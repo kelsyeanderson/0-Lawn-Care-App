@@ -1,2 +1,5 @@
-# 0-Lawn-Care-App
-Group 10 CS3450
+# Lawn Wizard
+This app creates a crowdsourcing environment for local yard care work.
+
+#Workspace layout
+__________________
