@@ -20,6 +20,8 @@ A demo version of the app will be posted to the google play store.
 
 To build and edit the app, simply run `bash $ git clone https://github.com/kelsyeanderson/0-Lawn-Care-App` to get a copy of the repository on your computer. You then just need to open the Android Studio app and click on the project to begin.
 
+## Organization and Name Scheme
+We will be using camel case for variables and upper camel case for class variables in our project. The individual pages will be fragments with their own XML files that have the necessary elements in them. 
 
 ## Unit testing instructions
 The file unitTest.txt will walk you through different use cases and tell you what should happen.
