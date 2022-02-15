@@ -1,5 +1,5 @@
 # Lawn Wizard
-This app creates a crowdsourcing environment for local yard care work.
+This app creates a crowdsourcing environment for local yard care work. In the app the user will be able to choose to either be a worker or a home owner. The home owners can create jobs and request work for their lawns which gets sent to the workers in the area. The workers can either accept or reject the job offers and get paid through the app. 
 
 ## Workspace layout
 The Lawn Wizard android app will be stored in this repository.
