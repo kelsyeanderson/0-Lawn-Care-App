@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout4"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.CustomerHomeFragment">
+
+    <androidx.gridlayout.widget.GridLayout
+        android:layout_width="379dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="100dp"
+        app:columnCount="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rowCount="3">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardBackgroundColor="#9F9898"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:layout_column="0"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="0"
+            app:layout_rowWeight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jobs Completed: "
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/JobsCompletedCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20"
+                    android:textSize="24sp" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="51dp"
+                    android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+            </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardBackgroundColor="#9F9898"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        app:layout_column="0"
+        app:layout_columnWeight="1"
+        app:layout_gravity="fill"
+        app:layout_row="1"
+        app:layout_rowWeight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Active Jobs: "
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/ActiveJobsCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20"
+                android:textSize="24sp" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="51dp"
+                android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardBackgroundColor="#9F9898"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        app:layout_column="0"
+        app:layout_columnWeight="1"
+        app:layout_gravity="fill"
+        app:layout_row="2"
+        app:layout_rowWeight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/Address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1650 E 400 S Logan, UT"
+                android:textSize="24sp" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="51dp"
+                android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    </androidx.gridlayout.widget.GridLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
