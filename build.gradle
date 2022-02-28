@@ -6,7 +6,7 @@ buildscript {
     }
     dependencies {
         classpath "com.android.tools.build:gradle:7.0.4"
-
+        classpath 'com.google.gms:google-services:4.3.10'
         // Firebase
         classpath 'com.google.gms:google-services:4.3.10'
 
@@ -14,6 +14,12 @@ buildscript {
         // in the individual module build.gradle files
     }
 }
+//allprojects {
+//    repositories {
+//        google()  // Google's Maven repository
+//        mavenCentral()
+//    }
+//}
 
 task clean(type: Delete) {
     delete rootProject.buildDir
