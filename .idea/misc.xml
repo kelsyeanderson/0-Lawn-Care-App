@@ -9,16 +9,12 @@
         <entry key="..\:/School/2022 Spring/cs 3450/LawnWizard/app/src/main/res/layout/fragment_sign_in.xml" value="0.3088768115942029" />
         <entry key="..\:/School/2022 Spring/cs 3450/LawnWizard/app/src/main/res/layout/fragment_signup.xml" value="0.3088768115942029" />
         <entry key="..\:/School/2022 Spring/cs 3450/LawnWizard/app/src/main/res/layout/fragment_worker_home.xml" value="0.3088768115942029" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1962962962962963" />
-        <entry key="app/src/main/res/layout/custom_card.xml" value="0.1962962962962963" />
-        <entry key="app/src/main/res/layout/fragment_customer_home.xml" value="0.1962962962962963" />
-        <entry key="app/src/main/res/layout/fragment_sign_in.xml" value="0.1962962962962963" />
-        <entry key="app/src/main/res/layout/fragment_signup.xml" value="0.1962962962962963" />
-        <entry key="app/src/main/res/layout/fragment_worker_home.xml" value="0.1962962962962963" />
+        <entry key="..\:/Users/camil/Documents/Sp22/3450/0-Lawn-Care-App/app/src/main/res/layout/fragment_sign_in.xml" value="0.13072916666666667" />
+        <entry key="..\:/Users/camil/Documents/Sp22/3450/0-Lawn-Care-App/app/src/main/res/layout/fragment_signup.xml" value="0.14666666666666667" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
