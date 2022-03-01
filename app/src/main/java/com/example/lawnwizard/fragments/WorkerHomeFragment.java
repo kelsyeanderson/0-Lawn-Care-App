@@ -3,19 +3,33 @@ package com.example.lawnwizard.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.lawnwizard.R;
+import com.example.lawnwizard.databinding.FragmentSignupBinding;
+import com.example.lawnwizard.databinding.FragmentWorkerHomeBinding;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class WorkerHomeFragment extends Fragment {
-
+    FragmentWorkerHomeBinding binding;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_worker_home, container, false);
+        binding = FragmentWorkerHomeBinding.inflate(inflater, container, false);
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        NavController controller = NavHostFragment.findNavController(this);
+
+        binding.imageView2.setOnClickListener((v) -> {
+            auth.signOut();
+            controller.navigate(R.id.action_workerHomeFragment_to_signInFragment);
+        });
+
+        return binding.getRoot();
     }
 }
