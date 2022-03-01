@@ -10,11 +10,15 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import com.example.lawnwizard.R;
 import com.example.lawnwizard.databinding.FragmentSignInBinding;
 import com.example.lawnwizard.databinding.FragmentSignupBinding;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.ArrayList;
 
 public class SignupFragment extends Fragment {
     FragmentSignupBinding binding;
@@ -24,6 +28,13 @@ public class SignupFragment extends Fragment {
         binding = FragmentSignupBinding.inflate(inflater, container, false);
         FirebaseAuth auth = FirebaseAuth.getInstance();
         NavController controller = NavHostFragment.findNavController(this);
+
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Worker");
+        list.add("Homeowner");
+        Spinner dropdown = binding.accountType;
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item, list);
+        dropdown.setAdapter(adapter);
 
         binding.signUpButton.setOnClickListener((v) -> {
             auth.createUserWithEmailAndPassword(
