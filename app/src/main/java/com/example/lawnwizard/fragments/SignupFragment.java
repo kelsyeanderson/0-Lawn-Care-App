@@ -25,13 +25,14 @@ import java.util.ArrayList;
 
 public class SignupFragment extends Fragment {
     FragmentSignupBinding binding;
+    UserViewModel viewmodel;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentSignupBinding.inflate(inflater, container, false);
         FirebaseAuth auth = FirebaseAuth.getInstance();
         NavController controller = NavHostFragment.findNavController(this);
-        UserViewModel viewmodel = new ViewModelProvider(this).get(UserViewModel.class);
+        viewmodel = new ViewModelProvider(this).get(UserViewModel.class);
 
         ArrayList<String> list = new ArrayList<>();
         list.add("Worker");
@@ -47,8 +48,13 @@ public class SignupFragment extends Fragment {
             ).addOnCompleteListener((task) -> {
                 if (task.isSuccessful()) {
                     Log.d("__FIREBASE", "Sign up success");
-                    createUser();
-                    controller.navigate(R.id.action_signupFragment_to_workerHomeFragment);
+                    viewmodel.saveUser(binding.editTextName.getText().toString(), dropdown.getSelectedItem().toString());
+                    if (dropdown.getSelectedItem().toString().equals("Worker")) {
+                        controller.navigate(R.id.action_signupFragment_to_workerHomeFragment);
+                    } else {
+                        controller.navigate(R.id.action_signupFragment_to_customerHomeFragment);
+                    }
+
                 } else {
                     Log.d("__FIREBASE", task.getException().toString());
                 }
@@ -56,10 +62,5 @@ public class SignupFragment extends Fragment {
         });
 
         return binding.getRoot();
-    }
-
-    private boolean createUser(){
-
-        return true;
     }
 }

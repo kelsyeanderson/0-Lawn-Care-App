@@ -35,7 +35,11 @@ public class UserViewModel extends ViewModel{
         );
         db.collection("users").add(newUser).addOnCompleteListener((task) -> {
             if (task.isSuccessful()) {
+                Log.d("__DATABASE", "New user sent to database");
                 user.setValue(newUser);
+            } else {
+                Log.d("__DATABASE", task.getException().toString());
+
             }
         });
     }
