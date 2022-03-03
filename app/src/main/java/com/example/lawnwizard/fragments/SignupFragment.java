@@ -3,6 +3,7 @@ package com.example.lawnwizard.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
@@ -14,20 +15,23 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import com.example.lawnwizard.R;
-import com.example.lawnwizard.databinding.FragmentSignInBinding;
 import com.example.lawnwizard.databinding.FragmentSignupBinding;
+import com.example.lawnwizard.models.User;
 import com.google.firebase.auth.FirebaseAuth;
+import com.example.lawnwizard.viewmodels.UserViewModel;
+
 
 import java.util.ArrayList;
 
 public class SignupFragment extends Fragment {
     FragmentSignupBinding binding;
-    @Override
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentSignupBinding.inflate(inflater, container, false);
         FirebaseAuth auth = FirebaseAuth.getInstance();
         NavController controller = NavHostFragment.findNavController(this);
+        UserViewModel viewmodel = new ViewModelProvider(this).get(UserViewModel.class);
 
         ArrayList<String> list = new ArrayList<>();
         list.add("Worker");
@@ -43,6 +47,7 @@ public class SignupFragment extends Fragment {
             ).addOnCompleteListener((task) -> {
                 if (task.isSuccessful()) {
                     Log.d("__FIREBASE", "Sign up success");
+                    createUser();
                     controller.navigate(R.id.action_signupFragment_to_workerHomeFragment);
                 } else {
                     Log.d("__FIREBASE", task.getException().toString());
@@ -51,5 +56,10 @@ public class SignupFragment extends Fragment {
         });
 
         return binding.getRoot();
+    }
+
+    private boolean createUser(){
+
+        return true;
     }
 }
