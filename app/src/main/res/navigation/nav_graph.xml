@@ -38,8 +38,17 @@
         android:label="fragment_customer_home"
         tools:layout="@layout/fragment_customer_home" >
         <action
-            android:id="@+id/action_customerHomeFragment_to_signInFragment"
-            app:destination="@id/signInFragment" />
+            android:id="@+id/action_customerHomeFragment_to_customerJobHistoryFragment"
+            app:destination="@id/customerJobHistoryFragment" />
+        <action
+            android:id="@+id/action_customerHomeFragment_to_customerActiveJobsFragment"
+            app:destination="@id/customerActiveJobsFragment" />
+        <action
+            android:id="@+id/action_customerHomeFragment_to_customerCreateJobFragment"
+            app:destination="@id/customerCreateJobFragment" />
+        <action
+            android:id="@+id/action_customerHomeFragment_to_costomerProfileFragment"
+            app:destination="@id/costomerProfileFragment" />
     </fragment>
     <fragment
         android:id="@+id/workerHomeFragment"
@@ -47,7 +56,142 @@
         android:label="fragment_worker_home"
         tools:layout="@layout/fragment_worker_home" >
         <action
-            android:id="@+id/action_workerHomeFragment_to_signInFragment"
+            android:id="@+id/action_workerHomeFragment_to_workerJobHistoryFragment"
+            app:destination="@id/workerJobHistoryFragment" />
+        <action
+            android:id="@+id/action_workerHomeFragment_to_workerActiveJobsFragment"
+            app:destination="@id/workerActiveJobsFragment" />
+        <action
+            android:id="@+id/action_workerHomeFragment_to_workerProfileFragment"
+            app:destination="@id/workerProfileFragment" />
+        <action
+            android:id="@+id/action_workerHomeFragment_to_workerAvailableJobsFragment"
+            app:destination="@id/workerAvailableJobsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/blackWhiteListFragment"
+        android:name="com.example.lawnwizard.fragments.BlackWhiteListFragment"
+        android:label="fragment_black_white_list"
+        tools:layout="@layout/fragment_black_white_list" >
+        <action
+            android:id="@+id/action_blackWhiteListFragment_to_workerProfileFragment"
+            app:destination="@id/workerProfileFragment" />
+        <action
+            android:id="@+id/action_blackWhiteListFragment_to_costomerProfileFragment"
+            app:destination="@id/costomerProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/customerJobHistoryFragment"
+        android:name="com.example.lawnwizard.fragments.CustomerJobHistoryFragment"
+        android:label="fragment_customer_job_history"
+        tools:layout="@layout/fragment_customer_job_history" >
+        <action
+            android:id="@+id/action_customerJobHistoryFragment_to_customerHomeFragment"
+            app:destination="@id/customerHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/workerJobHistoryFragment"
+        android:name="com.example.lawnwizard.fragments.WorkerJobHistoryFragment"
+        android:label="fragment_worker_job_history"
+        tools:layout="@layout/fragment_worker_job_history" >
+        <action
+            android:id="@+id/action_workerJobHistoryFragment_to_workerHomeFragment"
+            app:destination="@id/workerHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/workerActiveJobsFragment"
+        android:name="com.example.lawnwizard.fragments.WorkerActiveJobsFragment"
+        android:label="fragment_worker_active_jobs"
+        tools:layout="@layout/fragment_worker_active_jobs" >
+        <action
+            android:id="@+id/action_workerActiveJobsFragment_to_workerHomeFragment"
+            app:destination="@id/workerHomeFragment" />
+        <action
+            android:id="@+id/action_workerActiveJobsFragment_to_submitJobFragment"
+            app:destination="@id/submitJobFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/workerViewJobFragment"
+        android:name="com.example.lawnwizard.fragments.WorkerViewJobFragment"
+        android:label="fragment_worker_view_job"
+        tools:layout="@layout/fragment_worker_view_job" >
+        <action
+            android:id="@+id/action_workerViewJobFragment_to_workerHomeFragment2"
+            app:destination="@id/workerHomeFragment" />
+        <action
+            android:id="@+id/action_workerViewJobFragment_to_workerAvailableJobsFragment"
+            app:destination="@id/workerAvailableJobsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/workerProfileFragment"
+        android:name="com.example.lawnwizard.fragments.WorkerProfileFragment"
+        android:label="fragment_worker_profile"
+        tools:layout="@layout/fragment_worker_profile" >
+        <action
+            android:id="@+id/action_workerProfileFragment_to_workerHomeFragment"
+            app:destination="@id/workerHomeFragment" />
+        <action
+            android:id="@+id/action_workerProfileFragment_to_blackWhiteListFragment"
+            app:destination="@id/blackWhiteListFragment" />
+        <action
+            android:id="@+id/action_workerProfileFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/customerActiveJobsFragment"
+        android:name="com.example.lawnwizard.fragments.CustomerActiveJobsFragment"
+        android:label="fragment_customer_active_jobs"
+        tools:layout="@layout/fragment_customer_active_jobs" >
+        <action
+            android:id="@+id/action_customerActiveJobsFragment_to_customerHomeFragment"
+            app:destination="@id/customerHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/customerCreateJobFragment"
+        android:name="com.example.lawnwizard.fragments.CustomerCreateJobFragment"
+        android:label="fragment_customer_create_job"
+        tools:layout="@layout/fragment_customer_create_job" >
+        <action
+            android:id="@+id/action_customerCreateJobFragment_to_customerHomeFragment"
+            app:destination="@id/customerHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/costomerProfileFragment"
+        android:name="com.example.lawnwizard.fragments.CostomerProfileFragment"
+        android:label="fragment_customer_profile"
+        tools:layout="@layout/fragment_customer_profile" >
+        <action
+            android:id="@+id/action_costomerProfileFragment_to_customerHomeFragment"
+            app:destination="@id/customerHomeFragment" />
+        <action
+            android:id="@+id/action_costomerProfileFragment_to_blackWhiteListFragment"
+            app:destination="@id/blackWhiteListFragment" />
+        <action
+            android:id="@+id/action_costomerProfileFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/submitJobFragment"
+        android:name="com.example.lawnwizard.fragments.SubmitJobFragment"
+        android:label="fragment_submit_job"
+        tools:layout="@layout/fragment_submit_job" >
+        <action
+            android:id="@+id/action_submitJobFragment_to_workerActiveJobsFragment"
+            app:destination="@id/workerActiveJobsFragment" />
+        <action
+            android:id="@+id/action_submitJobFragment_to_workerHomeFragment"
+            app:destination="@id/workerHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/workerAvailableJobsFragment"
+        android:name="com.example.lawnwizard.fragments.WorkerAvailableJobsFragment"
+        android:label="fragment_worker_available_jobs"
+        tools:layout="@layout/fragment_worker_available_jobs" >
+        <action
+            android:id="@+id/action_workerAvailableJobsFragment_to_workerViewJobFragment"
+            app:destination="@id/workerViewJobFragment" />
+        <action
+            android:id="@+id/action_workerAvailableJobsFragment_to_workerHomeFragment"
+            app:destination="@id/workerHomeFragment" />
     </fragment>
 </navigation>
