@@ -24,8 +24,22 @@ public class CustomerHomeFragment extends Fragment {
         NavController controller = NavHostFragment.findNavController(this);
 
         binding.imageView2.setOnClickListener((v) -> {
+//            binding.imageView2.setEnabled(false);
             controller.navigate(R.id.action_customerHomeFragment_to_costomerProfileFragment);
         });
+        binding.completedJobsCard.setOnClickListener((v) -> {
+//            binding.completedJobsCard.setEnabled(false);
+            controller.navigate(R.id.action_customerHomeFragment_to_customerJobHistoryFragment);
+        });
+        binding.activeJobsCard.setOnClickListener((v) -> {
+//            binding.activeJobsCard.setEnabled(false);
+            controller.navigate(R.id.action_customerHomeFragment_to_customerActiveJobsFragment);
+        });
+        binding.addJobButton.setOnClickListener((v) -> {
+//            binding.addJobButton.setEnabled(false);
+            controller.navigate(R.id.action_customerHomeFragment_to_customerCreateJobFragment);
+        });
+
 
         return binding.getRoot();
     }

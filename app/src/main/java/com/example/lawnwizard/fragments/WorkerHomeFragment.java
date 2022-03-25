@@ -28,6 +28,15 @@ public class WorkerHomeFragment extends Fragment {
         binding.imageView2.setOnClickListener((v) -> {
             controller.navigate(R.id.action_workerHomeFragment_to_workerProfileFragment);
         });
+        binding.completedJobsCard.setOnClickListener((v) -> {
+            controller.navigate(R.id.action_workerHomeFragment_to_workerJobHistoryFragment);
+        });
+        binding.activeJobsCard.setOnClickListener((v) -> {
+            controller.navigate(R.id.action_workerHomeFragment_to_workerActiveJobsFragment);
+        });
+        binding.availableJobsCard.setOnClickListener((v) -> {
+            controller.navigate(R.id.action_workerHomeFragment_to_workerAvailableJobsFragment);
+        });
 
         return binding.getRoot();
     }

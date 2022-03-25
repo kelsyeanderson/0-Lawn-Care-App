@@ -41,7 +41,7 @@ public class SignInFragment extends Fragment {
                     binding.password.getText().toString()
             ).addOnCompleteListener((task) -> {
                if (task.isSuccessful()) {
-                   controller.navigate(R.id.action_signInFragment_to_workerHomeFragment);
+                   navigateToHome();
                } else {
                    Log.d("__FIREBASE", task.getException().toString());
                }
