@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.example.lawnwizard.R;
@@ -42,25 +43,76 @@ public class SignupFragment extends Fragment {
         dropdown.setAdapter(adapter);
 
         binding.signUpButton.setOnClickListener((v) -> {
-            auth.createUserWithEmailAndPassword(
-                    binding.editEmail.getText().toString(),
-                    binding.editPassword.getText().toString()
-            ).addOnCompleteListener((task) -> {
-                if (task.isSuccessful()) {
-                    Log.d("__FIREBASE", "Sign up success");
-                    viewmodel.saveUser(binding.editTextName.getText().toString(), dropdown.getSelectedItem().toString());
-                    if (dropdown.getSelectedItem().toString().equals("Worker")) {
-                        controller.navigate(R.id.action_signupFragment_to_workerHomeFragment);
-                    } else {
-                        controller.navigate(R.id.action_signupFragment_to_customerHomeFragment);
-                    }
+            if (!foundInputErrors(binding.editTextName, binding.editEmail, binding.editConfirmEmail, binding.editPassword, binding.editConfirmPassword)) {
+                auth.createUserWithEmailAndPassword(
+                        binding.editEmail.getText().toString(),
+                        binding.editPassword.getText().toString()
+                ).addOnCompleteListener((task) -> {
+                    if (task.isSuccessful()) {
+                        Log.d("__FIREBASE", "Sign up success");
+                        viewmodel.saveUser(binding.editTextName.getText().toString(), dropdown.getSelectedItem().toString());
+                        if (dropdown.getSelectedItem().toString().equals("Worker")) {
+                            controller.navigate(R.id.action_signupFragment_to_workerHomeFragment);
+                        } else {
+                            controller.navigate(R.id.action_signupFragment_to_customerHomeFragment);
+                        }
 
-                } else {
-                    Log.d("__FIREBASE", task.getException().toString());
-                }
-            });
+                    } else {
+                        Log.d("__FIREBASE", task.getException().toString());
+                    }
+                });
+            }
         });
 
         return binding.getRoot();
+    }
+
+    private boolean foundInputErrors(EditText nameField, EditText emailField, EditText confirmEmailField,
+                                     EditText passwordField, EditText confirmPasswordField){
+        boolean foundError = false;
+        if(nameField.getText().toString().equals("")){
+            nameField.setError("Please enter your full name");
+            foundError = true;
+        }
+        if(!passwordField.getText().toString().matches(confirmPasswordField.getText().toString())){
+            passwordField.setError("Passwords do not match");
+            confirmPasswordField.setError("Passwords do not match");
+            foundError = true;
+        }
+        if(!emailField.getText().toString().matches(confirmEmailField.getText().toString())){
+            emailField.setError("Emails do not match");
+            confirmEmailField.setError("Emails do not match");
+            foundError = true;
+        }
+        if(passwordField.getText().toString().length() < 8){
+            passwordField.setError("Password must be at least 8 characters");
+            foundError = true;
+        }
+        if(confirmPasswordField.getText().toString().length() < 8){
+            confirmPasswordField.setError("Password must be at least 8 characters");
+            foundError = true;
+        }
+        if(!emailField.getText().toString().contains("@")){
+            emailField.setError("Please enter a valid email");
+            foundError = true;
+        }
+        if(emailField.getText().toString().matches("")){
+            emailField.setError("Please enter an email");
+            foundError = true;
+        }
+        if(confirmEmailField.getText().toString().matches("")){
+            confirmEmailField.setError("Please enter an email");
+            foundError = true;
+        }
+        if(passwordField.getText().toString().matches("")){
+            passwordField.setError("Please enter a password");
+            foundError = true;
+        }
+        if(confirmPasswordField.getText().toString().matches("")){
+            confirmPasswordField.setError("Please enter a password");
+            foundError = true;
+        }
+
+        return foundError;
     }
 }

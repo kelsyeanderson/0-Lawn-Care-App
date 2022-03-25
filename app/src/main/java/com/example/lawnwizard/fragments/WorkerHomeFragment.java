@@ -26,7 +26,6 @@ public class WorkerHomeFragment extends Fragment {
         NavController controller = NavHostFragment.findNavController(this);
 
         binding.imageView2.setOnClickListener((v) -> {
-            auth.signOut();
             controller.navigate(R.id.action_workerHomeFragment_to_workerProfileFragment);
         });
 
