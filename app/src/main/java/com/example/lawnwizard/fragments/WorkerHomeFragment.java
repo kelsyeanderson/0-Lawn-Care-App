@@ -27,7 +27,7 @@ public class WorkerHomeFragment extends Fragment {
 
         binding.imageView2.setOnClickListener((v) -> {
             auth.signOut();
-            controller.navigate(R.id.action_workerHomeFragment_to_signInFragment);
+            controller.navigate(R.id.action_workerHomeFragment_to_workerProfileFragment);
         });
 
         return binding.getRoot();
