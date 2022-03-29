@@ -136,7 +136,7 @@
         app:layout_constraintStart_toStartOf="@+id/password" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="145dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:orientation="horizontal"
@@ -157,6 +157,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:gravity="center"
             android:text="@string/login"
             android:textStyle="bold" />
     </LinearLayout>
