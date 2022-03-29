@@ -15,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.802"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/timeExpectedInput" />
+        app:layout_constraintTop_toBottomOf="@+id/jobDescriptionInput" />
 
     <EditText
         android:id="@+id/addressInput"
@@ -64,7 +64,7 @@
         app:layout_constraintTop_toBottomOf="@+id/paymentInput" />
 
     <EditText
-        android:id="@+id/timeExpectedInput"
+        android:id="@+id/jobDescriptionInput"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
@@ -76,15 +76,15 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
-        android:id="@+id/timeExpectedText"
+        android:id="@+id/jobDescriptionText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Time Expected"
+        android:text="Job Description"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.197"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/timeExpectedInput" />
+        app:layout_constraintTop_toBottomOf="@+id/jobDescriptionInput" />
 
     <ImageView
         android:id="@+id/jobImage1"
@@ -95,7 +95,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.194"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/timeExpectedInput" />
+        app:layout_constraintTop_toBottomOf="@+id/jobDescriptionInput" />
 
     <Button
         android:id="@+id/createJob"

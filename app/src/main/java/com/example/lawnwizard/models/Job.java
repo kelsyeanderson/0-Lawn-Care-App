@@ -3,7 +3,7 @@ package com.example.lawnwizard.models;
 import com.google.type.LatLng;
 
 public class Job {
-    //TODO add photo
+    private String imageURI;
     private User homeowner;
     private User worker;
     private String description;
