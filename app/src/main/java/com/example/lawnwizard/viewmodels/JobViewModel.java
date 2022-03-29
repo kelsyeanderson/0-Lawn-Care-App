@@ -54,9 +54,9 @@ public class JobViewModel extends ViewModel{
                 .addOnCompleteListener((task) -> {
                     if (task.isSuccessful()) {
                         QuerySnapshot collection = task.getResult();
-                        for(QueryDocumentSnapshot document: collection) {
-                            DocumentReference doc = document.getReference();
-                        }
+//                        for(QueryDocumentSnapshot document: collection) {
+//                            DocumentReference doc = document.getReference();
+//                        }
                         jobs.addAll(collection.toObjects(Job.class));
                     }
                 });
