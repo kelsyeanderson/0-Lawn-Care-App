@@ -4,7 +4,8 @@ import com.google.type.LatLng;
 
 public class Job {
     //TODO add photo
-    private User user;
+    private User homeowner;
+    private User worker;
     private String description;
     private int pay;
     private LatLng location;
@@ -13,14 +14,20 @@ public class Job {
     private boolean deleted = false;
     private String docID;
 
-    public Job(User user, String description, int pay, LatLng location){
-        this.user = user;
+    public Job(User homeowner, String description, int pay, LatLng location){
+        this.homeowner = homeowner;
         this.description = description;
         this.pay = pay;
         this.location = location;
     }
 
-    public User getUser(){return user;}
+    public User getHomeowner(){return homeowner;}
+
+    public User getWorker(){ return worker; }
+
+    public void setWorker(User worker){
+        this.worker = worker;
+    }
 
     public String getDescription() {
         return description;
