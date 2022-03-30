@@ -30,6 +30,8 @@ public class WorkerProfileFragment extends Fragment {
             controller.navigate(R.id.action_workerProfileFragment_to_signInFragment);
         });
 
+        //binding.profileName.setText();
+
         return binding.getRoot();
     }
 }
