@@ -1,5 +1,6 @@
 package com.example.lawnwizard.models;
 
+import com.google.firebase.firestore.GeoPoint;
 import com.google.type.LatLng;
 
 public class Job {
@@ -8,13 +9,13 @@ public class Job {
     private User worker;
     private String description;
     private int pay;
-    private LatLng location;
+    private GeoPoint location;
     private boolean accepted = false;
     private boolean completed = false;
     private boolean deleted = false;
     private String docID;
 
-    public Job(User homeowner, String description, int pay, LatLng location){
+    public Job(User homeowner, String description, int pay, GeoPoint location){
         this.homeowner = homeowner;
         this.description = description;
         this.pay = pay;
@@ -41,7 +42,7 @@ public class Job {
         return pay;
     }
 
-    public LatLng getLocation() {
+    public GeoPoint getLocation() {
         return location;
     }
 
