@@ -3,6 +3,8 @@ package com.example.lawnwizard.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
@@ -13,6 +15,7 @@ import android.view.ViewGroup;
 import com.example.lawnwizard.R;
 import com.example.lawnwizard.databinding.FragmentCustomerHomeBinding;
 import com.example.lawnwizard.databinding.FragmentCustomerProfileBinding;
+import com.example.lawnwizard.models.User;
 import com.example.lawnwizard.viewmodels.UserViewModel;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -29,6 +32,7 @@ public class CustomerProfileFragment extends Fragment {
         binding = FragmentCustomerProfileBinding.inflate(inflater, container, false);
         FirebaseAuth auth = FirebaseAuth.getInstance();
         NavController controller = NavHostFragment.findNavController(this);
+        userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
 
         binding.customerLogoutButton.setOnClickListener((v) -> {
             auth.signOut();
@@ -41,9 +45,10 @@ public class CustomerProfileFragment extends Fragment {
             if (user == null) {
                 return;
             }
+
             binding.customerProfileNameText.setText(user.getName());
             binding.customerAddressText.setText(user.getName());
-            binding.customerBalanceText.setText(user.getBalance());
+            binding.customerBalanceText.setText(user.getBalance().toString());
             binding.customerEmailText.setText(Objects.requireNonNull(auth.getCurrentUser()).getEmail());
             binding.customerPhoneText.setText(user.getName());
         }));

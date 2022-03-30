@@ -3,6 +3,7 @@ package com.example.lawnwizard.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
@@ -29,6 +30,7 @@ public class WorkerProfileFragment extends Fragment {
         binding = FragmentWorkerProfileBinding.inflate(inflater, container, false);
         FirebaseAuth auth = FirebaseAuth.getInstance();
         NavController controller = NavHostFragment.findNavController(this);
+        userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
 
         binding.workerLogoutButton.setOnClickListener((v) -> {
             auth.signOut();
@@ -43,7 +45,7 @@ public class WorkerProfileFragment extends Fragment {
             }
             binding.customerProfileNameText.setText(user.getName());
             binding.customerAddressText.setText(user.getName());
-            binding.customerBalanceText.setText(user.getBalance());
+            binding.customerBalanceText.setText(user.getBalance().toString());
             binding.customerEmailText.setText(Objects.requireNonNull(auth.getCurrentUser()).getEmail());
             binding.customerPhoneText.setText(user.getName());
         }));
