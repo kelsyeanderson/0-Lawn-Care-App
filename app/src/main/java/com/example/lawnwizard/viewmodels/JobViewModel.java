@@ -28,7 +28,8 @@ public class JobViewModel extends ViewModel{
         return jobs;
     }
 
-    public void saveJob(User user, String description, int pay, LatLng location) {
+    public void saveJob(User user, String description, int pay) {
+        LatLng location = new LatLng(-34, 151);
         FirebaseAuth auth = FirebaseAuth.getInstance();
         Job newJob = new Job(
                 user,
