@@ -39,7 +39,7 @@ public class CustomerCreateJobFragment extends Fragment {
         binding.createJobButton.setOnClickListener((v) -> {
             binding.createJobButton.setEnabled(false);
             if(!foundInputErrors(binding.addressInput , binding.paymentInput, binding.jobDescriptionInput)){
-                addJob();
+                //addJob();
             }else{
                 binding.createJobButton.setEnabled(true);
             }
@@ -48,21 +48,21 @@ public class CustomerCreateJobFragment extends Fragment {
         return binding.getRoot();
     }
 
-    private void addJob(){
-        userViewModel.loadUser();
-        jobViewModel.loadJobs();
-        userViewModel.getUser().observe(getViewLifecycleOwner(), (user -> {
-            if (user == null) {
-                return;
-            }
-            jobViewModel.saveJob(
-                    user,
-                    binding.jobDescriptionInput.toString(),
-                    Integer.parseInt(binding.paymentInput.toString()),
-                    //add location here
-            );
-        }));
-    }
+//    private void addJob(){
+//        userViewModel.loadUser();
+//        jobViewModel.loadJobs();
+//        userViewModel.getUser().observe(getViewLifecycleOwner(), (user -> {
+//            if (user == null) {
+//                return;
+//            }
+//            jobViewModel.saveJob(
+//                    user,
+//                    binding.jobDescriptionInput.toString(),
+//                    Integer.parseInt(binding.paymentInput.toString()),
+//                    //add location here
+//            );
+//        }));
+//    }
 
     private boolean foundInputErrors(EditText location, EditText payment, EditText description){
         boolean foundError = false;
