@@ -58,7 +58,8 @@ public class CustomerCreateJobFragment extends Fragment {
             jobViewModel.saveJob(
                     user,
                     binding.jobDescriptionInput.toString(),
-                    Integer.parseInt(binding.paymentInput.toString())
+                    Integer.parseInt(binding.paymentInput.toString()),
+                    //add location here
             );
         }));
     }

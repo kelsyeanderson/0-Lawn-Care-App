@@ -60,15 +60,14 @@ public class SignInFragment extends Fragment {
         viewModel.getUser().observe(getViewLifecycleOwner(), (user -> {
             if (user == null) {
                 return;
+            }
+            String userRole = user.getRole();
+            if (userRole.equals("Worker")) {
+                controller.navigate(R.id.action_signInFragment_to_workerHomeFragment);
+            } else if (userRole.equals("Homeowner")) {
+                controller.navigate(R.id.action_signInFragment_to_customerHomeFragment);
             } else {
-                String userRole = user.getRole();
-                if (userRole.equals("Worker")) {
-                    controller.navigate(R.id.action_signInFragment_to_workerHomeFragment);
-                } else if (userRole.equals("Homeowner")) {
-                    controller.navigate(R.id.action_signInFragment_to_customerHomeFragment);
-                } else {
-                    Log.d("------------------------------Sign in error", "Couldnt find user role");
-                }
+                Log.d("------------------------------Sign in error", "Couldnt find user role");
             }
         }));
     }
