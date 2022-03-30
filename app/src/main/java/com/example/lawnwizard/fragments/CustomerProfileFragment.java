@@ -13,9 +13,14 @@ import android.view.ViewGroup;
 import com.example.lawnwizard.R;
 import com.example.lawnwizard.databinding.FragmentCustomerHomeBinding;
 import com.example.lawnwizard.databinding.FragmentCustomerProfileBinding;
+import com.example.lawnwizard.viewmodels.UserViewModel;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class CostomerProfileFragment extends Fragment {
+import java.util.Objects;
+
+public class CustomerProfileFragment extends Fragment {
+    UserViewModel userViewModel;
+
     FragmentCustomerProfileBinding binding;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -29,6 +34,19 @@ public class CostomerProfileFragment extends Fragment {
             auth.signOut();
             controller.navigate(R.id.action_costomerProfileFragment_to_signInFragment);
         });
+
+        userViewModel.loadUser();
+
+        userViewModel.getUser().observe(getViewLifecycleOwner(), (user -> {
+            if (user == null) {
+                return;
+            }
+            binding.customerProfileNameText.setText(user.getName());
+            binding.customerAddressText.setText(user.getName());
+            binding.customerBalanceText.setText(user.getBalance());
+            binding.customerEmailText.setText(Objects.requireNonNull(auth.getCurrentUser()).getEmail());
+            binding.customerPhoneText.setText(user.getName());
+        }));
 
         return binding.getRoot();
     }

@@ -157,7 +157,7 @@
     </fragment>
     <fragment
         android:id="@+id/costomerProfileFragment"
-        android:name="com.example.lawnwizard.fragments.CostomerProfileFragment"
+        android:name="com.example.lawnwizard.fragments.CustomerProfileFragment"
         android:label="fragment_customer_profile"
         tools:layout="@layout/fragment_customer_profile" >
         <action
