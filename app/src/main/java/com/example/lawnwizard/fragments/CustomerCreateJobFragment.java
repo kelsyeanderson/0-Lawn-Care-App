@@ -42,11 +42,13 @@ public class CustomerCreateJobFragment extends Fragment {
         FirebaseAuth auth = FirebaseAuth.getInstance();
         controller = NavHostFragment.findNavController(this);
         userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
+        jobViewModel = new ViewModelProvider(this).get(JobViewModel.class);
 
         binding.createJobButton.setOnClickListener((v) -> {
             binding.createJobButton.setEnabled(false);
             if(!foundInputErrors(binding.addressInput , binding.paymentInput, binding.jobDescriptionInput)){
                 addJob();
+
             }else{
                 binding.createJobButton.setEnabled(true);
             }
@@ -62,7 +64,7 @@ public class CustomerCreateJobFragment extends Fragment {
             if (user == null) {
                 return;
             }
-            GeoPoint loc = getLocationFromAddress(getContext(), binding.addressInput.toString());
+            GeoPoint loc = getLocationFromAddress(getContext(), binding.addressInput.getText().toString());
             if (loc == null) {
                 binding.addressInput.setError("Please enter a valid address");
                 return;
@@ -70,10 +72,12 @@ public class CustomerCreateJobFragment extends Fragment {
             jobViewModel.saveJob(
                     user,
                     binding.jobDescriptionInput.toString(),
-                    Integer.parseInt(binding.paymentInput.toString()),
+                    Integer.parseInt(binding.paymentInput.getText().toString()),
                     loc
             );
+            controller.navigate(R.id.action_customerCreateJobFragment_to_customerHomeFragment);
         }));
+
     }
 
     private boolean foundInputErrors(EditText location, EditText payment, EditText description){
@@ -112,11 +116,14 @@ public class CustomerCreateJobFragment extends Fragment {
             }
 
             Address location = address.get(0);
-            p1 = new GeoPoint((double) (location.getLatitude() * 1E6),
-                    (double) (location.getLongitude() * 1E6));
+            System.out.println("lat: " + location.getLatitude() * 1E6 + " lon: " + location.getLongitude() * 1E6);
+            System.out.println("lat: " + location.getLatitude() + " lon: " + location.getLongitude());
+            p1 = new GeoPoint((double) (location.getLatitude()),
+                    (double) (location.getLongitude()));
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+        System.out.print("");
         return p1;
     }
 
