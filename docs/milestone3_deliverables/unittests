@@ -1,12 +1,15 @@
-Create Job Unit Test
-1.	When you are signed in with a customer profile, you will have the option to create a job
-2.	When you click create job, it will take you to the create a job page
-3.	If you click the Create button without entering in any values, the program will not advance, and you will be told to fill in the blanks
-4.	You will then have to enter in an address, payment, and job description
-  a.	Note that you can only enter number values in for the payment
-5.	You will also have the option to select a picture from your device if you have pictures, but this is not required
-6.	Once you press create, your job will be created
-7.	You can then create a new job if desired once you are redirected to the home page
+Create Job Unit Test:
+1.	When you are signed in with a customer profile, click Create a Job
+2.	Once you reach the create a job page, click the create button
+  a.  This should not work, as you must fill in each field with a value
+3.  Now for location, enter an address such as "1111 N 800 E"
+4.  For payment, enter a number such as "50"
+  a.  Notice You cannot enter non-numbers
+5.  For job description, enter a description such as "Mow my lawn"
+6.  If you desire, you can select an image that is saved on your phone
+  a.  This is not required
+7.  Now click create, and your job will be created
+8.  You will be redirected to the homepage where you can create another job if desired
 
 Signing Up Testing:
 If any of the input is invalid, it will throw an error and notify the user. By clicking on the red ‘!’ icon, it will display the error message corresponding to the problem.
