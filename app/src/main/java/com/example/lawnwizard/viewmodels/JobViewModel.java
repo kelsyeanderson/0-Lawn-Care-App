@@ -11,6 +11,7 @@ import com.example.lawnwizard.models.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.GeoPoint;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.firestore.SetOptions;
@@ -28,7 +29,7 @@ public class JobViewModel extends ViewModel{
         return jobs;
     }
 
-    public void saveJob(User user, String description, int pay, LatLng location) {
+    public void saveJob(User user, String description, int pay, GeoPoint location) {
         FirebaseAuth auth = FirebaseAuth.getInstance();
         Job newJob = new Job(
                 user,
