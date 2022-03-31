@@ -25,16 +25,16 @@ public class WorkerHomeFragment extends Fragment {
         FirebaseAuth auth = FirebaseAuth.getInstance();
         NavController controller = NavHostFragment.findNavController(this);
 
-        binding.imageView2.setOnClickListener((v) -> {
+        binding.imageView3.setOnClickListener((v) -> {
             controller.navigate(R.id.action_workerHomeFragment_to_workerProfileFragment);
         });
-        binding.completedJobsCard.setOnClickListener((v) -> {
+        binding.historyJobsCard.setOnClickListener((v) -> {
             controller.navigate(R.id.action_workerHomeFragment_to_workerJobHistoryFragment);
         });
-        binding.activeJobsCard.setOnClickListener((v) -> {
+        binding.currentJobsCard.setOnClickListener((v) -> {
             controller.navigate(R.id.action_workerHomeFragment_to_workerActiveJobsFragment);
         });
-        binding.availableJobsCard.setOnClickListener((v) -> {
+        binding.addJobButton2.setOnClickListener((v) -> {
             controller.navigate(R.id.action_workerHomeFragment_to_workerAvailableJobsFragment);
         });
 
