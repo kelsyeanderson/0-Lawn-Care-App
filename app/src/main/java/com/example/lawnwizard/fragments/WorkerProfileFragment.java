@@ -32,6 +32,10 @@ public class WorkerProfileFragment extends Fragment {
         NavController controller = NavHostFragment.findNavController(this);
         userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
 
+        binding.backArrow.setOnClickListener((v) ->{
+            controller.navigate(R.id.action_workerProfileFragment_to_workerHomeFragment);
+        });
+
         binding.workerLogoutButton.setOnClickListener((v) -> {
             auth.signOut();
             controller.navigate(R.id.action_workerProfileFragment_to_signInFragment);
