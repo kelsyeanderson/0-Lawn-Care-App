@@ -15,8 +15,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.423" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/addressInput"
@@ -35,10 +34,10 @@
         android:id="@+id/addressText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
         android:text="Location"
-        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/addressInput"
-        tools:layout_editor_absoluteX="55dp" />
+        app:layout_constraintStart_toStartOf="@+id/textView30" />
 
     <EditText
         android:id="@+id/paymentInput"
@@ -56,10 +55,10 @@
         android:id="@+id/paymentText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
         android:text="Payment"
-        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/paymentInput"
-        tools:layout_editor_absoluteX="55dp" />
+        app:layout_constraintStart_toStartOf="@+id/textView30" />
 
     <EditText
         android:id="@+id/jobDescriptionInput"
@@ -76,18 +75,19 @@
         android:id="@+id/jobDescriptionText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
         android:text="Job Description"
-        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/jobDescriptionInput"
-        tools:layout_editor_absoluteX="53dp" />
+        app:layout_constraintStart_toStartOf="@+id/textView30" />
 
     <ImageView
         android:id="@+id/jobImage1"
         android:layout_width="128dp"
         android:layout_height="128dp"
-        android:layout_marginTop="32dp"
         android:src="@drawable/ic_baseline_map_24"
+        app:layout_constraintBottom_toTopOf="@+id/createJobButton"
         app:layout_constraintEnd_toEndOf="@+id/textView30"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="@+id/textView30"
         app:layout_constraintTop_toBottomOf="@+id/jobDescriptionInput" />
 
@@ -118,7 +118,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
-        android:text="Create Job"
+        android:text="CREATE JOB"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/textView30"
