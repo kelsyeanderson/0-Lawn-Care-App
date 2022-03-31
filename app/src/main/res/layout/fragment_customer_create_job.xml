@@ -20,14 +20,15 @@
 
     <EditText
         android:id="@+id/addressInput"
-        android:layout_width="300dp"
+        android:layout_width="256dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
         android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView30"
+        app:layout_constraintStart_toStartOf="@+id/textView30"
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
@@ -36,21 +37,18 @@
         android:layout_height="wrap_content"
         android:text="Location"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.165"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addressInput" />
+        app:layout_constraintBottom_toTopOf="@+id/addressInput"
+        tools:layout_editor_absoluteX="55dp" />
 
     <EditText
         android:id="@+id/paymentInput"
-        android:layout_width="300dp"
+        android:layout_width="256dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="32dp"
         android:inputType="number"
         android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView30"
+        app:layout_constraintStart_toStartOf="@+id/textView30"
         app:layout_constraintTop_toBottomOf="@+id/addressInput"
         tools:ignore="SpeakableTextPresentCheck" />
 
@@ -60,20 +58,17 @@
         android:layout_height="wrap_content"
         android:text="Payment"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.165"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/paymentInput" />
+        app:layout_constraintBottom_toTopOf="@+id/paymentInput"
+        tools:layout_editor_absoluteX="55dp" />
 
     <EditText
         android:id="@+id/jobDescriptionInput"
-        android:layout_width="300dp"
+        android:layout_width="256dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="32dp"
         android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView30"
+        app:layout_constraintStart_toStartOf="@+id/textView30"
         app:layout_constraintTop_toBottomOf="@+id/paymentInput"
         tools:ignore="SpeakableTextPresentCheck" />
 
@@ -83,33 +78,29 @@
         android:layout_height="wrap_content"
         android:text="Job Description"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.197"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jobDescriptionInput" />
+        app:layout_constraintBottom_toTopOf="@+id/jobDescriptionInput"
+        tools:layout_editor_absoluteX="53dp" />
 
     <ImageView
         android:id="@+id/jobImage1"
         android:layout_width="128dp"
         android:layout_height="128dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="32dp"
         android:src="@drawable/ic_baseline_map_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView30"
+        app:layout_constraintStart_toStartOf="@+id/textView30"
         app:layout_constraintTop_toBottomOf="@+id/jobDescriptionInput" />
 
     <Button
         android:id="@+id/createJobButton"
-        android:layout_width="wrap_content"
+        android:layout_width="256dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="#4CAF50"
         android:text="Create"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/textView30"
+        app:layout_constraintEnd_toEndOf="@+id/textView30"
+        app:layout_constraintStart_toStartOf="@+id/textView30" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -120,6 +111,18 @@
         android:src="@drawable/ic_baseline_arrow_back_ios_24_white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="Create Job"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textView30"
+        app:layout_constraintTop_toTopOf="@+id/textView30" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
