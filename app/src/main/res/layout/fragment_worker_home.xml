@@ -147,7 +147,7 @@
                 android:id="@+id/textView76"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Current Jobs"
+                android:text="Past Jobs"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
