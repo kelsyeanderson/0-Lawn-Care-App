@@ -44,6 +44,8 @@ public class SignInFragment extends Fragment {
                    navigateToHome();
                } else {
                    Log.d("__FIREBASE", task.getException().toString());
+                   binding.email.setError("Double check you put the correct email");
+                   binding.password.setError("Double check you put the correct password");
                }
             });
         });
