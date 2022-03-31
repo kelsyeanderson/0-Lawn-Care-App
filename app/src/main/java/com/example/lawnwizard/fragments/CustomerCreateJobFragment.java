@@ -61,6 +61,10 @@ public class CustomerCreateJobFragment extends Fragment {
         userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
         jobViewModel = new ViewModelProvider(this).get(JobViewModel.class);
 
+        binding.backButton.setOnClickListener((v) -> {
+            controller.navigate(R.id.action_customerCreateJobFragment_to_customerHomeFragment);
+        });
+
         binding.jobImage1.setOnClickListener((view) -> {
             intent = new Intent(
                     Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);

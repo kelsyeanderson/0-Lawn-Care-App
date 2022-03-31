@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -25,6 +26,8 @@ public class CustomerJobHistoryFragment extends Fragment {
         FragmentCustomerJobHistoryBinding binding = FragmentCustomerJobHistoryBinding.inflate(inflater, container, false);
         JobViewModel jobViewModel = new ViewModelProvider(getActivity()).get(JobViewModel.class);
         UserViewModel userViewModel = new ViewModelProvider(getActivity()).get(UserViewModel.class);
+        NavController controller = NavHostFragment.findNavController(this);
+
 
         userViewModel.getUser().observe(getViewLifecycleOwner(), (user) -> {
             if (user == null) return;
@@ -41,6 +44,10 @@ public class CustomerJobHistoryFragment extends Fragment {
                             })
             );
             binding.jobs.setLayoutManager(new LinearLayoutManager(getContext()));
+        });
+
+        binding.workerAvailableJobsBackArrow.setOnClickListener((v)->{
+            controller.navigate(R.id.action_customerJobHistoryFragment_to_customerHomeFragment);
         });
 
         return binding.getRoot();
