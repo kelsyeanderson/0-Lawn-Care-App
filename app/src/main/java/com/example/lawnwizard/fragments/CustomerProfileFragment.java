@@ -39,6 +39,10 @@ public class CustomerProfileFragment extends Fragment {
             controller.navigate(R.id.action_costomerProfileFragment_to_signInFragment);
         });
 
+        binding.backArrow.setOnClickListener((v) -> {
+            controller.navigate(R.id.action_costomerProfileFragment_to_customerHomeFragment);
+        });
+
         userViewModel.loadUser();
 
         userViewModel.getUser().observe(getViewLifecycleOwner(), (user -> {

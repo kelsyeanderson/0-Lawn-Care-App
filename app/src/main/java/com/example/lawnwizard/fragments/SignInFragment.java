@@ -48,7 +48,7 @@ public class SignInFragment extends Fragment {
             });
         });
 
-        binding.signupBotton.setOnClickListener((v) -> {
+        binding.signupButton.setOnClickListener((v) -> {
             controller.navigate(R.id.action_signInFragment_to_signupFragment);
         });
 
