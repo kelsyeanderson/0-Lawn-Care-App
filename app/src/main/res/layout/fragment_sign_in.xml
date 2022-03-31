@@ -126,8 +126,8 @@
         app:layout_constraintStart_toStartOf="@+id/password" />
 
     <LinearLayout
-        android:layout_width="163dp"
-        android:layout_height="21dp"
+        android:layout_width="137dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="@+id/textView"
@@ -139,7 +139,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/already_a_user"
+            android:text="Not a user?"
             tools:ignore="TextContrastCheck" />
 
         <TextView
