@@ -61,16 +61,6 @@
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toTopOf="@+id/textView" />
 
-    <Button
-        android:id="@+id/signupBotton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#4CAF50"
-        android:text="@string/sign_up"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
-
 
     <Button
         android:id="@+id/logInButton"
@@ -136,8 +126,8 @@
         app:layout_constraintStart_toStartOf="@+id/password" />
 
     <LinearLayout
-        android:layout_width="145dp"
-        android:layout_height="wrap_content"
+        android:layout_width="163dp"
+        android:layout_height="21dp"
         android:layout_marginTop="32dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="@+id/textView"
@@ -153,12 +143,12 @@
             tools:ignore="TextContrastCheck" />
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/signupBotton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/login"
+            android:text="@string/sign_up"
             android:textStyle="bold" />
     </LinearLayout>
 
