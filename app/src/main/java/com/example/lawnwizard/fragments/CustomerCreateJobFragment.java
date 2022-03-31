@@ -1,15 +1,23 @@
 package com.example.lawnwizard.fragments;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.location.Address;
 import android.location.Geocoder;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,11 +29,15 @@ import com.example.lawnwizard.databinding.FragmentCustomerCreateJobBinding;
 import com.example.lawnwizard.databinding.FragmentSignInBinding;
 import com.example.lawnwizard.viewmodels.JobViewModel;
 import com.example.lawnwizard.viewmodels.UserViewModel;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.GeoPoint;
 import com.google.type.LatLng;
 
+import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class CustomerCreateJobFragment extends Fragment {
@@ -34,6 +46,11 @@ public class CustomerCreateJobFragment extends Fragment {
     UserViewModel userViewModel;
     JobViewModel jobViewModel;
     NavController controller;
+    String currentFilePath = "";
+    Uri uriFilePath;
+    Intent intent;
+    int REQUEST_IMAGE_CAPTURE = 1;
+    int RESULT_LOAD_IMAGE = 0;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -43,6 +60,40 @@ public class CustomerCreateJobFragment extends Fragment {
         controller = NavHostFragment.findNavController(this);
         userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
         jobViewModel = new ViewModelProvider(this).get(JobViewModel.class);
+
+        binding.jobImage1.setOnClickListener((view) -> {
+            intent = new Intent(
+                    Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            startActivityForResult(intent, RESULT_LOAD_IMAGE);
+//            new MaterialAlertDialogBuilder(getActivity())
+//                    .setTitle("Choose Image")
+//                    .setItems(new CharSequence[]{"From Camera", "From Photos"}, (menuItem, i) -> {
+//                        if (i == 0) {
+//                            //Camera
+//                            String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+//                            String fileName = "JPEG_" + timeStamp + ".jpg";
+//
+//                            File imageFile = new File(getActivity().getExternalFilesDir(Environment.DIRECTORY_PICTURES), fileName);
+//                            currentFilePath = imageFile.getAbsolutePath();
+//
+//                            Uri imageUri = FileProvider.getUriForFile(getActivity(), "com.example.contacts.fileprovider", imageFile);
+//
+//                            intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//                            intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
+//                            startActivityForResult(intent, REQUEST_IMAGE_CAPTURE);
+////                            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+////                            uriFilePath = Uri.fromFile(new File(Environment.getExternalStorageDirectory(),"fname_" +
+////                                    String.valueOf(System.currentTimeMillis()) + ".jpg"));
+////                            intent.putExtra(android.provider.MediaStore.EXTRA_OUTPUT, uriFilePath);
+////                            startActivityForResult(intent, REQUEST_IMAGE_CAPTURE);
+//                        } else {
+//                            //Photos
+//                            intent = new Intent(
+//                                    Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+//                            startActivityForResult(intent, RESULT_LOAD_IMAGE);
+//                        }
+//                    }).show();
+        });
 
         binding.createJobButton.setOnClickListener((v) -> {
             binding.createJobButton.setEnabled(false);
@@ -121,6 +172,27 @@ public class CustomerCreateJobFragment extends Fragment {
             ex.printStackTrace();
         }
         return p1;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        //super.onActivityResult(requestCode, resultCode, data); comment this unless you want to pass your result to the activity.
+        if (requestCode == RESULT_LOAD_IMAGE && resultCode == Activity.RESULT_OK && null != data) {
+            uriFilePath = data.getData();
+            String[] filePathColumn = { MediaStore.Images.Media.DATA };
+            Cursor cursor = getActivity().getContentResolver().query(uriFilePath,
+                    filePathColumn, null, null, null);
+            cursor.moveToFirst();
+            int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+            String picturePath = cursor.getString(columnIndex);
+            cursor.close();
+
+            binding.jobImage1.setImageURI(uriFilePath);
+        }else if(requestCode==REQUEST_IMAGE_CAPTURE && resultCode==Activity.RESULT_OK){
+            Bundle extras = data.getExtras();
+            Bitmap bmp = (Bitmap) extras.get("data");
+            binding.jobImage1.setImageURI(uriFilePath);
+        }
     }
 
 
