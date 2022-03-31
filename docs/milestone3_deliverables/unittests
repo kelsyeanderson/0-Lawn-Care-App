@@ -7,3 +7,12 @@ Create Job Unit Test
 5.	You will also have the option to select a picture from your device if you have pictures, but this is not required
 6.	Once you press create, your job will be created
 7.	You can then create a new job if desired once you are redirected to the home page
+
+Signing Up Testing:
+If any of the input is invalid, it will throw an error and notify the user. By clicking on the red ‘!’ icon, it will display the error message corresponding to the problem.
+  Invalid input include:
+	Input being left blank
+	Email is invalid (no @ sign)
+	Email addresses do not match
+	Password is less than 8 characters
+	Passwords do not match
