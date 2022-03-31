@@ -5,156 +5,140 @@
     android:id="@+id/frameLayout4"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white_background"
     tools:context=".fragments.CustomerHomeFragment">
 
-    <androidx.gridlayout.widget.GridLayout
-        android:id="@+id/gridLayout"
-        android:layout_width="379dp"
-        android:layout_height="300dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="100dp"
-        app:columnCount="1"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="256dp"
+        android:layout_marginStart="-8dp"
+        android:layout_marginTop="-8dp"
+        android:layout_marginEnd="-8dp"
+        android:background="@drawable/green_rounded_corner_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:rowCount="3">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/completedJobsCard"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            app:cardBackgroundColor="#9F9898"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="8dp"
-            app:layout_column="0"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill"
-            app:layout_row="0"
-            app:layout_rowWeight="1">
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="141dp"
+        android:layout_height="125dp"
+        android:background="@drawable/light_green_rounded_corner_view"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="291dp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Jobs Completed: "
-                    android:textSize="24sp" />
-
-                <TextView
-                    android:id="@+id/JobsCompletedCount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="20"
-                    android:textSize="24sp" />
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="51dp"
-                    android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/activeJobsCard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            app:cardBackgroundColor="#9F9898"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="8dp"
-            app:layout_column="0"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill"
-            app:layout_row="1"
-            app:layout_rowWeight="1">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Active Jobs: "
-                    android:textSize="24sp" />
-
-                <TextView
-                    android:id="@+id/ActiveJobsCount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="20"
-                    android:textSize="24sp" />
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="51dp"
-                    android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            app:cardBackgroundColor="#9F9898"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="8dp"
-            app:layout_column="0"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill"
-            app:layout_row="2"
-            app:layout_rowWeight="1">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/Address"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1650 E 400 S Logan, UT"
-                    android:textSize="24sp" />
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="51dp"
-                    android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-    </androidx.gridlayout.widget.GridLayout>
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="141dp"
+        android:layout_height="125dp"
+        android:background="@drawable/light_green_rounded_corner_view"
+        tools:layout_editor_absoluteX="226dp"
+        tools:layout_editor_absoluteY="282dp" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:src="@drawable/ic_baseline_person_24"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_baseline_person_24_white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/activeJobsCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="16dp"
+        app:cardBackgroundColor="@color/white_background"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_gravity="fill">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="300"
+                android:layout_height="wrap_content"
+                android:text="Current Jobs"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/ic_baseline_arrow_forward_24_black" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/completedJobsCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:cardBackgroundColor="@color/white_background"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        app:layout_columnWeight="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activeJobsCard"
+        app:layout_gravity="fill"
+        app:layout_rowWeight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="300"
+                android:layout_height="wrap_content"
+                android:text="History"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/ic_baseline_arrow_forward_24_black" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addJobButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#A5D6A7"
         android:clickable="true"
         android:src="@android:drawable/ic_input_add"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.909"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gridLayout"
-        app:layout_constraintVertical_bias="0.898" />
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
