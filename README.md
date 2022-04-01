@@ -16,16 +16,26 @@ Firebase - easy free database to use that connects to Android Stuido
 Fireauth - easy free user authentication 
 
 ## Build instructions
-A demo version of the app will be posted to the google play store.
-
-To build and edit the app, simply run `bash $ git clone https://github.com/kelsyeanderson/0-Lawn-Care-App` to get a copy of the repository on your computer. You then just need to open the Android Studio app and click on the project to begin. Installation and set up instructions are located in the docs folder.
+To build and edit the app, simply run `bash $ git clone https://github.com/kelsyeanderson/0-Lawn-Care-App` to get a copy of the repository on your computer. You then just need to open the Android Studio app and click on the project to begin. Installation and set up instructions for Android Studio are located in the docs folder.
 
 ## Organization and Name Scheme
 We will be using camel case for variables and upper camel case for class variables in our project. The individual pages will be fragments with their own XML files that have the necessary elements in them. 
 
 ## Unit testing instructions
-The file unitTest.txt will walk you through different use cases and tell you what should happen.
+The file unittests (located in docs/milestone3_deliverables) will walk you through different use cases and tell you what should happen.
 
 ## System testing instructions
-Start by opening the app on your android device. Login to the app using the following credentials. Username: SystemTest, Password: systest
-These credentials allow access to perform all actions as a customer, supervisor, owner, and attendant in a test environment.
+Start by opening the app on your android device.
+To test a worker profile use the following credentials:
+
+Email:home@owner.com
+
+Password: Password1!
+
+To test a homeowner profile use the following credentials:
+
+Email:worker@email.com
+
+Password:Password1!
+
+These credentials allow access to perform all actions as a customer and homeowner in a test environment.
