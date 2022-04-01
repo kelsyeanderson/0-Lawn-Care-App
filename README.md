@@ -39,3 +39,8 @@ Email:worker@email.com
 Password:Password1!
 
 These credentials allow access to perform all actions as a customer and homeowner in a test environment.
+
+## Milestone 3 Requirements
+To make grading easier, we have added a milestone 3 deliverables folder within our docs file. In it we have all our sprint planning, sprint retrospective, and standup reports. Since Android Studio doesn't allow for code based unit tests the way a python program would, we have provided a unittests file that details tests you can run on the emulator to ensure that everything is working as it should be. We understand that we are the only group to impliment this app through an Android Application, so we've included instructions for installing and setting up Android Studio if you would like to run our code yourself. In the event that you run into trouble getting everything working, we've also provided a screen recording video demonstration of us walking through the different features in our app. We'd be happy to hop on a call with you or answer any questions you may have through discord if you run into any problems.
+
+
