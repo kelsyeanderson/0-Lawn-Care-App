@@ -20,6 +20,8 @@ import com.google.type.LatLng;
 public class JobViewModel extends ViewModel{
     MutableLiveData<Job> selectedJob = new MutableLiveData<>();
     ObservableArrayList<Job> jobs = new ObservableArrayList<>();
+    ObservableArrayList<Job> activeJobs = new ObservableArrayList<>();
+    ObservableArrayList<Job> pastJobs = new ObservableArrayList<>();
     FirebaseFirestore db;
 
     public JobViewModel() {
@@ -52,13 +54,57 @@ public class JobViewModel extends ViewModel{
                 .addOnCompleteListener((task) -> {
                     if (task.isSuccessful()) {
                         QuerySnapshot collection = task.getResult();
-//                        for(QueryDocumentSnapshot document: collection) {
-//                            DocumentReference doc = document.getReference();
-//                        }
                         jobs.addAll(collection.toObjects(Job.class));
                     }
                 });
-        Log.d("____", String.valueOf(jobs));
+        Log.d("____Load Jobs:", String.valueOf(jobs));
+    }
+
+    public void loadPastJobs(User user) {
+        jobs.clear();
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        db.collection("jobs")
+                .whereEqualTo("deleted", false)
+                .whereEqualTo("completed", true)
+                .get()
+                .addOnCompleteListener((task) -> {
+                    if (task.isSuccessful()) {
+                        QuerySnapshot collection = task.getResult();
+                        jobs.addAll(collection.toObjects(Job.class));
+                    }
+                });
+        Log.d("____Load Jobs:", String.valueOf(jobs));
+    }
+
+    public void loadActiveJobs(User user) {
+        jobs.clear();
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        if(user.getRole() == "homeowner") {
+            db.collection("jobs")
+                    .whereEqualTo("deleted", false)
+                    .whereEqualTo("completed", false)
+                    .whereEqualTo("homeowner", user)
+                    .get()
+                    .addOnCompleteListener((task) -> {
+                        if (task.isSuccessful()) {
+                            QuerySnapshot collection = task.getResult();
+                            jobs.addAll(collection.toObjects(Job.class));
+                        }
+                    });
+        }else{
+            db.collection("jobs")
+                    .whereEqualTo("deleted", false)
+                    .whereEqualTo("completed", false)
+                    .whereEqualTo("accepted", false)
+                    .get()
+                    .addOnCompleteListener((task) -> {
+                        if (task.isSuccessful()) {
+                            QuerySnapshot collection = task.getResult();
+                            jobs.addAll(collection.toObjects(Job.class));
+                        }
+                    });
+        }
+        Log.d("____Load Jobs:", String.valueOf(jobs));
     }
 
     public void updateJob(String docID, Job updateJob) {
