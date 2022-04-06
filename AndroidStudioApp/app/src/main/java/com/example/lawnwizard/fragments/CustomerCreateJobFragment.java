@@ -126,7 +126,7 @@ public class CustomerCreateJobFragment extends Fragment {
             }
             jobViewModel.saveJob(
                     user,
-                    binding.jobDescriptionInput.toString(),
+                    binding.jobDescriptionInput.getText().toString(),
                     Integer.parseInt(binding.paymentInput.getText().toString()),
                     loc
             );

@@ -29,10 +29,12 @@ public class CustomerJobHistoryFragment extends Fragment {
         NavController controller = NavHostFragment.findNavController(this);
 
 
+        userViewModel.loadUser();
         userViewModel.getUser().observe(getViewLifecycleOwner(), (user) -> {
             if (user == null) return;
 
             // load transactions
+            jobViewModel.loadJobs();
             binding.jobs.setAdapter(
                     new JobHistoryAdapter(
                             jobViewModel.getJobs(),

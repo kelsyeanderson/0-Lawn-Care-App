@@ -5,15 +5,16 @@ import com.google.type.LatLng;
 
 public class Job {
     private String imageURI;
-    private User homeowner;
-    private User worker;
-    private String description;
-    private int pay;
-    private GeoPoint location;
-    private boolean accepted = false;
-    private boolean completed = false;
+    private User homeowner; //
+    private User worker; //
+    private String description; //
+    private int pay; //
+    private GeoPoint location; //
+    private boolean accepted = false; //
+    private boolean completed = false; //
     private boolean deleted = false;
-    private String docID;
+
+    public Job(){}
 
     public Job(User homeowner, String description, int pay, GeoPoint location){
         this.homeowner = homeowner;
@@ -34,13 +35,13 @@ public class Job {
         return description;
     }
 
-    public void setDocID(String docID){
-        this.docID = docID;
-    }
-
     public int getPay() {
         return pay;
     }
+
+    public boolean getDeleted() { return this.deleted; }
+
+    public String getImageURI() { return this.imageURI; }
 
     public GeoPoint getLocation() {
         return location;
@@ -69,4 +70,5 @@ public class Job {
     public void setAccepted() {
         this.accepted = true;
     }
+
 }

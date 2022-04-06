@@ -31,6 +31,7 @@ public class JobViewModel extends ViewModel{
 
     public void saveJob(User user, String description, int pay, GeoPoint location) {
         FirebaseAuth auth = FirebaseAuth.getInstance();
+        //TODO:Debug new job (imageURI and deleted)
         Job newJob = new Job(
                 user,
                 description,
@@ -61,6 +62,7 @@ public class JobViewModel extends ViewModel{
                         jobs.addAll(collection.toObjects(Job.class));
                     }
                 });
+        Log.d("____", String.valueOf(jobs));
     }
 
     public void updateJob(String docID, Job updateJob) {
