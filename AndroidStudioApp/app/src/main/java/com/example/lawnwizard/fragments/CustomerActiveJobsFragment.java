@@ -25,7 +25,28 @@ public class CustomerActiveJobsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         FragmentCustomerActiveJobsBinding binding = FragmentCustomerActiveJobsBinding.inflate(inflater, container, false);
+        JobViewModel jobViewModel = new ViewModelProvider(getActivity()).get(JobViewModel.class);
+        UserViewModel userViewModel = new ViewModelProvider(getActivity()).get(UserViewModel.class);
         NavController controller = NavHostFragment.findNavController(this);
+
+        userViewModel.loadUser();
+        userViewModel.getUser().observe(getViewLifecycleOwner(), (user) -> {
+            if (user == null) return;
+
+            // load transactions
+            jobViewModel.loadJobs();
+            binding.jobs.setAdapter(
+                    new JobHistoryAdapter(
+                            jobViewModel.getJobs(),
+                            transaction -> {
+                                // go to a job when clicked
+//                                jobViewModel.setSelectedJob(transaction);
+//                                NavHostFragment.findNavController(this)
+//                                        .navigate();
+                            })
+            );
+            binding.jobs.setLayoutManager(new LinearLayoutManager(getContext()));
+        });
 
         binding.workerAvailableJobsBackArrow.setOnClickListener((v)->{
             controller.navigate(R.id.action_customerActiveJobsFragment_to_customerHomeFragment);
