@@ -40,20 +40,24 @@
         app:layout_constraintTop_toBottomOf="@+id/textView27" />
 
     <TextView
-        android:id="@+id/pastJobs2"
+        android:id="@+id/workPastJobsCount"
         android:layout_width="136dp"
         android:layout_height="172dp"
         android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:textSize="60sp"
         android:background="@drawable/rounded_corner_view"
         app:layout_constraintEnd_toEndOf="@+id/textView20"
         app:layout_constraintStart_toStartOf="@+id/textView20"
         app:layout_constraintTop_toBottomOf="@+id/activeJobsText" />
 
     <TextView
-        android:id="@+id/currentJobs2"
+        android:id="@+id/workCurrentJobsCount"
         android:layout_width="136dp"
         android:layout_height="172dp"
         android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:textSize="60sp"
         android:background="@drawable/rounded_corner_view"
         app:layout_constraintEnd_toEndOf="@+id/textView24"
         app:layout_constraintStart_toStartOf="@+id/textView24"
@@ -95,7 +99,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/textView24"
         app:layout_constraintEnd_toEndOf="@+id/textView24"
         app:layout_constraintStart_toStartOf="@+id/textView24"
-        app:layout_constraintTop_toBottomOf="@+id/currentJobs2"
+        app:layout_constraintTop_toBottomOf="@+id/workCurrentJobsCount"
         app:layout_gravity="fill"
         app:layout_rowWeight="1">
 
@@ -156,21 +160,6 @@
 
     </androidx.cardview.widget.CardView>
 
-    <ScrollView
-        android:id="@+id/scrollView1"
-        android:layout_width="136dp"
-        android:layout_height="172dp"
-        app:layout_constraintBottom_toBottomOf="@+id/pastJobs2"
-        app:layout_constraintEnd_toEndOf="@+id/pastJobs2"
-        app:layout_constraintStart_toStartOf="@+id/pastJobs2"
-        app:layout_constraintTop_toTopOf="@+id/pastJobs2">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
-
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="40dp"
@@ -213,21 +202,6 @@
 
     </androidx.cardview.widget.CardView>
 
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="136dp"
-        android:layout_height="172dp"
-        app:layout_constraintBottom_toBottomOf="@+id/currentJobs2"
-        app:layout_constraintEnd_toEndOf="@+id/currentJobs2"
-        app:layout_constraintStart_toStartOf="@+id/currentJobs2"
-        app:layout_constraintTop_toTopOf="@+id/currentJobs2">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
-
     <androidx.cardview.widget.CardView
         android:id="@+id/currentJobsCard"
         android:layout_width="136dp"
@@ -238,7 +212,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/textView20"
         app:layout_constraintEnd_toEndOf="@+id/textView20"
         app:layout_constraintStart_toStartOf="@+id/textView20"
-        app:layout_constraintTop_toBottomOf="@+id/pastJobs2"
+        app:layout_constraintTop_toBottomOf="@+id/workPastJobsCount"
         app:layout_gravity="fill">
 
         <LinearLayout
