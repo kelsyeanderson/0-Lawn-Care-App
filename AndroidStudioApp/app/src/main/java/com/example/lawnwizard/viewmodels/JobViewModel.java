@@ -18,6 +18,7 @@ import com.google.firebase.firestore.SetOptions;
 import com.google.type.LatLng;
 
 public class JobViewModel extends ViewModel{
+    MutableLiveData<Job> selectedJob = new MutableLiveData<>();
     ObservableArrayList<Job> jobs = new ObservableArrayList<>();
     FirebaseFirestore db;
 
@@ -28,6 +29,8 @@ public class JobViewModel extends ViewModel{
     public ObservableArrayList<Job> getJobs() {
         return jobs;
     }
+
+    public void setSelectedJob(Job selectedJob) {this.selectedJob.setValue(selectedJob);}
 
     public void saveJob(Job newJob) {
         db.collection("jobs").add(newJob).addOnCompleteListener((task) -> {
@@ -66,5 +69,6 @@ public class JobViewModel extends ViewModel{
                     }
                 });
     }
+
 
 }

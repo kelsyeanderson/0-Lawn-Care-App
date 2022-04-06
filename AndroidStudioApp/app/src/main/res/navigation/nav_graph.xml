@@ -97,6 +97,9 @@
         <action
             android:id="@+id/action_workerJobHistoryFragment_to_workerHomeFragment"
             app:destination="@id/workerHomeFragment" />
+        <action
+            android:id="@+id/action_workerJobHistoryFragment_to_workerViewJobFragment"
+            app:destination="@id/workerViewJobFragment" />
     </fragment>
     <fragment
         android:id="@+id/workerActiveJobsFragment"
@@ -109,6 +112,9 @@
         <action
             android:id="@+id/action_workerActiveJobsFragment_to_submitJobFragment"
             app:destination="@id/submitJobFragment" />
+        <action
+            android:id="@+id/action_workerActiveJobsFragment_to_workerViewJobFragment"
+            app:destination="@id/workerViewJobFragment" />
     </fragment>
     <fragment
         android:id="@+id/workerViewJobFragment"

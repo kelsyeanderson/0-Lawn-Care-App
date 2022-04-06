@@ -39,9 +39,9 @@ public class WorkerJobHistoryFragment extends Fragment {
                             jobViewModel.getJobs(),
                             transaction -> {
                                 // go to a job when clicked
-//                                jobViewModel.setSelectedJob(transaction);
-//                                NavHostFragment.findNavController(this)
-//                                        .navigate();
+                                jobViewModel.setSelectedJob(transaction);
+                                NavHostFragment.findNavController(this)
+                                        .navigate(R.id.action_workerJobHistoryFragment_to_workerViewJobFragment);
                             })
             );
             binding.jobs.setLayoutManager(new LinearLayoutManager(getContext()));

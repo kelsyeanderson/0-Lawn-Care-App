@@ -2,12 +2,14 @@ package com.example.lawnwizard.fragments;
 
 import android.os.Bundle;
 
+import androidx.databinding.ObservableArrayList;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +18,7 @@ import com.example.lawnwizard.R;
 import com.example.lawnwizard.adapters.JobHistoryAdapter;
 import com.example.lawnwizard.databinding.FragmentCustomerActiveJobsBinding;
 import com.example.lawnwizard.databinding.FragmentCustomerJobHistoryBinding;
+import com.example.lawnwizard.models.Job;
 import com.example.lawnwizard.viewmodels.JobViewModel;
 import com.example.lawnwizard.viewmodels.UserViewModel;
 
@@ -40,9 +43,9 @@ public class CustomerActiveJobsFragment extends Fragment {
                             jobViewModel.getJobs(),
                             transaction -> {
                                 // go to a job when clicked
-//                                jobViewModel.setSelectedJob(transaction);
-//                                NavHostFragment.findNavController(this)
-//                                        .navigate();
+                                jobViewModel.setSelectedJob(transaction);
+                                NavHostFragment.findNavController(this);
+//                                        .navigate(); // TODO: create the fragment to view job
                             })
             );
             binding.jobs.setLayoutManager(new LinearLayoutManager(getContext()));
