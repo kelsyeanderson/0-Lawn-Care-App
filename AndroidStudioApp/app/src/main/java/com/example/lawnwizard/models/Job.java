@@ -1,8 +1,5 @@
 package com.example.lawnwizard.models;
-
 import com.google.firebase.firestore.GeoPoint;
-import com.google.type.LatLng;
-
 import java.util.Calendar;
 import java.util.Date;
 
