@@ -3,6 +3,9 @@ package com.example.lawnwizard.models;
 import com.google.firebase.firestore.GeoPoint;
 import com.google.type.LatLng;
 
+import java.util.Calendar;
+import java.util.Date;
+
 public class Job {
     private String imageURI;
     private User homeowner; //
@@ -13,14 +16,27 @@ public class Job {
     private boolean accepted = false; //
     private boolean completed = false; //
     private boolean deleted = false;
+    private String createdDate;
 
     public Job(){}
 
-    public Job(User homeowner, String description, int pay, GeoPoint location){
+    public Job(User homeowner, String description, int pay, GeoPoint location, String imageURI){
+        Date currentTime = Calendar.getInstance().getTime();
         this.homeowner = homeowner;
         this.description = description;
         this.pay = pay;
         this.location = location;
+        this.imageURI = imageURI;
+        this.createdDate = currentTime.toString();
+    }
+
+    public Job(User homeowner, String description, int pay, GeoPoint location){
+        Date currentTime = Calendar.getInstance().getTime();
+        this.homeowner = homeowner;
+        this.description = description;
+        this.pay = pay;
+        this.location = location;
+        this.createdDate = currentTime.toString();
     }
 
     public User getHomeowner(){return homeowner;}
@@ -46,6 +62,8 @@ public class Job {
     public GeoPoint getLocation() {
         return location;
     }
+
+    public String getCreatedDate() { return this.createdDate; }
 
     public void setDescription(String description) {
         this.description = description;

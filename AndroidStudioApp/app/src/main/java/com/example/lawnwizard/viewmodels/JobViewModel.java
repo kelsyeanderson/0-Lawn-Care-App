@@ -29,15 +29,7 @@ public class JobViewModel extends ViewModel{
         return jobs;
     }
 
-    public void saveJob(User user, String description, int pay, GeoPoint location) {
-        FirebaseAuth auth = FirebaseAuth.getInstance();
-        //TODO:Debug new job (imageURI and deleted)
-        Job newJob = new Job(
-                user,
-                description,
-                pay,
-                location
-        );
+    public void saveJob(Job newJob) {
         db.collection("jobs").add(newJob).addOnCompleteListener((task) -> {
             if (task.isSuccessful()) {
                 Log.d("__DATABASE", "New user sent to database");
@@ -49,6 +41,7 @@ public class JobViewModel extends ViewModel{
     }
 
     public void loadJobs() {
+        jobs.clear();
         FirebaseAuth auth = FirebaseAuth.getInstance();
         db.collection("jobs")
                 .whereEqualTo("deleted", false)

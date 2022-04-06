@@ -27,6 +27,7 @@ import android.widget.EditText;
 import com.example.lawnwizard.R;
 import com.example.lawnwizard.databinding.FragmentCustomerCreateJobBinding;
 import com.example.lawnwizard.databinding.FragmentSignInBinding;
+import com.example.lawnwizard.models.Job;
 import com.example.lawnwizard.viewmodels.JobViewModel;
 import com.example.lawnwizard.viewmodels.UserViewModel;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
@@ -124,12 +125,24 @@ public class CustomerCreateJobFragment extends Fragment {
                 binding.addressInput.setError("Please enter a valid address");
                 return;
             }
-            jobViewModel.saveJob(
-                    user,
-                    binding.jobDescriptionInput.getText().toString(),
-                    Integer.parseInt(binding.paymentInput.getText().toString()),
-                    loc
-            );
+            if (uriFilePath == null){
+                Job inJob = new Job(
+                        user,
+                        binding.jobDescriptionInput.getText().toString(),
+                        Integer.parseInt(binding.paymentInput.getText().toString()),
+                        loc
+                );
+                jobViewModel.saveJob(inJob);
+            } else{
+                Job inJob = new Job(
+                        user,
+                        binding.jobDescriptionInput.getText().toString(),
+                        Integer.parseInt(binding.paymentInput.getText().toString()),
+                        loc,
+                        uriFilePath.toString()
+                );
+                jobViewModel.saveJob(inJob);
+            }
             controller.navigate(R.id.action_customerCreateJobFragment_to_customerHomeFragment);
         }));
     }
