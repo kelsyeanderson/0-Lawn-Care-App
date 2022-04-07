@@ -34,10 +34,10 @@ public class CustomerJobHistoryFragment extends Fragment {
             if (user == null) return;
 
             // load transactions
-            jobViewModel.loadJobs();
+            jobViewModel.loadPastJobs(user);
             binding.jobs.setAdapter(
                     new JobHistoryAdapter(
-                            jobViewModel.getJobs(),
+                            jobViewModel.getPastJobs(),
                             transaction -> {
                                 // go to a job when clicked
 //                                jobViewModel.setSelectedJob(transaction);

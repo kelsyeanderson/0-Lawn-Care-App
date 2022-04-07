@@ -32,6 +32,14 @@ public class JobViewModel extends ViewModel{
         return jobs;
     }
 
+    public ObservableArrayList<Job> getActiveJobs() {
+        return activeJobs;
+    }
+
+    public ObservableArrayList<Job> getPastJobs() {
+        return pastJobs;
+    }
+
     public void setSelectedJob(Job selectedJob) {this.selectedJob.setValue(selectedJob);}
 
     public void saveJob(Job newJob) {
@@ -61,37 +69,54 @@ public class JobViewModel extends ViewModel{
     }
 
     public void loadPastJobs(User user) {
-        jobs.clear();
-        FirebaseAuth auth = FirebaseAuth.getInstance();
-        db.collection("jobs")
-                .whereEqualTo("deleted", false)
-                .whereEqualTo("completed", true)
-                .get()
-                .addOnCompleteListener((task) -> {
-                    if (task.isSuccessful()) {
-                        QuerySnapshot collection = task.getResult();
-                        jobs.addAll(collection.toObjects(Job.class));
-                    }
-                });
-        Log.d("____Load Jobs:", String.valueOf(jobs));
-    }
-
-    public void loadActiveJobs(User user) {
-        jobs.clear();
-        FirebaseAuth auth = FirebaseAuth.getInstance();
-        if(user.getRole() == "homeowner") {
+        pastJobs.clear();
+        if(user.getRole().equals("Homeowner")) {
             db.collection("jobs")
                     .whereEqualTo("deleted", false)
-                    .whereEqualTo("completed", false)
-                    .whereEqualTo("homeowner", user)
+                    .whereEqualTo("completed", true)
+                    .whereEqualTo("homeownerID", user.getUserID())
                     .get()
                     .addOnCompleteListener((task) -> {
                         if (task.isSuccessful()) {
                             QuerySnapshot collection = task.getResult();
-                            jobs.addAll(collection.toObjects(Job.class));
+                            pastJobs.addAll(collection.toObjects(Job.class));
                         }
+                        Log.d("____Load Past Homeowner Jobs:", String.valueOf(pastJobs));
                     });
         }else{
+            db.collection("jobs")
+                    .whereEqualTo("deleted", false)
+                    .whereEqualTo("completed", true)
+                    .whereEqualTo("workerID", user.getUserID())
+                    .get()
+                    .addOnCompleteListener((task) -> {
+                        if (task.isSuccessful()) {
+                            QuerySnapshot collection = task.getResult();
+                            pastJobs.addAll(collection.toObjects(Job.class));
+                        }
+                        Log.d("____Load Past Worker Jobs:", String.valueOf(pastJobs));
+                    });
+        }
+    }
+
+    public void loadActiveJobs(User user) {
+        activeJobs.clear();
+        if(user.getRole().equals("Homeowner")) {
+            db.collection("jobs")
+                    .whereEqualTo("deleted", false)
+                    .whereEqualTo("completed", false)
+                    .whereEqualTo("homeownerID", user.getUserID())
+                    .get()
+                    .addOnCompleteListener((task) -> {
+                        if (task.isSuccessful()) {
+                            QuerySnapshot collection = task.getResult();
+                            activeJobs.addAll(collection.toObjects(Job.class));
+                        }
+
+                        Log.d("____Load Active Homeowner Jobs:", String.valueOf(activeJobs));
+                    });
+        }else{
+            //TODO: add filter by area code
             db.collection("jobs")
                     .whereEqualTo("deleted", false)
                     .whereEqualTo("completed", false)
@@ -100,11 +125,12 @@ public class JobViewModel extends ViewModel{
                     .addOnCompleteListener((task) -> {
                         if (task.isSuccessful()) {
                             QuerySnapshot collection = task.getResult();
-                            jobs.addAll(collection.toObjects(Job.class));
+                            activeJobs.addAll(collection.toObjects(Job.class));
                         }
+
+                        Log.d("____Load Active Worker Jobs:", String.valueOf(activeJobs));
                     });
         }
-        Log.d("____Load Jobs:", String.valueOf(jobs));
     }
 
     public void updateJob(String docID, Job updateJob) {

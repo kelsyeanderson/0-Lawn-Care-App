@@ -1,9 +1,15 @@
 package com.example.lawnwizard.models;
+import android.app.Activity;
+import android.location.Address;
+import android.location.Geocoder;
+
 import com.google.firebase.firestore.GeoPoint;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 
 public class Job {
     private String imageURI;
@@ -19,6 +25,8 @@ public class Job {
     private boolean accepted = false;
     private boolean completed = false;
     private boolean deleted = false;
+    private boolean flagged = false;
+    private boolean resolved = false;
     private String createdDate;
 
     public Job(){}
@@ -33,6 +41,10 @@ public class Job {
         this.location = location;
         this.imageURI = imageURI;
         this.createdDate = currentTime.toString();
+
+//        Geocoder geocoder = new Geocoder(getActivity(), Locale.getDefault());
+//        List<Address> addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
+
     }
 
     public Job(User homeowner, String description, int pay, GeoPoint location){
@@ -45,6 +57,10 @@ public class Job {
         this.location = location;
         this.createdDate = currentTime.toString();
     }
+
+    public boolean getFlagged() { return this.flagged; }
+
+    public boolean getResolved() { return this.resolved; }
 
     public String getHomeowner() { return this.homeowner; }
 
