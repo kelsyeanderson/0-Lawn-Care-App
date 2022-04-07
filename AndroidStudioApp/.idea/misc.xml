@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/camil/Documents/Sp22/3450/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/layout/fragment_customer_profile.xml" value="0.14130434782608695" />
+        <entry key="..\:/Users/camil/Documents/Sp22/3450/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/layout/fragment_worker_profile.xml" value="0.14130434782608695" />
         <entry key="app/src/main/res/layout/fragment_customer_home.xml" value="0.23854166666666668" />
         <entry key="app/src/main/res/layout/fragment_worker_home.xml" value="0.23854166666666668" />
       </map>
