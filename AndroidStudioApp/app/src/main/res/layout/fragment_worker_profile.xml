@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ccc"
+    android:background="@color/white"
     tools:context=".fragments.WorkerProfileFragment">
 
     <TextView
@@ -77,43 +77,42 @@
             android:layout_height="wrap_content"
             android:background="#4F7942"
             android:numStars="5"
-            android:stepSize="0.1"
-            />
+            android:stepSize="0.1" />
 
-<!--        <ImageView-->
-<!--            android:id="@+id/imageView6"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="1"-->
-<!--            android:src="@drawable/ic_baseline_star_24" />-->
+        <!--        <ImageView-->
+        <!--            android:id="@+id/imageView6"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_weight="1"-->
+        <!--            android:src="@drawable/ic_baseline_star_24" />-->
 
-<!--        <ImageView-->
-<!--            android:id="@+id/imageView7"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="1"-->
-<!--            android:src="@drawable/ic_baseline_star_24" />-->
+        <!--        <ImageView-->
+        <!--            android:id="@+id/imageView7"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_weight="1"-->
+        <!--            android:src="@drawable/ic_baseline_star_24" />-->
 
-<!--        <ImageView-->
-<!--            android:id="@+id/imageView8"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="1"-->
-<!--            android:src="@drawable/ic_baseline_star_half_24" />-->
+        <!--        <ImageView-->
+        <!--            android:id="@+id/imageView8"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_weight="1"-->
+        <!--            android:src="@drawable/ic_baseline_star_half_24" />-->
 
-<!--        <ImageView-->
-<!--            android:id="@+id/imageView9"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="1"-->
-<!--            android:src="@drawable/ic_baseline_star_border_24" />-->
+        <!--        <ImageView-->
+        <!--            android:id="@+id/imageView9"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_weight="1"-->
+        <!--            android:src="@drawable/ic_baseline_star_border_24" />-->
 
-<!--        <ImageView-->
-<!--            android:id="@+id/imageView10"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="1"-->
-<!--            android:src="@drawable/ic_baseline_star_border_24" />-->
+        <!--        <ImageView-->
+        <!--            android:id="@+id/imageView10"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_weight="1"-->
+        <!--            android:src="@drawable/ic_baseline_star_border_24" />-->
 
     </LinearLayout>
 
@@ -215,12 +214,12 @@
 
     <TextView
         android:id="@+id/customerAddressText"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView19"
-        android:layout_width="wrap_content"/>
+        app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
     <TextView
         android:id="@+id/customerBalanceText"

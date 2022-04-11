@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout4"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white_background"
+    android:background="@color/white"
     tools:context=".fragments.CustomerHomeFragment">
 
     <TextView
@@ -57,9 +57,9 @@
         android:layout_width="136dp"
         android:layout_height="172dp"
         android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_corner_view"
         android:gravity="center"
         android:textSize="60sp"
-        android:background="@drawable/rounded_corner_view"
         app:layout_constraintEnd_toEndOf="@+id/textView29"
         app:layout_constraintStart_toStartOf="@+id/textView29"
         app:layout_constraintTop_toBottomOf="@+id/historyJobsText" />
@@ -69,7 +69,7 @@
         android:layout_width="136dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        app:cardBackgroundColor="@color/white_background"
+        app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
         app:layout_constraintEnd_toEndOf="@+id/textView29"
@@ -111,9 +111,9 @@
         android:layout_width="136dp"
         android:layout_height="172dp"
         android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_corner_view"
         android:gravity="center"
         android:textSize="60sp"
-        android:background="@drawable/rounded_corner_view"
         app:layout_constraintEnd_toEndOf="@+id/textView21"
         app:layout_constraintStart_toStartOf="@+id/textView21"
         app:layout_constraintTop_toBottomOf="@+id/activeJobsText" />
@@ -122,7 +122,7 @@
         android:id="@+id/activeJobsCard"
         android:layout_width="136dp"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="@color/white_background"
+        app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/textView21"
@@ -162,7 +162,7 @@
         android:layout_width="136dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        app:cardBackgroundColor="@color/white_background"
+        app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
         app:layout_constraintEnd_toEndOf="@+id/textView21"
@@ -193,7 +193,7 @@
         android:id="@+id/completedJobsCard"
         android:layout_width="136dp"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="@color/white_background"
+        app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
         app:layout_columnWeight="1"
@@ -221,7 +221,7 @@
 
             <ImageView
                 android:id="@+id/imageView12"
-                android:layout_width="wrap_content"
+                android:layout_width="56dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:src="@drawable/ic_baseline_arrow_forward_24_black" />
