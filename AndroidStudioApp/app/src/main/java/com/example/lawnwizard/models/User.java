@@ -49,5 +49,12 @@ public class User {
     public ArrayList<String> getBlacklist() {
         return blacklist;
     }
+
+    public void setBalance(int num) {
+        this.balance += num;
+        if(this.balance < 0){
+            this.balance = 0;
+        }
+    }
 }
 

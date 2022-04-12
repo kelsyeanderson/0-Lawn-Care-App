@@ -33,6 +33,31 @@ public class CustomerProfileFragment extends Fragment {
         NavController controller = NavHostFragment.findNavController(this);
         userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
 
+        userViewModel.loadUser();
+        userViewModel.getUser().observe(getViewLifecycleOwner(), (user -> {
+            if (user == null) {
+                return;
+            }
+
+            binding.transferFundsButton.setOnClickListener((v) -> {
+                if(binding.transferFunds.getText().toString().equals("")){
+                    binding.transferFunds.setError("Please enter a value");
+                }else if(Integer.parseInt(binding.transferFunds.getText().toString()) < 0){
+                    binding.transferFunds.setError("Please enter a positive number");
+                }else{
+                    user.setBalance(Integer.parseInt(binding.transferFunds.getText().toString()));
+                    userViewModel.updateUser(user);
+                    binding.transferFunds.setText("");
+                }
+            });
+
+            binding.customerProfileNameText.setText(user.getName());
+            binding.customerAddressText.setText(user.getName());
+            binding.customerBalanceText.setText(user.getBalance().toString());
+            binding.customerEmailText.setText(Objects.requireNonNull(auth.getCurrentUser()).getEmail());
+            binding.customerPhoneText.setText(user.getName());
+        }));
+
         binding.customerLogoutButton.setOnClickListener((v) -> {
             auth.signOut();
             controller.navigate(R.id.action_costomerProfileFragment_to_signInFragment);
@@ -41,20 +66,6 @@ public class CustomerProfileFragment extends Fragment {
         binding.backArrow.setOnClickListener((v) -> {
             controller.navigate(R.id.action_costomerProfileFragment_to_customerHomeFragment);
         });
-
-        userViewModel.loadUser();
-
-        userViewModel.getUser().observe(getViewLifecycleOwner(), (user -> {
-            if (user == null) {
-                return;
-            }
-
-            binding.customerProfileNameText.setText(user.getName());
-            binding.customerAddressText.setText(user.getName());
-            binding.customerBalanceText.setText(user.getBalance().toString());
-            binding.customerEmailText.setText(Objects.requireNonNull(auth.getCurrentUser()).getEmail());
-            binding.customerPhoneText.setText(user.getName());
-        }));
 
         return binding.getRoot();
     }

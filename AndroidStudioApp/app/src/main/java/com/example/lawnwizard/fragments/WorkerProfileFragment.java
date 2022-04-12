@@ -52,6 +52,18 @@ public class WorkerProfileFragment extends Fragment {
             binding.customerBalanceText.setText(user.getBalance().toString());
             binding.customerEmailText.setText(Objects.requireNonNull(auth.getCurrentUser()).getEmail());
             binding.customerPhoneText.setText(user.getName());
+
+            binding.transferFundsButton.setOnClickListener((v) -> {
+                if(binding.transferFunds.getText().toString().equals("")){
+                    binding.transferFunds.setError("Please enter a value to transfer");
+                }else if(Integer.parseInt(binding.transferFunds.getText().toString()) < 0){
+                    binding.transferFunds.setError("Please enter a positive number");
+                }else{
+                    user.setBalance(-Integer.parseInt(binding.transferFunds.getText().toString()));
+                    userViewModel.updateUser(user);
+                    binding.transferFunds.setText("");
+                }
+            });
         }));
 
         return binding.getRoot();

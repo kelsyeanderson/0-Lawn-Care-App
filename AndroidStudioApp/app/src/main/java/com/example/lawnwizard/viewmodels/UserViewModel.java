@@ -22,6 +22,8 @@ public class UserViewModel extends ViewModel{
         db = FirebaseFirestore.getInstance();
     }
 
+    public String getDocID() { return docID; }
+
     public MutableLiveData<User> getUser() {
         return user;
     }
@@ -39,7 +41,6 @@ public class UserViewModel extends ViewModel{
                 user.setValue(newUser);
             } else {
                 Log.d("__DATABASE", task.getException().toString());
-
             }
         });
     }
@@ -67,7 +68,7 @@ public class UserViewModel extends ViewModel{
                 });
     }
 
-    public void updateUser(String docID, User updateUser) {
+    public void updateUser(User updateUser) {
         db.collection("users").document(docID).set(updateUser, SetOptions.merge())
                 .addOnCompleteListener((task) -> {
                     if (task.isSuccessful()) {
