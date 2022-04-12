@@ -38,6 +38,10 @@ Email:worker@email.com
 
 Password:Password1!
 
+Email:admin@email.com
+
+Password:Password1!
+
 These credentials allow access to perform all actions as a customer and homeowner in a test environment.
 
 ## Milestone 3 Requirements
