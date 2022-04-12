@@ -1,4 +1,4 @@
-package com.example.lawnwizard.fragments;
+package com.example.lawnwizard;
 
 import android.os.Bundle;
 
@@ -12,45 +12,29 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.lawnwizard.R;
+import com.example.lawnwizard.databinding.FragmentLoadingBinding;
 import com.example.lawnwizard.databinding.FragmentSignInBinding;
 import com.example.lawnwizard.viewmodels.UserViewModel;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class SignInFragment extends Fragment {
-    FragmentSignInBinding binding;
+public class LoadingFragment extends Fragment {
+    FragmentLoadingBinding binding;
     UserViewModel viewModel;
     NavController controller;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = FragmentSignInBinding.inflate(inflater, container, false);
+        binding = FragmentLoadingBinding.inflate(inflater, container, false);
         FirebaseAuth auth = FirebaseAuth.getInstance();
         controller = NavHostFragment.findNavController(this);
         viewModel = new ViewModelProvider(this).get(UserViewModel.class);
-        binding.logInButton.setEnabled(true);
 
-        binding.logInButton.setOnClickListener((v) -> {
-            binding.logInButton.setEnabled(false);
-            auth.signInWithEmailAndPassword(
-                    binding.email.getText().toString(),
-                    binding.password.getText().toString()
-            ).addOnCompleteListener((task) -> {
-               if (task.isSuccessful()) {
-                   navigateToHome();
-               } else {
-                   binding.logInButton.setEnabled(true);
-                   Log.d("__FIREBASE", task.getException().toString());
-                   binding.email.setError("Double check you put the correct email");
-                   binding.password.setError("Double check you put the correct password");
-               }
-            });
-        });
-
-        binding.signupButton.setOnClickListener((v) -> {
-            controller.navigate(R.id.action_signInFragment_to_signupFragment);
-        });
+        if(auth.getCurrentUser() != null) {
+            navigateToHome();
+        }else{
+            controller.navigate(R.id.action_loadingFragment_to_signInFragment);
+        }
 
         return binding.getRoot();
     }
@@ -63,11 +47,11 @@ public class SignInFragment extends Fragment {
             }
             String userRole = user.getRole();
             if (userRole.equals("Worker")) {
-                controller.navigate(R.id.action_signInFragment_to_workerHomeFragment);
+                controller.navigate(R.id.action_loadingFragment_to_workerHomeFragment);
             } else if (userRole.equals("Homeowner")) {
-                controller.navigate(R.id.action_signInFragment_to_customerHomeFragment);
+                controller.navigate(R.id.action_loadingFragment_to_customerHomeFragment);
             } else if (userRole.equals("Admin")) {
-                controller.navigate(R.id.action_signInFragment_to_adminHomeFragment);
+                controller.navigate(R.id.action_loadingFragment_to_adminHomeFragment);
             } else {
                 Log.d("------------------------------Sign in error", "Couldnt find user role");
             }

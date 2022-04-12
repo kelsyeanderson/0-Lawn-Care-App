@@ -3,45 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/James Seelos/Desktop/Lawn Wizard/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.27" />
-        <entry key="..\:/Users/James Seelos/Desktop/Lawn Wizard/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/drawable/green_rounded_corner_view.xml" value="0.27" />
-        <entry key="..\:/Users/James Seelos/Desktop/Lawn Wizard/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.27" />
-        <entry key="..\:/Users/James Seelos/Desktop/Lawn Wizard/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/drawable/ic_baseline_arrow_back_ios_24_white.xml" value="0.27" />
-        <entry key="..\:/Users/James Seelos/Desktop/Lawn Wizard/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/drawable/ic_baseline_arrow_forward_24_black.xml" value="0.27" />
-        <entry key="..\:/Users/James Seelos/Desktop/Lawn Wizard/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/drawable/ic_baseline_arrow_forward_ios_24.xml" value="0.27" />
-        <entry key="..\:/Users/James Seelos/Desktop/Lawn Wizard/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/drawable/ic_baseline_history_24.xml" value="0.27" />
-        <entry key="..\:/Users/James Seelos/Desktop/Lawn Wizard/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/drawable/ic_baseline_logout_24.xml" value="0.27" />
-        <entry key="..\:/Users/James Seelos/Desktop/Lawn Wizard/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/drawable/ic_baseline_map_24.xml" value="0.27" />
-        <entry key="..\:/Users/James Seelos/Desktop/Lawn Wizard/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/drawable/ic_baseline_person_24_white.xml" value="0.27" />
-        <entry key="..\:/Users/James Seelos/Desktop/Lawn Wizard/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/drawable/ic_baseline_star_24.xml" value="0.27" />
-        <entry key="..\:/Users/James Seelos/Desktop/Lawn Wizard/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/drawable/ic_baseline_star_border_24.xml" value="0.27" />
-        <entry key="..\:/Users/James Seelos/Desktop/Lawn Wizard/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/drawable/ic_baseline_star_half_24.xml" value="0.27" />
-        <entry key="..\:/Users/James Seelos/Desktop/Lawn Wizard/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.27" />
-        <entry key="..\:/Users/James Seelos/Desktop/Lawn Wizard/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/drawable/rounded_corner_view.xml" value="0.27" />
-        <entry key="..\:/Users/James Seelos/Desktop/Lawn Wizard/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/layout/activity_main.xml" value="0.27717391304347827" />
-        <entry key="..\:/Users/James Seelos/Desktop/Lawn Wizard/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/layout/fragment_admin_home.xml" value="0.27717391304347827" />
-        <entry key="..\:/Users/James Seelos/Desktop/Lawn Wizard/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/layout/fragment_black_white_list.xml" value="0.27717391304347827" />
-        <entry key="..\:/Users/James Seelos/Desktop/Lawn Wizard/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/layout/fragment_customer_active_jobs.xml" value="0.27717391304347827" />
-        <entry key="..\:/Users/James Seelos/Desktop/Lawn Wizard/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/layout/fragment_customer_create_job.xml" value="0.27717391304347827" />
-        <entry key="..\:/Users/James Seelos/Desktop/Lawn Wizard/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/layout/fragment_customer_home.xml" value="0.27717391304347827" />
-        <entry key="..\:/Users/James Seelos/Desktop/Lawn Wizard/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/layout/fragment_customer_job_history.xml" value="0.27717391304347827" />
-        <entry key="..\:/Users/James Seelos/Desktop/Lawn Wizard/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/layout/fragment_customer_profile.xml" value="0.27717391304347827" />
-        <entry key="..\:/Users/James Seelos/Desktop/Lawn Wizard/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/layout/fragment_extra_signup_page.xml" value="0.27717391304347827" />
-        <entry key="..\:/Users/James Seelos/Desktop/Lawn Wizard/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/layout/fragment_sign_in.xml" value="0.27717391304347827" />
-        <entry key="..\:/Users/James Seelos/Desktop/Lawn Wizard/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/layout/fragment_signup.xml" value="0.27717391304347827" />
-        <entry key="..\:/Users/James Seelos/Desktop/Lawn Wizard/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/layout/fragment_submit_job.xml" value="0.27717391304347827" />
-        <entry key="..\:/Users/James Seelos/Desktop/Lawn Wizard/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/layout/fragment_worker_active_jobs.xml" value="0.27717391304347827" />
-        <entry key="..\:/Users/James Seelos/Desktop/Lawn Wizard/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/layout/fragment_worker_available_jobs.xml" value="0.27717391304347827" />
-        <entry key="..\:/Users/James Seelos/Desktop/Lawn Wizard/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/layout/fragment_worker_home.xml" value="0.27717391304347827" />
-        <entry key="..\:/Users/James Seelos/Desktop/Lawn Wizard/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/layout/fragment_worker_job_history.xml" value="0.27717391304347827" />
-        <entry key="..\:/Users/James Seelos/Desktop/Lawn Wizard/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/layout/fragment_worker_profile.xml" value="0.27717391304347827" />
-        <entry key="..\:/Users/James Seelos/Desktop/Lawn Wizard/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/layout/fragment_worker_view_job.xml" value="0.27717391304347827" />
-        <entry key="..\:/Users/James Seelos/Desktop/Lawn Wizard/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/layout/job_card.xml" value="0.33" />
-        <entry key="..\:/Users/James Seelos/Desktop/Lawn Wizard/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/layout/user_card.xml" value="0.27717391304347827" />
-        <entry key="..\:/Users/camil/Documents/Sp22/3450/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/layout/fragment_customer_profile.xml" value="0.14130434782608695" />
-        <entry key="..\:/Users/camil/Documents/Sp22/3450/0-Lawn-Care-App/AndroidStudioApp/app/src/main/res/layout/fragment_worker_profile.xml" value="0.14130434782608695" />
+        <entry key="app/src/main/res/drawable/ic_baseline_star_half_24.xml" value="0.175" />
+        <entry key="app/src/main/res/drawable/ic_launcher_ wizard_background.xml" value="0.175" />
+        <entry key="app/src/main/res/drawable/wizard.xml" value="0.175" />
         <entry key="app/src/main/res/layout/fragment_customer_home.xml" value="0.23854166666666668" />
+        <entry key="app/src/main/res/layout/fragment_loading.xml" value="0.22447916666666667" />
         <entry key="app/src/main/res/layout/fragment_worker_home.xml" value="0.23854166666666668" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_ wizard.xml" value="0.1725" />
       </map>
     </option>
   </component>
