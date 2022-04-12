@@ -154,6 +154,9 @@
         <action
             android:id="@+id/action_customerActiveJobsFragment_to_customerHomeFragment"
             app:destination="@id/customerHomeFragment" />
+        <action
+            android:id="@+id/action_customerActiveJobsFragment_to_customerViewJobFragment"
+            app:destination="@id/customerViewJobFragment" />
     </fragment>
     <fragment
         android:id="@+id/customerCreateJobFragment"
@@ -229,5 +232,26 @@
         <action
             android:id="@+id/action_loadingFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/customerFeedbackFragment"
+        android:name="com.example.lawnwizard.fragments.CustomerFeedbackFragment"
+        android:label="fragment_customer_feedback"
+        tools:layout="@layout/fragment_customer_feedback" >
+        <action
+            android:id="@+id/action_customerFeedbackFragment_to_customerViewJobFragment"
+            app:destination="@id/customerViewJobFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/customerViewJobFragment"
+        android:name="com.example.lawnwizard.fragments.CustomerViewJobFragment"
+        android:label="fragment_customer_view_job"
+        tools:layout="@layout/fragment_customer_view_job" >
+        <action
+            android:id="@+id/action_customerViewJobFragment_to_customerActiveJobsFragment"
+            app:destination="@id/customerActiveJobsFragment" />
+        <action
+            android:id="@+id/action_customerViewJobFragment_to_customerFeedbackFragment"
+            app:destination="@id/customerFeedbackFragment" />
     </fragment>
 </navigation>

@@ -44,8 +44,8 @@ public class CustomerActiveJobsFragment extends Fragment {
                             transaction -> {
                                 // go to a job when clicked
                                 jobViewModel.setSelectedJob(transaction);
-                                NavHostFragment.findNavController(this);
-//                                        .navigate(); // TODO: create the fragment to view job
+                                NavHostFragment.findNavController(this)
+                                        .navigate(R.id.action_customerActiveJobsFragment_to_customerViewJobFragment);
                             })
             );
             binding.jobs.setLayoutManager(new LinearLayoutManager(getContext()));
