@@ -41,7 +41,7 @@ public class WorkerActiveJobsFragment extends Fragment {
                                 // go to a job when clicked
                                 jobViewModel.setSelectedJob(transaction);
                                 NavHostFragment.findNavController(this)
-                                        .navigate(R.id.action_workerActiveJobsFragment_to_workerViewJobFragment);
+                                        .navigate(R.id.action_workerActiveJobsFragment_to_submitJobFragment);
                             })
             );
             binding.jobs.setLayoutManager(new LinearLayoutManager(getContext()));
