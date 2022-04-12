@@ -10,8 +10,10 @@ public class User {
     private String role;
     private LatLng prevLocation;
     private Integer balance = 0;
+    private Float rating;
     private ArrayList<String> whitelist = new ArrayList<String>();
     private ArrayList<String> blacklist = new ArrayList<String>();
+    private ArrayList<Float> ratings = new ArrayList<>();
 
     public User(String userID, String name, String role){
         //TODO: Add in prevLocation
@@ -42,6 +44,15 @@ public class User {
         return balance;
     }
 
+    public Float getRating() {
+        Float total = null;
+        for (int i = 0; i < ratings.size(); i++) {
+            total += ratings.get(i);
+        }
+        rating = total / ratings.size();
+        return rating;
+    }
+
     public ArrayList<String> getWhitelist() {
         return whitelist;
     }
@@ -55,6 +66,9 @@ public class User {
         if(this.balance < 0){
             this.balance = 0;
         }
+    }
+    public ArrayList<Float> getRatings() {
+        return ratings;
     }
 }
 

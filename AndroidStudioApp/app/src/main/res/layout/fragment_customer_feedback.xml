@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="#ccc"
     tools:context=".fragments.WorkerProfileFragment">
 
     <TextView
@@ -19,15 +19,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/workerLogoutButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:src="@drawable/ic_baseline_logout_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -77,56 +68,11 @@
             android:layout_height="wrap_content"
             android:background="#4F7942"
             android:numStars="5"
-            android:stepSize="0.1" />
-
-<!--        <ImageView-->
-<!--            android:id="@+id/imageView6"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="1"-->
-<!--            android:src="@drawable/ic_baseline_star_24" />-->
-
-<!--        <ImageView-->
-<!--            android:id="@+id/imageView7"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="1"-->
-<!--            android:src="@drawable/ic_baseline_star_24" />-->
-
-<!--        <ImageView-->
-<!--            android:id="@+id/imageView8"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="1"-->
-<!--            android:src="@drawable/ic_baseline_star_half_24" />-->
-
-<!--        <ImageView-->
-<!--            android:id="@+id/imageView9"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="1"-->
-<!--            android:src="@drawable/ic_baseline_star_border_24" />-->
-
-<!--        <ImageView-->
-<!--            android:id="@+id/imageView10"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="1"-->
-<!--            android:src="@drawable/ic_baseline_star_border_24" />-->
+            android:stepSize="0.1"
+            android:rating="3.5"
+            />
 
     </LinearLayout>
-
-    <EditText
-        android:id="@+id/transferFunds"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:minHeight="48dp"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/viewFunds"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageView
         android:id="@+id/backArrow"
@@ -139,22 +85,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/transferFundsButton"
+        android:id="@+id/submitRatingButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:backgroundTint="#4CAF50"
-        android:text="Transfer Funds"
+        android:text="Submit Rating"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/viewFunds"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="$$"
-        app:layout_constraintBottom_toTopOf="@+id/transferFundsButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -178,24 +115,6 @@
         app:layout_constraintTop_toBottomOf="@+id/customerEmailText" />
 
     <TextView
-        android:id="@+id/textView18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:text="Balance"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/customerAddressText" />
-
-    <TextView
-        android:id="@+id/textView19"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:text="Address"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/customerPhoneText" />
-
-    <TextView
         android:id="@+id/customerEmailText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -213,22 +132,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
-    <TextView
-        android:id="@+id/customerAddressText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView19" />
-
-    <TextView
-        android:id="@+id/customerBalanceText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
