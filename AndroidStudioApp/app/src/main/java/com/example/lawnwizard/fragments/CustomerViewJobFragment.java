@@ -26,7 +26,7 @@ public class CustomerViewJobFragment extends Fragment {
             controller.navigate(R.id.action_customerViewJobFragment_to_customerActiveJobsFragment);
         });
 
-        binding.totalTimeText.setOnClickListener((v)-> {
+        binding.textView33.setOnClickListener((v)-> {
             controller.navigate(R.id.action_customerViewJobFragment_to_customerFeedbackFragment);
         });
 
