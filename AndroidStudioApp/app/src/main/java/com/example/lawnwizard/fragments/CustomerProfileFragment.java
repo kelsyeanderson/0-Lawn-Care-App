@@ -23,7 +23,6 @@ import java.util.Objects;
 
 public class CustomerProfileFragment extends Fragment {
     UserViewModel userViewModel;
-
     FragmentCustomerProfileBinding binding;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
