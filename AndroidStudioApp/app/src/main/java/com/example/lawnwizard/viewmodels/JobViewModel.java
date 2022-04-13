@@ -1,5 +1,9 @@
 package com.example.lawnwizard.viewmodels;
 
+import android.content.Context;
+import android.location.Address;
+import android.location.Geocoder;
+import android.provider.Telephony;
 import android.util.Log;
 
 import androidx.databinding.ObservableArrayList;
@@ -17,11 +21,17 @@ import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.firestore.SetOptions;
 import com.google.type.LatLng;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+
 public class JobViewModel extends ViewModel{
     MutableLiveData<Job> selectedJob = new MutableLiveData<>();
     ObservableArrayList<Job> jobs = new ObservableArrayList<>();
     ObservableArrayList<Job> activeJobs = new ObservableArrayList<>();
     ObservableArrayList<Job> pastJobs = new ObservableArrayList<>();
+    ObservableArrayList<Job> availableJobs = new ObservableArrayList<>();
     FirebaseFirestore db;
 
     public JobViewModel() {
@@ -39,6 +49,8 @@ public class JobViewModel extends ViewModel{
     public ObservableArrayList<Job> getPastJobs() {
         return pastJobs;
     }
+
+    public ObservableArrayList<Job> getAvailableJobs() { return availableJobs; }
 
     public void setSelectedJob(Job selectedJob) {this.selectedJob.setValue(selectedJob);}
 
@@ -133,6 +145,32 @@ public class JobViewModel extends ViewModel{
         }
     }
 
+    public void loadAvailableJobs(User user, Context context, GeoPoint geoPoint) {
+        if (geoPoint == null) { return; }
+        String userZip = getZipCode(context, geoPoint.getLatitude(), geoPoint.getLongitude());
+        ArrayList<Job> allAvailable = new ArrayList<>();
+        availableJobs.clear();
+        db.collection("jobs")
+                .whereEqualTo("deleted", false)
+                .whereEqualTo("completed", false)
+                .whereEqualTo("accepted", false)
+                .get()
+                .addOnCompleteListener((task) -> {
+                    if (task.isSuccessful()) {
+                        QuerySnapshot collection = task.getResult();
+                        allAvailable.addAll(collection.toObjects(Job.class));
+                    }
+                    Log.d("___Load Available Worker Jobs: ", String.valueOf(availableJobs));
+                });
+        for (Job job : availableJobs) {
+            GeoPoint jobLoc = job.getLocation();
+            String jobZip = getZipCode(context, jobLoc.getLatitude(), jobLoc.getLongitude());
+            if (jobZip.equals(userZip)) {
+                availableJobs.add(job);
+            }
+        }
+    }
+
     public void updateJob(String docID, Job updateJob) {
         db.collection("jobs").document(docID).set(updateJob, SetOptions.merge())
                 .addOnCompleteListener((task) -> {
@@ -140,6 +178,27 @@ public class JobViewModel extends ViewModel{
                         jobs.add(updateJob);
                     }
                 });
+    }
+
+    public String getZipCode (Context c, double lat, double lng) {
+        String fullAdd = null;
+        String locality = null;
+        String zip = null;
+        String country = null;
+        try {
+            Geocoder geocoder = new Geocoder(c, Locale.getDefault());
+            List<Address> addresses = geocoder.getFromLocation(lat,lng,1);
+            if (addresses.size() > 0) {
+                Address address = addresses.get(0);
+                fullAdd = address.getAddressLine(0);
+                locality = address.getLocality();
+                zip = address.getPostalCode();
+                country = address.getCountryName();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return zip;
     }
 
 
