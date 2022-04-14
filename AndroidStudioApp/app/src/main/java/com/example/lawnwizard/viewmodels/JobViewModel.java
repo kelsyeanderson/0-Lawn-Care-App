@@ -32,6 +32,7 @@ public class JobViewModel extends ViewModel{
     ObservableArrayList<Job> activeJobs = new ObservableArrayList<>();
     ObservableArrayList<Job> pastJobs = new ObservableArrayList<>();
     ObservableArrayList<Job> availableJobs = new ObservableArrayList<>();
+    ObservableArrayList<Job> flaggedJobs = new ObservableArrayList<>();
     FirebaseFirestore db;
 
     public JobViewModel() {
@@ -50,7 +51,13 @@ public class JobViewModel extends ViewModel{
         return pastJobs;
     }
 
-    public ObservableArrayList<Job> getAvailableJobs() { return availableJobs; }
+    public ObservableArrayList<Job> getAvailableJobs() {
+        return availableJobs;
+    }
+
+    public ObservableArrayList<Job> getFlaggedJobs() {
+        return flaggedJobs;
+    }
 
     public void setSelectedJob(Job selectedJob) {this.selectedJob.setValue(selectedJob);}
 
@@ -78,6 +85,23 @@ public class JobViewModel extends ViewModel{
                     }
                 });
         Log.d("____Load Jobs:", String.valueOf(jobs));
+    }
+
+    public void loadFlaggedJobs() {
+        flaggedJobs.clear();
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        db.collection("jobs")
+                .whereEqualTo("deleted", false)
+                .whereEqualTo("completed", true)
+                .whereEqualTo("flagged", true)
+                .get()
+                .addOnCompleteListener((task) -> {
+                    if (task.isSuccessful()) {
+                        QuerySnapshot collection = task.getResult();
+                        flaggedJobs.addAll(collection.toObjects(Job.class));
+                    }
+                });
+        Log.d("____Load Flagged Jobs:", String.valueOf(flaggedJobs));
     }
 
     public void loadPastJobs(User user) {
