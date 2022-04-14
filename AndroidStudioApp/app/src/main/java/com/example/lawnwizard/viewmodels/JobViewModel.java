@@ -34,9 +34,12 @@ public class JobViewModel extends ViewModel{
     ObservableArrayList<Job> availableJobs = new ObservableArrayList<>();
     FirebaseFirestore db;
 
+
     public JobViewModel() {
         db = FirebaseFirestore.getInstance();
     }
+
+    public MutableLiveData<Job> getSelectedJob(){ return this.selectedJob; }
 
     public ObservableArrayList<Job> getJobs() {
         return jobs;
@@ -74,6 +77,14 @@ public class JobViewModel extends ViewModel{
                 .addOnCompleteListener((task) -> {
                     if (task.isSuccessful()) {
                         QuerySnapshot collection = task.getResult();
+                        int i =0;
+                        for(QueryDocumentSnapshot document: collection){
+                            DocumentReference doc = document.getReference();
+                            Job job = collection.toObjects(Job.class).get(i);
+                            job.setDocID(doc.getId());
+                            updateJob(job);
+                            i++;
+                        }
                         jobs.addAll(collection.toObjects(Job.class));
                     }
                 });
@@ -91,6 +102,14 @@ public class JobViewModel extends ViewModel{
                     .addOnCompleteListener((task) -> {
                         if (task.isSuccessful()) {
                             QuerySnapshot collection = task.getResult();
+                            int i =0;
+                            for(QueryDocumentSnapshot document: collection){
+                                DocumentReference doc = document.getReference();
+                                Job job = collection.toObjects(Job.class).get(i);
+                                job.setDocID(doc.getId());
+                                updateJob(job);
+                                i++;
+                            }
                             pastJobs.addAll(collection.toObjects(Job.class));
                         }
                         Log.d("____Load Past Homeowner Jobs:", String.valueOf(pastJobs));
@@ -104,6 +123,14 @@ public class JobViewModel extends ViewModel{
                     .addOnCompleteListener((task) -> {
                         if (task.isSuccessful()) {
                             QuerySnapshot collection = task.getResult();
+                            int i =0;
+                            for(QueryDocumentSnapshot document: collection){
+                                DocumentReference doc = document.getReference();
+                                Job job = collection.toObjects(Job.class).get(i);
+                                job.setDocID(doc.getId());
+                                updateJob(job);
+                                i++;
+                            }
                             pastJobs.addAll(collection.toObjects(Job.class));
                         }
                         Log.d("____Load Past Worker Jobs:", String.valueOf(pastJobs));
@@ -137,6 +164,14 @@ public class JobViewModel extends ViewModel{
                     .addOnCompleteListener((task) -> {
                         if (task.isSuccessful()) {
                             QuerySnapshot collection = task.getResult();
+                            int i =0;
+                            for(QueryDocumentSnapshot document: collection){
+                                DocumentReference doc = document.getReference();
+                                Job job = collection.toObjects(Job.class).get(i);
+                                job.setDocID(doc.getId());
+                                updateJob(job);
+                                i++;
+                            }
                             activeJobs.addAll(collection.toObjects(Job.class));
                         }
 
@@ -158,6 +193,14 @@ public class JobViewModel extends ViewModel{
                 .addOnCompleteListener((task) -> {
                     if (task.isSuccessful()) {
                         QuerySnapshot collection = task.getResult();
+                        int i =0;
+                        for(QueryDocumentSnapshot document: collection){
+                            DocumentReference doc = document.getReference();
+                            Job job = collection.toObjects(Job.class).get(i);
+                            job.setDocID(doc.getId());
+                            updateJob(job);
+                            i++;
+                        }
                         allAvailable.addAll(collection.toObjects(Job.class));
                     }
                     Log.d("___Load Available Worker Jobs: ", String.valueOf(availableJobs));
@@ -171,8 +214,8 @@ public class JobViewModel extends ViewModel{
         }
     }
 
-    public void updateJob(String docID, Job updateJob) {
-        db.collection("jobs").document(docID).set(updateJob, SetOptions.merge())
+    public void updateJob(Job updateJob) {
+        db.collection("jobs").document(updateJob.getDocID()).set(updateJob, SetOptions.merge())
                 .addOnCompleteListener((task) -> {
                     if (task.isSuccessful()) {
                         jobs.add(updateJob);

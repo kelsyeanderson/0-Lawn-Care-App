@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout4"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_background"
+    tools:context=".fragments.CustomerHomeFragment">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="256dp"
+        android:layout_marginStart="-8dp"
+        android:layout_marginTop="-8dp"
+        android:layout_marginEnd="-8dp"
+        android:background="@drawable/green_rounded_corner_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/addJobButton"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:background="@drawable/rounded_corner_view"
+        app:layout_constraintBottom_toBottomOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_baseline_person_24_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="172dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/light_green_rounded_corner_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/pastJobs"
+        android:layout_width="136dp"
+        android:layout_height="172dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_corner_view"
+        app:layout_constraintEnd_toEndOf="@+id/textView29"
+        app:layout_constraintStart_toStartOf="@+id/textView29"
+        app:layout_constraintTop_toBottomOf="@+id/historyJobsText" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/historyJobsText"
+        android:layout_width="136dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:cardBackgroundColor="@color/white_background"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView29"
+        app:layout_constraintStart_toStartOf="@+id/textView29"
+        app:layout_constraintTop_toTopOf="@+id/textView29"
+        app:layout_gravity="fill">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView76"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Past Jobs"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="172dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/light_green_rounded_corner_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/currentJobs"
+        android:layout_width="136dp"
+        android:layout_height="172dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_corner_view"
+        app:layout_constraintEnd_toEndOf="@+id/textView21"
+        app:layout_constraintStart_toStartOf="@+id/textView21"
+        app:layout_constraintTop_toBottomOf="@+id/activeJobsText" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="136dp"
+        android:layout_height="172dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView29"
+        app:layout_constraintStart_toStartOf="@+id/textView29"
+        app:layout_constraintTop_toBottomOf="@+id/historyJobsText">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="136dp"
+        android:layout_height="172dp"
+        app:layout_constraintEnd_toEndOf="@+id/currentJobs"
+        app:layout_constraintStart_toStartOf="@+id/currentJobs"
+        app:layout_constraintTop_toTopOf="@+id/currentJobs">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/activeJobsCard"
+        android:layout_width="136dp"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white_background"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView21"
+        app:layout_constraintEnd_toEndOf="@+id/textView21"
+        app:layout_constraintStart_toStartOf="@+id/textView21"
+        app:layout_constraintTop_toBottomOf="@+id/currentJobs"
+        app:layout_gravity="fill">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="View All"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageView15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/ic_baseline_arrow_forward_24_black" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/activeJobsText"
+        android:layout_width="136dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:cardBackgroundColor="@color/white_background"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView21"
+        app:layout_constraintStart_toStartOf="@+id/textView21"
+        app:layout_constraintTop_toTopOf="@+id/textView21"
+        app:layout_gravity="fill">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView77"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Current Jobs"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/completedJobsCard"
+        android:layout_width="136dp"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white_background"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        app:layout_columnWeight="1"
+        app:layout_constraintBottom_toBottomOf="@+id/textView29"
+        app:layout_constraintEnd_toEndOf="@+id/textView29"
+        app:layout_constraintStart_toStartOf="@+id/textView29"
+        app:layout_constraintTop_toBottomOf="@+id/pastJobs"
+        app:layout_gravity="fill"
+        app:layout_rowWeight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="History"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageView12"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/ic_baseline_arrow_forward_24_black" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Create A Job Now"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/addJobButton"
+        app:layout_constraintStart_toStartOf="@+id/addJobButton"
+        app:layout_constraintTop_toTopOf="@+id/addJobButton" />
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_arrow_forward_24_black"
+        app:layout_constraintBottom_toBottomOf="@+id/addJobButton"
+        app:layout_constraintEnd_toEndOf="@+id/addJobButton"
+        app:layout_constraintStart_toStartOf="@+id/addJobButton"
+        app:layout_constraintTop_toBottomOf="@+id/textView25"
+        app:layout_constraintVertical_bias="0.32999998" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

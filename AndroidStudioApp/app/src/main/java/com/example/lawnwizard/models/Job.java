@@ -28,6 +28,7 @@ public class Job {
     private boolean flagged = false;
     private boolean resolved = false;
     private String createdDate;
+    private String docID;
 
     public Job(){}
 
@@ -89,6 +90,10 @@ public class Job {
     public ArrayList<String> getHwBlacklist() { return this.hwBlacklist; }
 
     public ArrayList<String> getWorkerBlacklist() { return this.workerBlacklist; }
+
+    public String getDocID() { return this.docID; }
+
+    public void setDocID(String docID) { this.docID = docID; }
 
     public void setWorkerID(String id) { this.workerID = id; }
 
