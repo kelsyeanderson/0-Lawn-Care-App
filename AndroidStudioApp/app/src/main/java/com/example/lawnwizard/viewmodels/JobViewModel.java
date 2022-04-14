@@ -109,6 +109,14 @@ public class JobViewModel extends ViewModel{
                 .addOnCompleteListener((task) -> {
                     if (task.isSuccessful()) {
                         QuerySnapshot collection = task.getResult();
+                        int i =0;
+                        for(QueryDocumentSnapshot document: collection){
+                            DocumentReference doc = document.getReference();
+                            Job job = collection.toObjects(Job.class).get(i);
+                            job.setDocID(doc.getId());
+                            updateJob(job);
+                            i++;
+                        }
                         flaggedJobs.addAll(collection.toObjects(Job.class));
                     }
                 });
@@ -173,6 +181,14 @@ public class JobViewModel extends ViewModel{
                     .addOnCompleteListener((task) -> {
                         if (task.isSuccessful()) {
                             QuerySnapshot collection = task.getResult();
+                            int i =0;
+                            for(QueryDocumentSnapshot document: collection){
+                                DocumentReference doc = document.getReference();
+                                Job job = collection.toObjects(Job.class).get(i);
+                                job.setDocID(doc.getId());
+                                updateJob(job);
+                                i++;
+                            }
                             activeJobs.addAll(collection.toObjects(Job.class));
                         }
 
