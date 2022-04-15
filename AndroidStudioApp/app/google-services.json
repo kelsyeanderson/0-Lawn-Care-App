@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "158832308588",
-    "project_id": "lawn-care-7fe42",
-    "storage_bucket": "lawn-care-7fe42.appspot.com"
+    "project_number": "525092325572",
+    "project_id": "lawn-wizard",
+    "storage_bucket": "lawn-wizard.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:158832308588:android:bbac15dcd88e88830f8349",
+        "mobilesdk_app_id": "1:525092325572:android:1ab171c745d257feb72191",
         "android_client_info": {
           "package_name": "com.example.lawnwizard"
         }
       },
       "oauth_client": [
         {
-          "client_id": "158832308588-tcbtqot5jdrv5ianl4htivknl7j64mdl.apps.googleusercontent.com",
+          "client_id": "525092325572-puju6b66kaeiqeh5h8p1os0ff300ffun.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCWMKpfMr6L1Wja-H6kk5PyAoK4ZSgUgeM"
+          "current_key": "AIzaSyDF3-JrY6DpOhi0yrF9mqFll7WzW8pe3ZQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "158832308588-tcbtqot5jdrv5ianl4htivknl7j64mdl.apps.googleusercontent.com",
+              "client_id": "525092325572-puju6b66kaeiqeh5h8p1os0ff300ffun.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

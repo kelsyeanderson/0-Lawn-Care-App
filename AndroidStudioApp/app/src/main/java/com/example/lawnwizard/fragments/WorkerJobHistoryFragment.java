@@ -32,14 +32,14 @@ public class WorkerJobHistoryFragment extends Fragment {
         userViewModel.getUser().observe(getViewLifecycleOwner(), (user) -> {
             if (user == null) return;
 
-            // load transactions
-            jobViewModel.loadJobs();
+            // load jobs
+            jobViewModel.loadPastJobs(user);
             binding.jobs.setAdapter(
                     new JobHistoryAdapter(
-                            jobViewModel.getJobs(),
-                            transaction -> {
+                            jobViewModel.getPastJobs(),
+                            job -> {
                                 // go to a job when clicked
-                                jobViewModel.setSelectedJob(transaction);
+                                jobViewModel.setSelectedJob(job);
                                 NavHostFragment.findNavController(this)
                                         .navigate(R.id.action_workerJobHistoryFragment_to_workerViewJobFragment);
                             })
