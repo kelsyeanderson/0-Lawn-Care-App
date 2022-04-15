@@ -74,11 +74,13 @@
             android:id="@+id/customerRatingBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#4F7942"
+            android:background="#FFFFFF"
             android:numStars="5"
-            android:stepSize="0.1"
+            android:progressBackgroundTint="#A5A195"
+            android:progressTint="#FFC107"
             android:rating="3.5"
-            />
+            android:secondaryProgressTint="#FFFFFF"
+            android:stepSize="0.1" />
 
 <!--        <ImageView-->
 <!--            android:id="@+id/imageView6"-->

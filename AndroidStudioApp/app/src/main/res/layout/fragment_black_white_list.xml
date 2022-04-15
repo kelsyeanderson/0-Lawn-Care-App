@@ -27,25 +27,25 @@
 
     <Button
         android:id="@+id/whiteListButton"
-        android:layout_width="wrap_content"
+        android:layout_width="128dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
+        android:layout_marginStart="64dp"
         android:layout_marginTop="16dp"
         android:enabled="false"
-        android:text="WhiteList"
+        android:text="Favorites"
         android:textColor="@color/green_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/blackListButton"
-        android:layout_width="wrap_content"
+        android:layout_width="128dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="72dp"
+        android:layout_marginEnd="64dp"
         android:backgroundTint="@color/green_background"
         android:enabled="true"
-        android:text="Blacklist"
+        android:text="Avoid"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
