@@ -221,6 +221,7 @@ public class JobViewModel extends ViewModel{
     }
 
     public void loadAvailableJobs(User user, Context context, GeoPoint geoPoint) {
+        Log.d("___JobViewModel: ", "loadAvailableJobs started");
         if (geoPoint == null) { return; }
         String userZip = getZipCode(context, geoPoint.getLatitude(), geoPoint.getLongitude());
         ArrayList<Job> allAvailable = new ArrayList<>();
@@ -244,14 +245,14 @@ public class JobViewModel extends ViewModel{
                         allAvailable.addAll(collection.toObjects(Job.class));
                     }
                     Log.d("___Load Available Worker Jobs: ", String.valueOf(availableJobs));
+                    for (Job job : allAvailable) {
+                        GeoPoint jobLoc = job.getLocation();
+                        String jobZip = getZipCode(context, jobLoc.getLatitude(), jobLoc.getLongitude());
+                        if (jobZip.equals(userZip)) {
+                            availableJobs.add(job);
+                        }
+                    }
                 });
-        for (Job job : availableJobs) {
-            GeoPoint jobLoc = job.getLocation();
-            String jobZip = getZipCode(context, jobLoc.getLatitude(), jobLoc.getLongitude());
-            if (jobZip.equals(userZip)) {
-                availableJobs.add(job);
-            }
-        }
     }
 
     public void updateJob(Job updateJob) {

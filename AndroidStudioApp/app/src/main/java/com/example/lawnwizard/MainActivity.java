@@ -20,6 +20,10 @@ public class MainActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).hide();
 
         ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
+
+
+
+
         setContentView(binding.getRoot());
     }
 }
