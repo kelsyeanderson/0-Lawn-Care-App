@@ -195,11 +195,11 @@ public class JobViewModel extends ViewModel{
                         Log.d("____Load Active Homeowner Jobs:", String.valueOf(activeJobs));
                     });
         }else{
-            //TODO: add filter by area code
             db.collection("jobs")
                     .whereEqualTo("deleted", false)
                     .whereEqualTo("completed", false)
                     .whereEqualTo("accepted", false)
+                    .whereEqualTo("workerID", user.getUserID())
                     .get()
                     .addOnCompleteListener((task) -> {
                         if (task.isSuccessful()) {
