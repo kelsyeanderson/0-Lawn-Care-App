@@ -83,6 +83,7 @@ public class WorkerViewJobFragment extends Fragment {
 
                 Job job = jobViewModel.getSelectedJob().getValue();
                 job.setAccepted();
+                job.setWorkerID(user.getUserID());
                 jobViewModel.updateJob(job);
                 controller.navigate(R.id.action_workerViewJobFragment_to_workerHomeFragment2);
             });

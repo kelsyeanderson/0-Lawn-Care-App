@@ -3,6 +3,7 @@ package com.example.lawnwizard.adapters;
 import android.content.Context;
 import android.location.Address;
 import android.location.Geocoder;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -25,6 +26,7 @@ public class JobHistoryAdapter extends RecyclerView.Adapter<JobHistoryAdapter.Vi
 
     public JobHistoryAdapter(ObservableArrayList<Job> jobs, OnJobSelectedListener listener) {
         this.jobs = jobs;
+        Log.d("---", String.valueOf(jobs.size()));
         this.listener = listener;
         jobs.addOnListChangedCallback(new ObservableList.OnListChangedCallback<ObservableList<Job>>() {
             @Override

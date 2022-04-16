@@ -198,7 +198,7 @@ public class JobViewModel extends ViewModel{
             db.collection("jobs")
                     .whereEqualTo("deleted", false)
                     .whereEqualTo("completed", false)
-                    .whereEqualTo("accepted", false)
+                    .whereEqualTo("accepted", true)
                     .whereEqualTo("workerID", user.getUserID())
                     .get()
                     .addOnCompleteListener((task) -> {
@@ -253,6 +253,7 @@ public class JobViewModel extends ViewModel{
                         }
                     }
                 });
+        Log.d("---", String.valueOf(availableJobs.size()));
     }
 
     public void updateJob(Job updateJob) {

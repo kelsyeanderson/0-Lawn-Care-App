@@ -14,6 +14,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
+import androidx.databinding.ObservableArrayList;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
@@ -33,6 +34,7 @@ import com.example.lawnwizard.adapters.JobHistoryAdapter;
 import com.example.lawnwizard.databinding.FragmentWorkerAvailableJobsBinding;
 import com.example.lawnwizard.location.GoogleLocationService;
 import com.example.lawnwizard.location.LocationUpdateListener;
+import com.example.lawnwizard.models.Job;
 import com.example.lawnwizard.viewmodels.JobViewModel;
 import com.example.lawnwizard.viewmodels.LocationViewModel;
 import com.example.lawnwizard.viewmodels.UserViewModel;
@@ -73,6 +75,7 @@ public class WorkerAvailableJobsFragment extends Fragment {
 
                 // load jobs
                 jobViewModel.loadAvailableJobs(user, getContext(), userLocation);
+                ObservableArrayList<Job> test = jobViewModel.getAvailableJobs();
                 binding.jobs.setAdapter(
                         new JobHistoryAdapter(
                                 jobViewModel.getAvailableJobs(),
