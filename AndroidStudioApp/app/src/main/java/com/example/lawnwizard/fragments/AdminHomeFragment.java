@@ -47,7 +47,7 @@ public class AdminHomeFragment extends Fragment {
                             job -> {
                                 jobViewModel.setSelectedJob(job);
                                 NavHostFragment.findNavController(this)
-                                        .navigate(R.id.action_ad);
+                                        .navigate(R.id.action_adminHomeFragment_to_viewDisputeFragment);
                             })
             );
             binding.jobsAdmin.setLayoutManager(new LinearLayoutManager(getContext()));

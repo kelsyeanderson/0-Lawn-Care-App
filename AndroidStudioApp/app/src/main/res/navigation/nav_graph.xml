@@ -217,6 +217,9 @@
         <action
             android:id="@+id/action_adminHomeFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_adminHomeFragment_to_viewDisputeFragment"
+            app:destination="@id/viewDisputeFragment" />
     </fragment>
     <fragment
         android:id="@+id/loadingFragment"
@@ -268,5 +271,14 @@
         <action
             android:id="@+id/action_disputFragment_to_customerViewJobFragment"
             app:destination="@id/customerViewJobFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewDisputeFragment"
+        android:name="com.example.lawnwizard.ViewDisputeFragment"
+        android:label="fragment_view_dispute"
+        tools:layout="@layout/fragment_view_dispute" >
+        <action
+            android:id="@+id/action_viewDisputeFragment_to_adminHomeFragment"
+            app:destination="@id/adminHomeFragment" />
     </fragment>
 </navigation>
