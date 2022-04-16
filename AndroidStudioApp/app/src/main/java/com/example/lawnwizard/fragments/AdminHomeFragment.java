@@ -44,7 +44,11 @@ public class AdminHomeFragment extends Fragment {
             binding.jobsAdmin.setAdapter(
                     new JobHistoryAdapter(
                             jobViewModel.getFlaggedJobs(),
-                            jobViewModel::setSelectedJob)
+                            job -> {
+                                jobViewModel.setSelectedJob(job);
+                                NavHostFragment.findNavController(this)
+                                        .navigate(R.id.action_ad);
+                            })
             );
             binding.jobsAdmin.setLayoutManager(new LinearLayoutManager(getContext()));
         });

@@ -29,6 +29,7 @@ public class Job {
     private boolean resolved = false;
     private String createdDate;
     private String docID;
+    private String jobDispute;
 
     public Job(){}
 
@@ -59,7 +60,13 @@ public class Job {
         this.createdDate = currentTime.toString();
     }
 
-    public boolean getFlagged() { return this.flagged; }
+    public String getJobDispute() {
+        return jobDispute;
+    }
+
+    public void setJobDispute(String jobDispute) {
+        this.jobDispute = jobDispute;
+    }
 
     public boolean getResolved() { return this.resolved; }
 
@@ -113,6 +120,12 @@ public class Job {
 
     public boolean isCompleted() {
         return completed;
+    }
+
+    public void setFlagged(boolean flagged){ this.flagged = flagged;}
+
+    public boolean isFlagged() {
+        return flagged;
     }
 
     public void setCompleted() {

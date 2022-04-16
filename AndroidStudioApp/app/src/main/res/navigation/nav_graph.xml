@@ -91,6 +91,9 @@
         <action
             android:id="@+id/action_customerJobHistoryFragment_to_customerHomeFragment"
             app:destination="@id/customerHomeFragment" />
+        <action
+            android:id="@+id/action_customerJobHistoryFragment_to_customerViewJobFragment"
+            app:destination="@id/customerViewJobFragment" />
     </fragment>
     <fragment
         android:id="@+id/workerJobHistoryFragment"
@@ -253,5 +256,17 @@
         <action
             android:id="@+id/action_customerViewJobFragment_to_customerFeedbackFragment"
             app:destination="@id/customerFeedbackFragment" />
+        <action
+            android:id="@+id/action_customerViewJobFragment_to_disputFragment"
+            app:destination="@id/disputFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/disputFragment"
+        android:name="com.example.lawnwizard.fragments.DisputFragment"
+        android:label="fragment_disput"
+        tools:layout="@layout/fragment_disput" >
+        <action
+            android:id="@+id/action_disputFragment_to_customerViewJobFragment"
+            app:destination="@id/customerViewJobFragment" />
     </fragment>
 </navigation>

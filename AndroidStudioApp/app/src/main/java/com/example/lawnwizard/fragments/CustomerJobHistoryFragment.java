@@ -40,9 +40,9 @@ public class CustomerJobHistoryFragment extends Fragment {
                             jobViewModel.getPastJobs(),
                             transaction -> {
                                 // go to a job when clicked
-//                                jobViewModel.setSelectedJob(transaction);
-//                                NavHostFragment.findNavController(this)
-//                                        .navigate();
+                                jobViewModel.setSelectedJob(transaction);
+                                NavHostFragment.findNavController(this)
+                                        .navigate(R.id.action_customerJobHistoryFragment_to_customerViewJobFragment);
                             })
             );
             binding.jobs.setLayoutManager(new LinearLayoutManager(getContext()));
