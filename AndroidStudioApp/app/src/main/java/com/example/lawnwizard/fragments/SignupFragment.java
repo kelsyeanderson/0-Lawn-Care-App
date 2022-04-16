@@ -38,19 +38,19 @@ public class SignupFragment extends Fragment {
         ArrayList<String> list = new ArrayList<>();
         list.add("Worker");
         list.add("Homeowner");
-        Spinner dropdown = binding.accountType;
+        Spinner dropdown = binding.accountTypeSignUp;
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item, list);
         dropdown.setAdapter(adapter);
 
-        binding.signUpButton.setOnClickListener((v) -> {
-            if (!foundInputErrors(binding.editTextName, binding.editEmail, binding.editConfirmEmail, binding.editPassword, binding.editConfirmPassword)) {
+        binding.signUpButtonSignUp.setOnClickListener((v) -> {
+            if (!foundInputErrors(binding.nameEditTextSignUp, binding.emailEditTextSignUp, binding.phoneEditTextSignUp, binding.passwordEditTextSignUp, binding.confirmPasswordEditTextSignUp)) {
                 auth.createUserWithEmailAndPassword(
-                        binding.editEmail.getText().toString(),
-                        binding.editPassword.getText().toString()
+                        binding.emailEditTextSignUp.getText().toString(),
+                        binding.passwordEditTextSignUp.getText().toString()
                 ).addOnCompleteListener((task) -> {
                     if (task.isSuccessful()) {
                         Log.d("__FIREBASE", "Sign up success");
-                        viewmodel.saveUser(binding.editTextName.getText().toString(), dropdown.getSelectedItem().toString());
+                        viewmodel.saveUser(binding.nameEditTextSignUp.getText().toString(), dropdown.getSelectedItem().toString());
                         if (dropdown.getSelectedItem().toString().equals("Worker")) {
                             controller.navigate(R.id.action_signupFragment_to_workerHomeFragment);
                         } else {

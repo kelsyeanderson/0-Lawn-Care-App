@@ -7,7 +7,7 @@
     tools:context=".fragments.CustomerProfileFragment">
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/backgroundCustomerProfile"
         android:layout_width="0dp"
         android:layout_height="256dp"
         android:layout_marginStart="-16dp"
@@ -15,11 +15,22 @@
         android:layout_marginEnd="-16dp"
         android:background="@drawable/green_rounded_corner_view"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/customerLogoutButton"
+        android:id="@+id/bacbkArrowCustomerProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_baseline_arrow_back_ios_24_white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/logoutButtonCustomerProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -28,29 +39,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="175dp"
-        android:orientation="vertical"
-        app:cardCornerRadius="60dp"
-        app:cardElevation="0dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/profilePicture"
-            android:layout_width="128dp"
-            android:layout_height="128dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/googleg_disabled_color_18" />
-
-    </androidx.cardview.widget.CardView>
-
     <TextView
-        android:id="@+id/customerProfileNameText"
+        android:id="@+id/nameTextCustomerProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
@@ -59,6 +49,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="176dp"
+        android:orientation="vertical"
+        app:cardCornerRadius="60dp"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/profilePictureCustomerProfile"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/googleg_disabled_color_18" />
+
+    </androidx.cardview.widget.CardView>
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -71,16 +82,17 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView">
 
         <RatingBar
-            android:id="@+id/customerRatingBar"
+            android:id="@+id/ratingCustomerProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#FFFFFF"
             android:numStars="5"
             android:progressBackgroundTint="#A5A195"
             android:progressTint="#FFC107"
-            android:rating="3.5"
+            android:rating="0"
             android:secondaryProgressTint="#FFFFFF"
-            android:stepSize="0.1" />
+            android:stepSize="0.1"
+            tools:ignore="SpeakableTextPresentCheck" />
 
 <!--        <ImageView-->
 <!--            android:id="@+id/imageView6"-->
@@ -119,50 +131,8 @@
 
     </LinearLayout>
 
-    <EditText
-        android:id="@+id/transferFunds"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:minHeight="48dp"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/viewFunds"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageView
-        android:id="@+id/backArrow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/ic_baseline_arrow_back_ios_24_white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/transferFundsButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:backgroundTint="#4CAF50"
-        android:text="Add Funds"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <TextView
-        android:id="@+id/viewFunds"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="$$"
-        app:layout_constraintBottom_toTopOf="@+id/transferFundsButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/emailTextCustomerProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -172,66 +142,98 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/emailEditTextCustomerProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailTextCustomerProfile" />
+
+    <TextView
+        android:id="@+id/phoneTextCustomerProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:text="Phone Number"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/customerEmailText" />
+        app:layout_constraintTop_toBottomOf="@+id/emailEditTextCustomerProfile" />
 
     <TextView
-        android:id="@+id/textView18"
+        android:id="@+id/phoneEditTextCustomerProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:text="Balance"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/customerAddressText" />
+        app:layout_constraintTop_toBottomOf="@+id/phoneTextCustomerProfile" />
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/addressTextCustomerProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:text="Address"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/customerPhoneText" />
+        app:layout_constraintTop_toBottomOf="@+id/phoneEditTextCustomerProfile" />
 
     <TextView
-        android:id="@+id/customerEmailText"
+        android:id="@+id/addressEditTextCustomerProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+        app:layout_constraintTop_toBottomOf="@+id/addressTextCustomerProfile" />
 
     <TextView
-        android:id="@+id/customerPhoneText"
+        android:id="@+id/balanceTextCustomerProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="Balance"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addressEditTextCustomerProfile" />
+
+    <TextView
+        android:id="@+id/balanceEditTextCustomerProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+        app:layout_constraintTop_toBottomOf="@+id/balanceTextCustomerProfile" />
 
-    <TextView
-        android:id="@+id/customerAddressText"
+    <EditText
+        android:id="@+id/transferFundsCustomerProfile"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:textColor="#000000"
+        android:inputType="number"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/fundsTextCustomerProfile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView19"
-        android:layout_width="wrap_content"/>
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
-        android:id="@+id/customerBalanceText"
+        android:id="@+id/fundsTextCustomerProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+        android:text="$$"
+        app:layout_constraintBottom_toTopOf="@+id/transferFundsButtonCustomerProfile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/transferFundsButtonCustomerProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="#4CAF50"
+        android:text="Transfer Funds"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

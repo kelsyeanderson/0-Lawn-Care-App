@@ -36,23 +36,23 @@ public class CustomerHomeFragment extends Fragment {
 
             // load transactions
             jobViewModel.loadJobs();
-            binding.currentJobsCount.setText(Integer.toString(jobViewModel.getJobs().size()));
-            binding.pastJobsCount.setText(Integer.toString(jobViewModel.getJobs().size()));
+            binding.currentJobListCustomerHome.setText(Integer.toString(jobViewModel.getJobs().size()));
+            binding.jobHistoryListCustomerHome.setText(Integer.toString(jobViewModel.getJobs().size()));
         });
 
-        binding.imageView2.setOnClickListener((v) -> {
+        binding.profileButtonCustomerHome.setOnClickListener((v) -> {
 //            binding.imageView2.setEnabled(false);
             controller.navigate(R.id.action_customerHomeFragment_to_costomerProfileFragment);
         });
-        binding.completedJobsCard.setOnClickListener((v) -> {
+        binding.jobHistoryButtonCustomerHome.setOnClickListener((v) -> {
 //            binding.completedJobsCard.setEnabled(false);
             controller.navigate(R.id.action_customerHomeFragment_to_customerJobHistoryFragment);
         });
-        binding.activeJobsCard.setOnClickListener((v) -> {
+        binding.currentJobButtonCustomerHome.setOnClickListener((v) -> {
 //            binding.activeJobsCard.setEnabled(false);
             controller.navigate(R.id.action_customerHomeFragment_to_customerActiveJobsFragment);
         });
-        binding.addJobButton.setOnClickListener((v) -> {
+        binding.createJobButtonCustomerHome.setOnClickListener((v) -> {
 //            binding.addJobButton.setEnabled(false);
             controller.navigate(R.id.action_customerHomeFragment_to_customerCreateJobFragment);
         });

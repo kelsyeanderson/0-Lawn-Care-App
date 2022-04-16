@@ -41,7 +41,7 @@ public class AdminHomeFragment extends Fragment {
             // load transactions
             jobViewModel.loadFlaggedJobs();
             // go to a job when clicked
-            binding.jobsAdmin.setAdapter(
+            binding.jobsRecyclerViewAdminHome.setAdapter(
                     new JobHistoryAdapter(
                             jobViewModel.getFlaggedJobs(),
                             job -> {
@@ -50,10 +50,10 @@ public class AdminHomeFragment extends Fragment {
                                         .navigate(R.id.action_adminHomeFragment_to_viewDisputeFragment);
                             })
             );
-            binding.jobsAdmin.setLayoutManager(new LinearLayoutManager(getContext()));
+            binding.jobsRecyclerViewAdminHome.setLayoutManager(new LinearLayoutManager(getContext()));
         });
 
-        binding.logoutImageView.setOnClickListener((v) -> {
+        binding.logoutImageViewAdminHome.setOnClickListener((v) -> {
             auth.signOut();
             controller.navigate(R.id.action_adminHomeFragment_to_signInFragment);
         });

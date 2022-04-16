@@ -7,16 +7,17 @@
     tools:context=".fragments.CustomerActiveJobsFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/jobs"
+        android:id="@+id/jobListCustomerActiveJobs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.16000003" />
 
     <ImageView
-        android:id="@+id/workerAvailableJobsBackArrow"
+        android:id="@+id/backArrowCustomerActiveJobs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"

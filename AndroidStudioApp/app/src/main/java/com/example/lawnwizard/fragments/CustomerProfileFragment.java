@@ -39,31 +39,31 @@ public class CustomerProfileFragment extends Fragment {
                 return;
             }
 
-            binding.transferFundsButton.setOnClickListener((v) -> {
-                if(binding.transferFunds.getText().toString().equals("")){
-                    binding.transferFunds.setError("Please enter a value");
-                }else if(Integer.parseInt(binding.transferFunds.getText().toString()) < 0){
-                    binding.transferFunds.setError("Please enter a positive number");
+            binding.transferFundsButtonCustomerProfile.setOnClickListener((v) -> {
+                if(binding.transferFundsCustomerProfile.getText().toString().equals("")){
+                    binding.transferFundsCustomerProfile.setError("Please enter a value");
+                }else if(Integer.parseInt(binding.transferFundsCustomerProfile.getText().toString()) < 0){
+                    binding.transferFundsCustomerProfile.setError("Please enter a positive number");
                 }else{
-                    user.setBalance(Integer.parseInt(binding.transferFunds.getText().toString()));
+                    user.setBalance(Integer.parseInt(binding.transferFundsCustomerProfile.getText().toString()));
                     userViewModel.updateUser(user);
-                    binding.transferFunds.setText("");
+                    binding.transferFundsCustomerProfile.setText("");
                 }
             });
 
-            binding.customerProfileNameText.setText(user.getName());
-            binding.customerAddressText.setText(user.getName());
-            binding.customerBalanceText.setText(user.getBalance().toString());
-            binding.customerEmailText.setText(Objects.requireNonNull(auth.getCurrentUser()).getEmail());
-            binding.customerPhoneText.setText(user.getName());
+            binding.nameTextCustomerProfile.setText(user.getName());
+            binding.addressEditTextCustomerProfile.setText(user.getName());
+            binding.balanceEditTextCustomerProfile.setText(user.getBalance().toString());
+            binding.emailEditTextCustomerProfile.setText(Objects.requireNonNull(auth.getCurrentUser()).getEmail());
+            binding.phoneEditTextCustomerProfile.setText(user.getName());
         }));
 
-        binding.customerLogoutButton.setOnClickListener((v) -> {
+        binding.logoutButtonCustomerProfile.setOnClickListener((v) -> {
             auth.signOut();
             controller.navigate(R.id.action_costomerProfileFragment_to_signInFragment);
         });
 
-        binding.backArrow.setOnClickListener((v) -> {
+        binding.bacbkArrowCustomerProfile.setOnClickListener((v) -> {
             controller.navigate(R.id.action_costomerProfileFragment_to_customerHomeFragment);
         });
 

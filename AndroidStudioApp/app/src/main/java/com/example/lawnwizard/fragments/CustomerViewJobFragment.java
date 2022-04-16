@@ -25,19 +25,19 @@ public class CustomerViewJobFragment extends Fragment {
         FragmentCustomerViewJobBinding binding = FragmentCustomerViewJobBinding.inflate(inflater, container, false);
         NavController controller = NavHostFragment.findNavController(this);
 
-        binding.jobBackButton.setOnClickListener((v)->{
+        binding.backButtonCustomerViewJob.setOnClickListener((v)->{
             controller.navigate(R.id.action_customerViewJobFragment_to_customerActiveJobsFragment);
         });
 
         if(!jobViewModel.getSelectedJob().getValue().isCompleted() || jobViewModel.getSelectedJob().getValue().isFlagged()){
-            binding.disputJobButton.setVisibility(View.GONE);
+            binding.disputeButtonCustomerViewJob.setVisibility(View.GONE);
         }
 
-        binding.disputJobButton.setOnClickListener((v)-> {
+        binding.disputeButtonCustomerViewJob.setOnClickListener((v)-> {
             controller.navigate(R.id.action_customerViewJobFragment_to_disputFragment);
         });
 
-        binding.textView33.setOnClickListener((v)-> {
+        binding.ratingButtonCustomerViewJob.setOnClickListener((v)-> {
             controller.navigate(R.id.action_customerViewJobFragment_to_customerFeedbackFragment);
         });
 

@@ -29,26 +29,26 @@ public class SignInFragment extends Fragment {
         FirebaseAuth auth = FirebaseAuth.getInstance();
         controller = NavHostFragment.findNavController(this);
         viewModel = new ViewModelProvider(this).get(UserViewModel.class);
-        binding.logInButton.setEnabled(true);
+        binding.loginButtonSignIn.setEnabled(true);
 
-        binding.logInButton.setOnClickListener((v) -> {
-            binding.logInButton.setEnabled(false);
+        binding.loginButtonSignIn.setOnClickListener((v) -> {
+            binding.loginButtonSignIn.setEnabled(false);
             auth.signInWithEmailAndPassword(
-                    binding.email.getText().toString(),
-                    binding.password.getText().toString()
+                    binding.emailEditTextSignIn.getText().toString(),
+                    binding.passwordEditTextSignIn.getText().toString()
             ).addOnCompleteListener((task) -> {
                if (task.isSuccessful()) {
                    navigateToHome();
                } else {
-                   binding.logInButton.setEnabled(true);
+                   binding.loginButtonSignIn.setEnabled(true);
                    Log.d("__FIREBASE", task.getException().toString());
-                   binding.email.setError("Double check you put the correct email");
-                   binding.password.setError("Double check you put the correct password");
+                   binding.emailEditTextSignIn.setError("Double check you put the correct email");
+                   binding.passwordEditTextSignIn.setError("Double check you put the correct password");
                }
             });
         });
 
-        binding.signupButton.setOnClickListener((v) -> {
+        binding.signupButtonSignIn.setOnClickListener((v) -> {
             controller.navigate(R.id.action_signInFragment_to_signupFragment);
         });
 

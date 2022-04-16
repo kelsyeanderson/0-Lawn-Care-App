@@ -42,7 +42,7 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/customerProfileNameText"
+        android:id="@+id/nameTextCustomerProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
@@ -96,7 +96,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/emailTextCustomerProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -106,31 +106,31 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/phoneTextCustomerProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:text="Phone Number"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/customerEmailText" />
+        app:layout_constraintTop_toBottomOf="@+id/emailEditTextCustomerProfile" />
 
     <TextView
-        android:id="@+id/customerEmailText"
+        android:id="@+id/emailEditTextCustomerProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+        app:layout_constraintTop_toBottomOf="@+id/emailTextCustomerProfile" />
 
     <TextView
-        android:id="@+id/customerPhoneText"
+        android:id="@+id/phoneEditTextCustomerProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+        app:layout_constraintTop_toBottomOf="@+id/phoneTextCustomerProfile" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

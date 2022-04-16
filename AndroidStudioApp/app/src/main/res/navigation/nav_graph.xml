@@ -265,16 +265,16 @@
     </fragment>
     <fragment
         android:id="@+id/disputFragment"
-        android:name="com.example.lawnwizard.fragments.DisputFragment"
+        android:name="com.example.lawnwizard.fragments.DisputeFragment"
         android:label="fragment_disput"
-        tools:layout="@layout/fragment_disput" >
+        tools:layout="@layout/fragment_dispute" >
         <action
             android:id="@+id/action_disputFragment_to_customerViewJobFragment"
             app:destination="@id/customerViewJobFragment" />
     </fragment>
     <fragment
         android:id="@+id/viewDisputeFragment"
-        android:name="com.example.lawnwizard.ViewDisputeFragment"
+        android:name="com.example.lawnwizard.fragments.ViewDisputeFragment"
         android:label="fragment_view_dispute"
         tools:layout="@layout/fragment_view_dispute" >
         <action

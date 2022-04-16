@@ -62,11 +62,11 @@ public class CustomerCreateJobFragment extends Fragment {
         userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
         jobViewModel = new ViewModelProvider(this).get(JobViewModel.class);
 
-        binding.backButton.setOnClickListener((v) -> {
+        binding.backArrowCustomerCreateJob.setOnClickListener((v) -> {
             controller.navigate(R.id.action_customerCreateJobFragment_to_customerHomeFragment);
         });
 
-        binding.jobImage1.setOnClickListener((view) -> {
+        binding.jobImageCustomerCreateJob.setOnClickListener((view) -> {
             intent = new Intent(
                     Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
             startActivityForResult(intent, RESULT_LOAD_IMAGE);
@@ -100,13 +100,13 @@ public class CustomerCreateJobFragment extends Fragment {
 //                    }).show();
         });
 
-        binding.createJobButton.setOnClickListener((v) -> {
-            binding.createJobButton.setEnabled(false);
-            if(!foundInputErrors(binding.addressInput , binding.paymentInput, binding.jobDescriptionInput)){
+        binding.createJobButtonCustomerCreateJob.setOnClickListener((v) -> {
+            binding.createJobButtonCustomerCreateJob.setEnabled(false);
+            if(!foundInputErrors(binding.addressInputCustomerCreateJob , binding.paymentInputCustomerCreateJob, binding.jobDescriptionInputCustomerCreateJob)){
                 addJob();
 
             } else {
-                binding.createJobButton.setEnabled(true);
+                binding.createJobButtonCustomerCreateJob.setEnabled(true);
             }
         });
 
@@ -120,24 +120,24 @@ public class CustomerCreateJobFragment extends Fragment {
             if (user == null) {
                 return;
             }
-            GeoPoint loc = getLocationFromAddress(getContext(), binding.addressInput.getText().toString());
+            GeoPoint loc = getLocationFromAddress(getContext(), binding.addressInputCustomerCreateJob.getText().toString());
             if (loc == null) {
-                binding.addressInput.setError("Please enter a valid address");
+                binding.addressInputCustomerCreateJob.setError("Please enter a valid address");
                 return;
             }
             if (uriFilePath == null){
                 Job inJob = new Job(
                         user,
-                        binding.jobDescriptionInput.getText().toString(),
-                        Integer.parseInt(binding.paymentInput.getText().toString()),
+                        binding.jobDescriptionInputCustomerCreateJob.getText().toString(),
+                        Integer.parseInt(binding.paymentInputCustomerCreateJob.getText().toString()),
                         loc
                 );
                 jobViewModel.saveJob(inJob);
             } else{
                 Job inJob = new Job(
                         user,
-                        binding.jobDescriptionInput.getText().toString(),
-                        Integer.parseInt(binding.paymentInput.getText().toString()),
+                        binding.jobDescriptionInputCustomerCreateJob.getText().toString(),
+                        Integer.parseInt(binding.paymentInputCustomerCreateJob.getText().toString()),
                         loc,
                         uriFilePath.toString()
                 );
@@ -204,11 +204,11 @@ public class CustomerCreateJobFragment extends Fragment {
             String picturePath = cursor.getString(columnIndex);
             cursor.close();
 
-            binding.jobImage1.setImageURI(uriFilePath);
+            binding.jobImageCustomerCreateJob.setImageURI(uriFilePath);
         }else if(requestCode==REQUEST_IMAGE_CAPTURE && resultCode==Activity.RESULT_OK){
             Bundle extras = data.getExtras();
             Bitmap bmp = (Bitmap) extras.get("data");
-            binding.jobImage1.setImageURI(uriFilePath);
+            binding.jobImageCustomerCreateJob.setImageURI(uriFilePath);
         }
     }
 

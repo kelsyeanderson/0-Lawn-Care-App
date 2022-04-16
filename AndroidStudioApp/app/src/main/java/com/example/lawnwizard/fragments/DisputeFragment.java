@@ -20,7 +20,7 @@ import com.example.lawnwizard.models.Job;
 import com.example.lawnwizard.viewmodels.JobViewModel;
 import com.example.lawnwizard.viewmodels.UserViewModel;
 
-public class DisputFragment extends Fragment {
+public class DisputeFragment extends Fragment {
 
 
     @Override

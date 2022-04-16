@@ -7,103 +7,8 @@
     android:background="@color/green_background"
     tools:context=".fragments.CustomerCreateJobFragment">
 
-    <TextView
-        android:id="@+id/textView30"
-        android:layout_width="320dp"
-        android:layout_height="654dp"
-        android:background="@drawable/rounded_corner_view"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/addressInput"
-        android:layout_width="256dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="@+id/textView30"
-        app:layout_constraintStart_toStartOf="@+id/textView30"
-        app:layout_constraintTop_toBottomOf="@+id/textView8"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <TextView
-        android:id="@+id/addressText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:text="Location"
-        app:layout_constraintBottom_toTopOf="@+id/addressInput"
-        app:layout_constraintStart_toStartOf="@+id/textView30" />
-
-    <EditText
-        android:id="@+id/paymentInput"
-        android:layout_width="256dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:inputType="number"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="@+id/textView30"
-        app:layout_constraintStart_toStartOf="@+id/textView30"
-        app:layout_constraintTop_toBottomOf="@+id/addressInput"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <TextView
-        android:id="@+id/paymentText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:text="Payment"
-        app:layout_constraintBottom_toTopOf="@+id/paymentInput"
-        app:layout_constraintStart_toStartOf="@+id/textView30" />
-
-    <EditText
-        android:id="@+id/jobDescriptionInput"
-        android:layout_width="256dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="@+id/textView30"
-        app:layout_constraintStart_toStartOf="@+id/textView30"
-        app:layout_constraintTop_toBottomOf="@+id/paymentInput"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <TextView
-        android:id="@+id/jobDescriptionText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:text="Job Description"
-        app:layout_constraintBottom_toTopOf="@+id/jobDescriptionInput"
-        app:layout_constraintStart_toStartOf="@+id/textView30" />
-
     <ImageView
-        android:id="@+id/jobImage1"
-        android:layout_width="128dp"
-        android:layout_height="128dp"
-        android:src="@drawable/ic_baseline_map_24"
-        app:layout_constraintBottom_toTopOf="@+id/createJobButton"
-        app:layout_constraintEnd_toEndOf="@+id/textView30"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="@+id/textView30"
-        app:layout_constraintTop_toBottomOf="@+id/jobDescriptionInput" />
-
-    <Button
-        android:id="@+id/createJobButton"
-        android:layout_width="256dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="#4CAF50"
-        android:text="Create"
-        app:layout_constraintBottom_toBottomOf="@+id/textView30"
-        app:layout_constraintEnd_toEndOf="@+id/textView30"
-        app:layout_constraintStart_toStartOf="@+id/textView30" />
-
-    <ImageView
-        android:id="@+id/backButton"
+        android:id="@+id/backArrowCustomerCreateJob"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -113,16 +18,111 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/backgroundCustomerCreateJob"
+        android:layout_width="320dp"
+        android:layout_height="654dp"
+        android:background="@drawable/rounded_corner_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/titleCustomerCreateJob"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:text="CREATE JOB"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/textView30"
-        app:layout_constraintTop_toTopOf="@+id/textView30" />
+        app:layout_constraintStart_toStartOf="@+id/backgroundCustomerCreateJob"
+        app:layout_constraintTop_toTopOf="@+id/backgroundCustomerCreateJob" />
+
+    <TextView
+        android:id="@+id/addressTextCustomerCreateJob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="Location"
+        app:layout_constraintBottom_toTopOf="@+id/addressInputCustomerCreateJob"
+        app:layout_constraintStart_toStartOf="@+id/backgroundCustomerCreateJob" />
+
+    <EditText
+        android:id="@+id/addressInputCustomerCreateJob"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/backgroundCustomerCreateJob"
+        app:layout_constraintStart_toStartOf="@+id/backgroundCustomerCreateJob"
+        app:layout_constraintTop_toBottomOf="@+id/titleCustomerCreateJob"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/paymentTextCustomerCreateJob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="Payment"
+        app:layout_constraintBottom_toTopOf="@+id/paymentInputCustomerCreateJob"
+        app:layout_constraintStart_toStartOf="@+id/backgroundCustomerCreateJob" />
+
+    <EditText
+        android:id="@+id/paymentInputCustomerCreateJob"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:inputType="number"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/backgroundCustomerCreateJob"
+        app:layout_constraintStart_toStartOf="@+id/backgroundCustomerCreateJob"
+        app:layout_constraintTop_toBottomOf="@+id/addressInputCustomerCreateJob"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/jobDescriptionTextCustomerCreateJob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="Job Description"
+        app:layout_constraintBottom_toTopOf="@+id/jobDescriptionInputCustomerCreateJob"
+        app:layout_constraintStart_toStartOf="@+id/backgroundCustomerCreateJob" />
+
+    <EditText
+        android:id="@+id/jobDescriptionInputCustomerCreateJob"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/backgroundCustomerCreateJob"
+        app:layout_constraintStart_toStartOf="@+id/backgroundCustomerCreateJob"
+        app:layout_constraintTop_toBottomOf="@+id/paymentInputCustomerCreateJob"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/jobImageCustomerCreateJob"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:src="@drawable/ic_baseline_map_24"
+        app:layout_constraintBottom_toTopOf="@+id/createJobButtonCustomerCreateJob"
+        app:layout_constraintEnd_toEndOf="@+id/backgroundCustomerCreateJob"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="@+id/backgroundCustomerCreateJob"
+        app:layout_constraintTop_toBottomOf="@+id/jobDescriptionInputCustomerCreateJob" />
+
+    <Button
+        android:id="@+id/createJobButtonCustomerCreateJob"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#4CAF50"
+        android:text="Create"
+        app:layout_constraintBottom_toBottomOf="@+id/backgroundCustomerCreateJob"
+        app:layout_constraintEnd_toEndOf="@+id/backgroundCustomerCreateJob"
+        app:layout_constraintStart_toStartOf="@+id/backgroundCustomerCreateJob" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -35,7 +35,7 @@ public class CustomerJobHistoryFragment extends Fragment {
 
             // load transactions
             jobViewModel.loadPastJobs(user);
-            binding.jobs.setAdapter(
+            binding.jobListCustomerJobHistory.setAdapter(
                     new JobHistoryAdapter(
                             jobViewModel.getPastJobs(),
                             transaction -> {
@@ -45,10 +45,10 @@ public class CustomerJobHistoryFragment extends Fragment {
                                         .navigate(R.id.action_customerJobHistoryFragment_to_customerViewJobFragment);
                             })
             );
-            binding.jobs.setLayoutManager(new LinearLayoutManager(getContext()));
+            binding.jobListCustomerJobHistory.setLayoutManager(new LinearLayoutManager(getContext()));
         });
 
-        binding.workerAvailableJobsBackArrow.setOnClickListener((v)->{
+        binding.backArrowCustomerJobHistory.setOnClickListener((v)->{
             controller.navigate(R.id.action_customerJobHistoryFragment_to_customerHomeFragment);
         });
 

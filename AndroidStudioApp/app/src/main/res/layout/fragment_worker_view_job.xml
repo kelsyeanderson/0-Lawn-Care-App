@@ -123,7 +123,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/submissionImage1"
+        android:id="@+id/jobImageCustomerViewJob"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="32dp"
@@ -156,7 +156,7 @@
         app:layout_constraintEnd_toEndOf="@+id/textView31" />
 
     <TextView
-        android:id="@+id/textView33"
+        android:id="@+id/descriptionEditTextCustomerViewJob"
         android:layout_width="256dp"
         android:layout_height="128dp"
         android:layout_marginStart="32dp"
@@ -166,7 +166,7 @@
         app:layout_constraintEnd_toEndOf="@+id/textView31"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/textView31"
-        app:layout_constraintTop_toBottomOf="@+id/submissionImage1" />
+        app:layout_constraintTop_toBottomOf="@+id/jobImageCustomerViewJob" />
 
     <LinearLayout
         android:id="@+id/linearLayout4"

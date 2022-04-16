@@ -11,7 +11,7 @@
     <!-- TODO: Update blank fragment layout -->
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/backgroundSignIn"
         android:layout_width="320dp"
         android:layout_height="448dp"
         android:background="@drawable/rounded_corner_view"
@@ -21,8 +21,29 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.423" />
 
+    <TextView
+        android:id="@+id/titleSignIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/login"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/backgroundSignIn"
+        app:layout_constraintTop_toTopOf="@+id/backgroundSignIn" />
+
+    <TextView
+        android:id="@+id/emailTextSignIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/email"
+        android:textColor="#455A64"
+        app:layout_constraintBottom_toTopOf="@+id/emailEditTextSignIn"
+        app:layout_constraintStart_toStartOf="@+id/emailEditTextSignIn" />
+
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/emailEditTextSignIn"
         android:layout_width="256dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -31,12 +52,21 @@
         android:importantForAutofill="no"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="@+id/backgroundSignIn"
+        app:layout_constraintTop_toBottomOf="@+id/titleSignIn"
         tools:ignore="SpeakableTextPresentCheck" />
 
+    <TextView
+        android:id="@+id/passwordTextSignIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/password"
+        android:textColor="#455A64"
+        app:layout_constraintBottom_toTopOf="@+id/passwordEditTextSignIn"
+        app:layout_constraintStart_toStartOf="@+id/passwordEditTextSignIn" />
+
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/passwordEditTextSignIn"
         android:layout_width="256dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -45,34 +75,22 @@
         android:importantForAutofill="no"
         android:inputType="textPassword"
         android:minHeight="48dp"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/email"
+        app:layout_constraintStart_toStartOf="@+id/backgroundSignIn"
+        app:layout_constraintTop_toBottomOf="@+id/emailEditTextSignIn"
         tools:ignore="SpeakableTextPresentCheck" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:text="@string/login"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="@+id/textView" />
 
 
     <Button
-        android:id="@+id/logInButton"
+        android:id="@+id/loginButtonSignIn"
         android:layout_width="256dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:backgroundTint="#4CAF50"
         android:text="@string/login"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="@+id/backgroundSignIn"
         app:layout_constraintHorizontal_bias="0.484"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/password"
+        app:layout_constraintStart_toStartOf="@+id/backgroundSignIn"
+        app:layout_constraintTop_toBottomOf="@+id/passwordEditTextSignIn"
         tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
 
     <LinearLayout
@@ -81,9 +99,9 @@
         android:layout_height="18dp"
         android:layout_marginTop="32dp"
         android:gravity="center_horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@id/logInButton">
+        app:layout_constraintEnd_toEndOf="@+id/backgroundSignIn"
+        app:layout_constraintStart_toStartOf="@+id/backgroundSignIn"
+        app:layout_constraintTop_toBottomOf="@id/loginButtonSignIn">
 
         <View
             android:layout_width="100dp"
@@ -107,31 +125,13 @@
             android:background="#000" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/email"
-        android:textColor="#455A64"
-        app:layout_constraintBottom_toTopOf="@+id/email"
-        app:layout_constraintStart_toStartOf="@+id/email" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/password"
-        android:textColor="#455A64"
-        app:layout_constraintBottom_toTopOf="@+id/password"
-        app:layout_constraintStart_toStartOf="@+id/password" />
-
     <LinearLayout
         android:layout_width="137dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="@+id/backgroundSignIn"
+        app:layout_constraintStart_toStartOf="@+id/backgroundSignIn"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <TextView
@@ -143,7 +143,7 @@
             tools:ignore="TextContrastCheck" />
 
         <TextView
-            android:id="@+id/signupButton"
+            android:id="@+id/signupButtonSignIn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
