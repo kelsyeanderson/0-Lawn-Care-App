@@ -80,7 +80,7 @@ public class CustomerViewJobFragment extends Fragment {
         binding.descriptionEditTextCustomerViewJob.setText((jobViewModel.getSelectedJob().getValue().getDescription()));
 
         binding.backButtonCustomerViewJob.setOnClickListener((v)->{
-            controller.navigate(R.id.action_customerViewJobFragment_to_customerActiveJobsFragment);
+            controller.navigate(R.id.action_customerViewJobFragment_to_customerHomeFragment);
         });
 
         if(!jobViewModel.getSelectedJob().getValue().isCompleted() || jobViewModel.getSelectedJob().getValue().isFlagged()){

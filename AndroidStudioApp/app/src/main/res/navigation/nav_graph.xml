@@ -262,6 +262,9 @@
         <action
             android:id="@+id/action_customerViewJobFragment_to_disputFragment"
             app:destination="@id/disputFragment" />
+        <action
+            android:id="@+id/action_customerViewJobFragment_to_customerHomeFragment"
+            app:destination="@id/customerHomeFragment" />
     </fragment>
     <fragment
         android:id="@+id/disputFragment"

@@ -105,6 +105,13 @@ public class CustomerCreateJobFragment extends Fragment {
             if(!foundInputErrors(binding.addressInputCustomerCreateJob , binding.paymentInputCustomerCreateJob, binding.jobDescriptionInputCustomerCreateJob)){
                 addJob();
 
+                userViewModel.getUser().observe(getViewLifecycleOwner(), user -> {
+                    user.setBalance(-Integer.parseInt(binding.paymentInputCustomerCreateJob.getText().toString()));
+                    userViewModel.updateUser(user);
+                });
+
+
+
             } else {
                 binding.createJobButtonCustomerCreateJob.setEnabled(true);
             }

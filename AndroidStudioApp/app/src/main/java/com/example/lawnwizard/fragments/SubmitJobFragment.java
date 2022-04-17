@@ -34,9 +34,12 @@ public class SubmitJobFragment extends Fragment {
         binding.submitJobButton.setOnClickListener((v) -> {
             userViewModel.getUser().observe(getViewLifecycleOwner(), (user) -> {
                 if (user == null) return;
-
                 Job job = jobViewModel.getSelectedJob().getValue();
                 job.setCompleted();
+
+                user.setBalance(job.getPay());
+                userViewModel.updateUser(user);
+
                 jobViewModel.updateJob(job);
                 controller.navigate(R.id.action_submitJobFragment_to_workerHomeFragment);
             });
