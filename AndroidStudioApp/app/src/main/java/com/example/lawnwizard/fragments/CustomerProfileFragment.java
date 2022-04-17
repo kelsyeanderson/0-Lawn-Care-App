@@ -46,8 +46,10 @@ public class CustomerProfileFragment extends Fragment {
                     binding.transferFundsCustomerProfile.setError("Please enter a positive number");
                 }else{
                     user.setBalance(Integer.parseInt(binding.transferFundsCustomerProfile.getText().toString()));
+                    binding.balanceEditTextCustomerProfile.setText(user.getBalance().toString());
                     userViewModel.updateUser(user);
                     binding.transferFundsCustomerProfile.setText("");
+
                 }
             });
 
