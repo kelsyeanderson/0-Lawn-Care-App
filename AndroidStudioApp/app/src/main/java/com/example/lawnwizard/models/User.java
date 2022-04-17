@@ -10,7 +10,6 @@ public class User {
     private String role;
     private LatLng prevLocation;
     private Integer balance = 0;
-    private Float rating;
     private ArrayList<String> whitelist = new ArrayList<String>();
     private ArrayList<String> blacklist = new ArrayList<String>();
     private ArrayList<Float> ratings = new ArrayList<>();
@@ -46,10 +45,13 @@ public class User {
 
     public Float getRating() {
         Float total = null;
+        if (ratings.size() < 1) {
+            return null;
+        }
         for (int i = 0; i < ratings.size(); i++) {
             total += ratings.get(i);
         }
-        rating = total / ratings.size();
+        Float rating = total / ratings.size();
         return rating;
     }
 
