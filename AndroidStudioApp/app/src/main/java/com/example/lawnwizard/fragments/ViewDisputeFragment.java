@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 
 import com.example.lawnwizard.R;
 import com.example.lawnwizard.databinding.FragmentCustomerViewJobBinding;
-import com.example.lawnwizard.databinding.FragmentDisputBinding;
+import com.example.lawnwizard.databinding.FragmentDisputeBinding;
 import com.example.lawnwizard.databinding.FragmentViewDisputeBinding;
 import com.example.lawnwizard.models.Job;
 import com.example.lawnwizard.viewmodels.JobViewModel;

@@ -42,10 +42,10 @@ public class CustomerFeedbackFragment extends Fragment {
             if (user == null) {
                 return;
             }
-            binding.workerRatingBar.getRating();
-            binding.customerProfileNameText.setText(user.getName());
-            binding.customerEmailText.setText(Objects.requireNonNull(auth.getCurrentUser()).getEmail());
-            binding.customerPhoneText.setText(user.getName());
+            binding.ratingWorkerProfile.getRating();
+            binding.nameTextCustomerProfile.setText(user.getName());
+            binding.emailEditTextCustomerProfile.setText(Objects.requireNonNull(auth.getCurrentUser()).getEmail());
+            binding.phoneEditTextCustomerProfile.setText(user.getName());
         }));
 
         return binding.getRoot();

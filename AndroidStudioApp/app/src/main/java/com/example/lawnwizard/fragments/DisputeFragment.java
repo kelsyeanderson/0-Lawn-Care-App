@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 import com.example.lawnwizard.R;
 import com.example.lawnwizard.adapters.JobHistoryAdapter;
 import com.example.lawnwizard.databinding.FragmentCustomerJobHistoryBinding;
-import com.example.lawnwizard.databinding.FragmentDisputBinding;
+import com.example.lawnwizard.databinding.FragmentDisputeBinding;
 import com.example.lawnwizard.models.Job;
 import com.example.lawnwizard.viewmodels.JobViewModel;
 import com.example.lawnwizard.viewmodels.UserViewModel;
@@ -26,7 +26,7 @@ public class DisputeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        FragmentDisputBinding binding = FragmentDisputBinding.inflate(inflater, container, false);
+        FragmentDisputeBinding binding = FragmentDisputeBinding.inflate(inflater, container, false);
         JobViewModel jobViewModel = new ViewModelProvider(getActivity()).get(JobViewModel.class);
         UserViewModel userViewModel = new ViewModelProvider(getActivity()).get(UserViewModel.class);
         NavController controller = NavHostFragment.findNavController(this);
@@ -37,7 +37,7 @@ public class DisputeFragment extends Fragment {
             if (user == null) return;
         });
 
-        binding.disputButton.setOnClickListener((view -> {
+        binding.disputeButton.setOnClickListener((view -> {
             Job job = jobViewModel.getSelectedJob().getValue();
             job.setFlagged(true);
             job.setJobDispute(binding.editTextTextPersonName.getText().toString());

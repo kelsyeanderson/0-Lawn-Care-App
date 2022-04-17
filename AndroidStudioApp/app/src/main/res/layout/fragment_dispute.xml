@@ -8,7 +8,7 @@
     tools:context=".fragments.DisputeFragment">
 
     <Button
-        android:id="@+id/disputButton"
+        android:id="@+id/disputeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
