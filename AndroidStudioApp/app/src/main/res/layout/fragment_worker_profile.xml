@@ -134,31 +134,13 @@
         app:layout_constraintTop_toBottomOf="@+id/phoneTextWorkerProfile" />
 
     <TextView
-        android:id="@+id/addressTextWorkerProfile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:text="Address"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phoneEditTextWorkerProfile" />
-
-    <TextView
-        android:id="@+id/addressEditTextWorkerProfile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addressTextWorkerProfile" />
-
-    <TextView
         android:id="@+id/balanceTextWorkerProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:text="Balance"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addressEditTextWorkerProfile" />
+        app:layout_constraintTop_toBottomOf="@+id/phoneEditTextWorkerProfile" />
 
     <TextView
         android:id="@+id/balanceEditTextWorkerProfile"

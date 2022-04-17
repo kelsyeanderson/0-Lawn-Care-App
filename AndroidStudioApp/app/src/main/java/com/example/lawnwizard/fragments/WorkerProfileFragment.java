@@ -48,10 +48,9 @@ public class WorkerProfileFragment extends Fragment {
                 return;
             }
             binding.nameTextWorkerProfile.setText(user.getName());
-            binding.addressEditTextWorkerProfile.setText(user.getName());
             binding.balanceEditTextWorkerProfile.setText(user.getBalance().toString());
             binding.emailEditTextWorkerProfile.setText(Objects.requireNonNull(auth.getCurrentUser()).getEmail());
-            binding.phoneEditTextWorkerProfile.setText(user.getName());
+            binding.phoneEditTextWorkerProfile.setText(user.getPhoneNumber());
             binding.ratingWorkerProfile.getRating();
 
             binding.transferFundsButtonWorkerProfile.setOnClickListener((v) -> {
