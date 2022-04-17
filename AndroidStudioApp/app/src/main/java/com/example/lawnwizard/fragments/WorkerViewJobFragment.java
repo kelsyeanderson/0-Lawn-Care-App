@@ -47,6 +47,11 @@ public class WorkerViewJobFragment extends Fragment {
         binding.phoneEditTextWorkerViewJob.setText(jobViewModel.getSelectedJob().getValue().getHomeownerPhone());
         binding.ownerEditTextWorkerViewJob.setText((jobViewModel.getSelectedJob().getValue().getHomeowner()));
 
+        if(jobViewModel.getSelectedJob().getValue().isCompleted()){
+            binding.acceptButtonWorkerViewJob.setVisibility(View.GONE);
+            binding.declineButtonWorkerViewJob.setVisibility(View.GONE);
+        }
+
         GeoPoint p = jobViewModel.getSelectedJob().getValue().getLocation();
         Geocoder geoCoder = new Geocoder(
                 getContext(), Locale.getDefault());
