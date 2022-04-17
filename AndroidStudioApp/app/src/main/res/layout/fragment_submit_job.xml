@@ -20,6 +20,7 @@
         android:id="@+id/submissionDescriptionEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="196dp"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
@@ -27,8 +28,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="SpeakableTextPresentCheck"
-        tools:layout_editor_absoluteY="120dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/submissionDescriptionText"
@@ -69,7 +70,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/submissionImageText"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:inputType="number" />
 
     <TextView
         android:id="@+id/totalTimeText"
@@ -90,6 +92,44 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/ownerTextSumbitJob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="Owner: "
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/submitJobBackArrow" />
+
+    <TextView
+        android:id="@+id/ownerEditTextSubmitJob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/ownerTextSumbitJob"
+        app:layout_constraintTop_toBottomOf="@+id/submitJobBackArrow" />
+
+    <TextView
+        android:id="@+id/paymentTextSumbitJob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:text="Payment: "
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ownerTextSumbitJob" />
+
+    <TextView
+        android:id="@+id/paymentEditTextSubmitJob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/paymentTextSumbitJob"
+        app:layout_constraintTop_toBottomOf="@+id/ownerTextSumbitJob" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -27,6 +27,9 @@ public class SubmitJobFragment extends Fragment {
         JobViewModel jobViewModel = new ViewModelProvider(getActivity()).get(JobViewModel.class);
         NavController controller = NavHostFragment.findNavController(this);
 
+        binding.ownerEditTextSubmitJob.setText(jobViewModel.getSelectedJob().getValue().getHomeowner());
+        binding.paymentEditTextSubmitJob.setText(jobViewModel.getSelectedJob().getValue().getPay());
+
         binding.submitJobBackArrow.setOnClickListener((v)->{
             controller.navigate(R.id.action_submitJobFragment_to_workerActiveJobsFragment);
         });
