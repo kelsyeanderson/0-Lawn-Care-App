@@ -15,6 +15,7 @@ import com.google.firebase.firestore.SetOptions;
 
 public class UserViewModel extends ViewModel{
     MutableLiveData<User> user = new MutableLiveData<>();
+    MutableLiveData<User> differentUser = new MutableLiveData<>();
     FirebaseFirestore db;
     String docID;
 
@@ -26,6 +27,10 @@ public class UserViewModel extends ViewModel{
 
     public MutableLiveData<User> getUser() {
         return user;
+    }
+
+    public MutableLiveData<User> getDifferentUser() {
+        return differentUser;
     }
 
     public void saveUser(String name, String phoneNumber, String role, String email) {
@@ -46,6 +51,8 @@ public class UserViewModel extends ViewModel{
         });
     }
 
+
+
     public void loadUser() {
         FirebaseAuth auth = FirebaseAuth.getInstance();
         db.collection("users")
@@ -65,6 +72,29 @@ public class UserViewModel extends ViewModel{
                             i++;
                         }
                         user.setValue(collection.toObjects(User.class).get(0));
+                    }
+                });
+    }
+
+    public void loadDifferentUser(String homeownerID) {
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        db.collection(homeownerID)
+                .whereEqualTo("userID", auth.getUid())
+                .get()
+                .addOnCompleteListener((task) -> {
+                    if (task.isSuccessful()) {
+                        QuerySnapshot collection = task.getResult();
+                        int i = 0;
+                        for(QueryDocumentSnapshot document: collection) {
+                            if(i > 0){
+                                Log.d("ERROR: ","________TOO MANY DOCUMENTS LOADED___________");
+                                break;
+                            }
+                            DocumentReference doc = document.getReference();
+                            docID = doc.getId();
+                            i++;
+                        }
+                        differentUser.setValue(collection.toObjects(User.class).get(0));
                     }
                 });
     }

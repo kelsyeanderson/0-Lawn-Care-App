@@ -67,8 +67,13 @@ public class CustomerViewJobFragment extends Fragment {
             e.printStackTrace();
         }
 
+//        userViewModel.loadDifferentUser(jobViewModel.getSelectedJob().getValue().getHomeownerID());
+//        userViewModel.getDifferentUser().observe(getViewLifecycleOwner(), user -> {
+//            if(user == null) return;
+//            binding.phoneEditTextCustomerViewJob.setText(user.getPhoneNumber());
+//            binding.emailEditTextCustomerViewJob.setText(user.getEmail());
+//        });
 
-//        binding.phoneEditTextCustomerViewJob.setText(userViewModel.getUser().getValue().getEmail());
 //
 //        binding.emailEditTextCustomerViewJob.setText(jobViewModel.getSelectedJob().getValue().getHomeowner().getEmail());
 

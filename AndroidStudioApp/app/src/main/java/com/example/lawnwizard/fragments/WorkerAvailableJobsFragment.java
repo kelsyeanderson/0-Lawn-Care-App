@@ -65,17 +65,16 @@ public class WorkerAvailableJobsFragment extends Fragment {
         NavController controller = NavHostFragment.findNavController(this);
 
         locationViewModel.loadUserLocation(getContext());
-        userViewModel.loadUser();
 
+        userViewModel.loadUser();
         userViewModel.getUser().observe(getViewLifecycleOwner(), (user) -> {
             if (user == null) return;
+
 
             locationViewModel.getUserLocation().observe(getViewLifecycleOwner(), (location) -> {
                 userLocation = location;
 
-                // load jobs
                 jobViewModel.loadAvailableJobs(user, getContext(), userLocation);
-                ObservableArrayList<Job> test = jobViewModel.getAvailableJobs();
                 binding.jobListWorkerAvailableJobs.setAdapter(
                         new JobHistoryAdapter(
                                 jobViewModel.getAvailableJobs(),
