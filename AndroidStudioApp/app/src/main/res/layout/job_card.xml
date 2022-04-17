@@ -8,7 +8,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/userCard"
         android:layout_width="378dp"
-        android:layout_height="42dp"
+        android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
@@ -32,10 +32,10 @@
 
             <ImageView
                 android:id="@+id/imageView11"
-                android:layout_width="wrap_content"
+                android:layout_width="7dp"
                 android:layout_height="42dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ic_baseline_person_24_white" />
+                app:srcCompat="@drawable/wizard" />
 
             <TextView
                 android:id="@+id/userName"
@@ -44,16 +44,6 @@
                 android:text="Bobby Wilson"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/userDistance"
-                android:layout_width="113dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="3.6 mi"
-                android:textColor="#FFFFFF"
-                android:textSize="20sp"
-                tools:textAlignment="center" />
 
             <ImageView
                 android:id="@+id/imageView13"
