@@ -17,6 +17,8 @@ public class Job {
     private String worker;
     private String homeownerID;
     private String workerID;
+    private String homeownerEmail;
+    private String homeownerPhone;
     private ArrayList<String> hwBlacklist = new ArrayList<String>();
     private ArrayList<String> workerBlacklist = new ArrayList<String>();
     private String description;
@@ -33,13 +35,16 @@ public class Job {
 
     public Job(){}
 
-    public Job(User homeowner, String description, int pay, GeoPoint location, String imageURI){
+    public Job(User homeowner, String description, int pay, GeoPoint location, String imageURI, String worker){
         Date currentTime = Calendar.getInstance().getTime();
         this.homeownerID = homeowner.getUserID();
         this.hwBlacklist = homeowner.getBlacklist();
+        this.homeownerEmail = homeowner.getEmail();
+        this.homeownerPhone = homeowner.getPhoneNumber();
         this.homeowner = homeowner.getName();
         this.description = description;
         this.pay = pay;
+        this.worker = worker;
         this.location = location;
         this.imageURI = imageURI;
         this.createdDate = currentTime.toString();
@@ -49,23 +54,42 @@ public class Job {
 
     }
 
-    public Job(User homeowner, String description, int pay, GeoPoint location){
+    public Job(User homeowner, String description, int pay, GeoPoint location, String worker){
         Date currentTime = Calendar.getInstance().getTime();
         this.homeownerID = homeowner.getUserID();
         this.hwBlacklist = homeowner.getBlacklist();
         this.homeowner = homeowner.getName();
+        this.homeownerEmail = homeowner.getEmail();
+        this.homeownerPhone = homeowner.getPhoneNumber();
         this.description = description;
+        this.worker = worker;
         this.pay = pay;
         this.location = location;
         this.createdDate = currentTime.toString();
     }
 
+    public String getHomeownerEmail() {
+        return this.homeownerEmail;
+    }
+
+    public String getHomeownerPhone() {
+        return this.homeownerPhone;
+    }
+
     public String getWorker() {
-        return worker;
+        return this.worker;
     }
 
     public void setWorker(String worker) {
         this.worker = worker;
+    }
+
+    public void setHomeowner(String homeowner) {
+        this.homeowner = homeowner;
+    }
+
+    public void setHomeownerID(String homeownerID) {
+        this.homeownerID = homeownerID;
     }
 
     public void setCreatedDate(String createdDate) {

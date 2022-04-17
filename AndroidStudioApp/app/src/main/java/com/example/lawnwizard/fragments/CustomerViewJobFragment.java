@@ -75,7 +75,9 @@ public class CustomerViewJobFragment extends Fragment {
 //        });
 
 //
-//        binding.emailEditTextCustomerViewJob.setText(jobViewModel.getSelectedJob().getValue().getHomeowner().getEmail());
+        binding.emailEditTextCustomerViewJob.setText(jobViewModel.getSelectedJob().getValue().getHomeownerEmail());
+        binding.phoneEditTextCustomerViewJob.setText(jobViewModel.getSelectedJob().getValue().getHomeownerPhone());
+        binding.descriptionEditTextCustomerViewJob.setText((jobViewModel.getSelectedJob().getValue().getDescription()));
 
         binding.backButtonCustomerViewJob.setOnClickListener((v)->{
             controller.navigate(R.id.action_customerViewJobFragment_to_customerActiveJobsFragment);

@@ -126,11 +126,8 @@ public class CustomerCreateJobFragment extends Fragment {
                 return;
             }
             if (uriFilePath == null){
-                Job inJob = new Job(
-                        user,
-                        binding.jobDescriptionInputCustomerCreateJob.getText().toString(),
-                        Integer.parseInt(binding.paymentInputCustomerCreateJob.getText().toString()),
-                        loc
+                Job inJob = new Job(user, binding.jobDescriptionInputCustomerCreateJob.getText().toString(),
+                        Integer.parseInt(binding.paymentInputCustomerCreateJob.getText().toString()), loc, ""
                 );
                 jobViewModel.saveJob(inJob);
             } else{
