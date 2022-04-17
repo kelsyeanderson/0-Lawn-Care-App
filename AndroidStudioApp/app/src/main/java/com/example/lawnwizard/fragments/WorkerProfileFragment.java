@@ -61,6 +61,7 @@ public class WorkerProfileFragment extends Fragment {
                     binding.transferFundsWorkerProfile.setError("Please enter a positive number");
                 }else{
                     user.setBalance(-Integer.parseInt(binding.transferFundsWorkerProfile.getText().toString()));
+                    binding.balanceEditTextWorkerProfile.setText(user.getBalance().toString());
                     userViewModel.updateUser(user);
                     binding.transferFundsWorkerProfile.setText("");
                 }

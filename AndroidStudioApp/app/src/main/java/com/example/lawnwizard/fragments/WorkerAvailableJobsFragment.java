@@ -85,6 +85,7 @@ public class WorkerAvailableJobsFragment extends Fragment {
             binding.jobListWorkerAvailableJobs.setLayoutManager(new LinearLayoutManager(getContext()));
         });
 
+
 //        userViewModel.loadUser();
 //        userViewModel.getUser().observe(getViewLifecycleOwner(), (user) -> {
 //            if (user == null) return;
