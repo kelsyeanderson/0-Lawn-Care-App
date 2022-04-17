@@ -31,7 +31,7 @@ public class SubmitJobFragment extends Fragment {
             controller.navigate(R.id.action_submitJobFragment_to_workerActiveJobsFragment);
         });
 
-        binding.sumbitJobButton.setOnClickListener((v) -> {
+        binding.submitJobButton.setOnClickListener((v) -> {
             userViewModel.getUser().observe(getViewLifecycleOwner(), (user) -> {
                 if (user == null) return;
 

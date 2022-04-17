@@ -85,9 +85,10 @@
             android:id="@+id/ratingWorkerProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#FFFFFF"
+            android:background="#4F7942"
             android:numStars="5"
             android:stepSize="0.1"
+            android:rating="0.0"
             tools:ignore="SpeakableTextPresentCheck" />
 
 <!--        <ImageView-->
