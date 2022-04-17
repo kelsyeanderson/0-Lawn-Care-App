@@ -220,10 +220,10 @@ public class JobViewModel extends ViewModel{
         }
     }
 
-    public void loadAvailableJobs(User user, Context context, GeoPoint geoPoint) {
+    public void loadAvailableJobs(User user) {
         Log.d("___JobViewModel: ", "loadAvailableJobs started");
-        if (geoPoint == null) { return; }
-        String userZip = getZipCode(context, geoPoint.getLatitude(), geoPoint.getLongitude());
+//        if (geoPoint == null) { return; }
+//        String userZip = getZipCode(context, geoPoint.getLatitude(), geoPoint.getLongitude());
         ArrayList<Job> allAvailable = new ArrayList<>();
         availableJobs.clear();
         db.collection("jobs")
@@ -247,10 +247,11 @@ public class JobViewModel extends ViewModel{
                     Log.d("___Load Available Worker Jobs: ", String.valueOf(availableJobs));
                     for (Job job : allAvailable) {
                         GeoPoint jobLoc = job.getLocation();
-                        String jobZip = getZipCode(context, jobLoc.getLatitude(), jobLoc.getLongitude());
-                        if (jobZip.equals(userZip)) {
-                            availableJobs.add(job);
-                        }
+//                        String jobZip = getZipCode(context, jobLoc.getLatitude(), jobLoc.getLongitude());
+                        availableJobs.add(job);
+//                        if (jobZip.equals(userZip)) {
+//                            availableJobs.add(job);
+//                        }
                     }
                 });
         Log.d("---", String.valueOf(availableJobs.size()));

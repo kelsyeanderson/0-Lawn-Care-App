@@ -70,24 +70,44 @@ public class WorkerAvailableJobsFragment extends Fragment {
         userViewModel.getUser().observe(getViewLifecycleOwner(), (user) -> {
             if (user == null) return;
 
-
-            locationViewModel.getUserLocation().observe(getViewLifecycleOwner(), (location) -> {
-                userLocation = location;
-
-                jobViewModel.loadAvailableJobs(user, getContext(), userLocation);
-                binding.jobListWorkerAvailableJobs.setAdapter(
-                        new JobHistoryAdapter(
-                                jobViewModel.getAvailableJobs(),
-                                transaction -> {
-                                    // go to a job when clicked
-                                    jobViewModel.setSelectedJob(transaction);
-                                    NavHostFragment.findNavController(this)
-                                            .navigate(R.id.action_workerAvailableJobsFragment_to_workerViewJobFragment);
-                                })
-                );
-            });
+            // load transactions
+            jobViewModel.loadAvailableJobs(user);
+            binding.jobListWorkerAvailableJobs.setAdapter(
+                    new JobHistoryAdapter(
+                            jobViewModel.getAvailableJobs(),
+                            transaction -> {
+                                // go to a job when clicked
+                                jobViewModel.setSelectedJob(transaction);
+                                NavHostFragment.findNavController(this)
+                                        .navigate(R.id.action_workerAvailableJobsFragment_to_workerViewJobFragment);
+                            })
+            );
             binding.jobListWorkerAvailableJobs.setLayoutManager(new LinearLayoutManager(getContext()));
         });
+
+//        userViewModel.loadUser();
+//        userViewModel.getUser().observe(getViewLifecycleOwner(), (user) -> {
+//            if (user == null) return;
+//
+//
+//
+//            locationViewModel.getUserLocation().observe(getViewLifecycleOwner(), (location) -> {
+//                Log.d("-----", "-------");
+//                userLocation = location;
+//                jobViewModel.loadAvailableJobs(user, getContext(), userLocation);
+//                binding.jobListWorkerAvailableJobs.setAdapter(
+//                        new JobHistoryAdapter(
+//                                jobViewModel.getAvailableJobs(),
+//                                transaction -> {
+//                                    // go to a job when clicked
+//                                    jobViewModel.setSelectedJob(transaction);
+//                                    NavHostFragment.findNavController(this)
+//                                            .navigate(R.id.action_workerAvailableJobsFragment_to_workerViewJobFragment);
+//                                })
+//                );
+//            });
+//            binding.jobListWorkerAvailableJobs.setLayoutManager(new LinearLayoutManager(getContext()));
+//        });
 
         binding.backArrowWorkerAvailableJobs.setOnClickListener((v) -> {
             controller.navigate(R.id.action_workerAvailableJobsFragment_to_workerHomeFragment);

@@ -68,6 +68,14 @@ public class Job {
         this.worker = worker;
     }
 
+    public void setCreatedDate(String createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    public void setResolved(boolean resolved) {
+        this.resolved = resolved;
+    }
+
     public String getJobDispute() {
         return jobDispute;
     }
