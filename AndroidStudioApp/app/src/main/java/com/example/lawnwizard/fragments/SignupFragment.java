@@ -50,7 +50,7 @@ public class SignupFragment extends Fragment {
                 ).addOnCompleteListener((task) -> {
                     if (task.isSuccessful()) {
                         Log.d("__FIREBASE", "Sign up success");
-                        viewmodel.saveUser(binding.nameEditTextSignUp.getText().toString(), dropdown.getSelectedItem().toString());
+                        viewmodel.saveUser(binding.nameEditTextSignUp.getText().toString(), binding.phoneEditTextSignUp.getText().toString(), dropdown.getSelectedItem().toString());
                         if (dropdown.getSelectedItem().toString().equals("Worker")) {
                             controller.navigate(R.id.action_signupFragment_to_workerHomeFragment);
                         } else {
@@ -79,11 +79,6 @@ public class SignupFragment extends Fragment {
             confirmPasswordField.setError("Passwords do not match");
             foundError = true;
         }
-        if(!emailField.getText().toString().matches(confirmEmailField.getText().toString())){
-            emailField.setError("Emails do not match");
-            confirmEmailField.setError("Emails do not match");
-            foundError = true;
-        }
         if(passwordField.getText().toString().length() < 8){
             passwordField.setError("Password must be at least 8 characters");
             foundError = true;
@@ -98,10 +93,6 @@ public class SignupFragment extends Fragment {
         }
         if(emailField.getText().toString().matches("")){
             emailField.setError("Please enter an email");
-            foundError = true;
-        }
-        if(confirmEmailField.getText().toString().matches("")){
-            confirmEmailField.setError("Please enter an email");
             foundError = true;
         }
         if(passwordField.getText().toString().matches("")){

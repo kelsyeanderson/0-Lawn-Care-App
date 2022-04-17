@@ -8,16 +8,18 @@ public class User {
     private String userID;
     private String name;
     private String role;
+    private String phoneNumber;
     private LatLng prevLocation;
     private Integer balance = 0;
     private ArrayList<String> whitelist = new ArrayList<String>();
     private ArrayList<String> blacklist = new ArrayList<String>();
     private ArrayList<Float> ratings = new ArrayList<>();
 
-    public User(String userID, String name, String role){
+    public User(String userID, String name, String phoneNumber,  String role){
         //TODO: Add in prevLocation
         this.userID = userID;
         this.name = name;
+        this.phoneNumber = phoneNumber;
         this.role = role;
     }
 
@@ -33,6 +35,10 @@ public class User {
 
     public String getRole() {
         return role;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
     public LatLng getPrevLocation() {

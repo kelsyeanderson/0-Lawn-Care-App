@@ -28,11 +28,12 @@ public class UserViewModel extends ViewModel{
         return user;
     }
 
-    public void saveUser(String name, String role) {
+    public void saveUser(String name, String phoneNumber, String role) {
         FirebaseAuth auth = FirebaseAuth.getInstance();
         User newUser = new User(
                 auth.getUid(),
                 name,
+                phoneNumber,
                 role
         );
         db.collection("users").add(newUser).addOnCompleteListener((task) -> {
