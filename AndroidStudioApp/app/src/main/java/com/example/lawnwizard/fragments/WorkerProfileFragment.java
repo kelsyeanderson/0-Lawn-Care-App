@@ -52,6 +52,7 @@ public class WorkerProfileFragment extends Fragment {
             binding.balanceEditTextWorkerProfile.setText(user.getBalance().toString());
             binding.emailEditTextWorkerProfile.setText(Objects.requireNonNull(auth.getCurrentUser()).getEmail());
             binding.phoneEditTextWorkerProfile.setText(user.getName());
+            binding.ratingWorkerProfile.getRating();
 
             binding.transferFundsButtonWorkerProfile.setOnClickListener((v) -> {
                 if(binding.transferFundsWorkerProfile.getText().toString().equals("")){
