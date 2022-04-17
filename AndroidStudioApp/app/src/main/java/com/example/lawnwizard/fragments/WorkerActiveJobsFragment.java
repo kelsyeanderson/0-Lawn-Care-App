@@ -34,7 +34,7 @@ public class WorkerActiveJobsFragment extends Fragment {
 
             // load jobs
             jobViewModel.loadActiveJobs(user);
-            binding.jobs.setAdapter(
+            binding.jobListWorkerActiveJobs.setAdapter(
                     new JobHistoryAdapter(
                             jobViewModel.getActiveJobs(),
                             job -> {
@@ -44,10 +44,10 @@ public class WorkerActiveJobsFragment extends Fragment {
                                         .navigate(R.id.action_workerActiveJobsFragment_to_submitJobFragment);
                             })
             );
-            binding.jobs.setLayoutManager(new LinearLayoutManager(getContext()));
+            binding.jobListWorkerActiveJobs.setLayoutManager(new LinearLayoutManager(getContext()));
         });
 
-        binding.workerAvailableJobsBackArrow.setOnClickListener((v)->{
+        binding.backArrowWorkerActiveJobs.setOnClickListener((v)->{
             controller.navigate(R.id.action_workerActiveJobsFragment_to_workerHomeFragment);
         });
 

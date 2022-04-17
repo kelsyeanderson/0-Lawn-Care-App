@@ -8,7 +8,7 @@
     tools:context=".fragments.WorkerProfileFragment">
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/backgroundWorkerProfile"
         android:layout_width="0dp"
         android:layout_height="256dp"
         android:layout_marginStart="-16dp"
@@ -63,7 +63,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView">
 
         <RatingBar
-            android:id="@+id/workerRatingBar"
+            android:id="@+id/ratingWorkerProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#4F7942"

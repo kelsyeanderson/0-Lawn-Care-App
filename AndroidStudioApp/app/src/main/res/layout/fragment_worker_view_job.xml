@@ -4,72 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/green_background"
+    android:background="@color/white"
     tools:context=".fragments.WorkerViewJobFragment">
 
-    <TextView
-        android:id="@+id/textView31"
-        android:layout_width="320dp"
-        android:layout_height="654dp"
-        android:background="@drawable/rounded_corner_view"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+    <ImageView
+        android:id="@+id/backButtonWorkerViewJob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_baseline_arrow_back_ios_24"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.493" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout8"
+    <TextView
+        android:id="@+id/titleWorkerViewJob"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="@+id/textView31"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
-
-        <TextView
-            android:id="@+id/textView40"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Email: "
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/textView41"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="james@james.com"
-            android:textSize="16sp" />
-    </LinearLayout>
+        android:layout_marginTop="64dp"
+        android:text="View Job"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:id="@+id/linearLayout7"
+        android:id="@+id/linearLayout4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="@+id/textView31"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleWorkerViewJob">
 
         <TextView
-            android:id="@+id/textView35"
+            android:id="@+id/ownerTextWorkerViewJob"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Phone: "
+            android:text="Owner: "
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/textView34"
+            android:id="@+id/ownerEditTextWorkerViewJob"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="208-222-2222"
             android:textSize="16sp" />
     </LinearLayout>
 
@@ -80,11 +62,11 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="@+id/textView31"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
 
         <TextView
-            android:id="@+id/textView36"
+            android:id="@+id/addressTextWorkerViewJob"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -92,38 +74,67 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/textView37"
+            android:id="@+id/addressEditTextWorkerViewJob"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="111 E Hello Street"
             android:textSize="16sp" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView32"
+    <LinearLayout
+        android:id="@+id/linearLayout7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:text="View Job"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/textView31"
-        app:layout_constraintTop_toTopOf="@+id/textView31" />
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
 
-    <ImageView
-        android:id="@+id/jobBackButton"
+        <TextView
+            android:id="@+id/phoneTextWorkerViewJob"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Phone: "
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/phoneEditTextWorkerViewJob"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
-        android:src="@drawable/ic_baseline_arrow_back_ios_24_white"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
+
+        <TextView
+            android:id="@+id/emailTextWorkerViewJob"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Email: "
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/emailEditTextWorkerViewJob"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="16sp" />
+    </LinearLayout>
 
     <ImageView
-        android:id="@+id/jobImageCustomerViewJob"
+        android:id="@+id/jobImageWorkerViewJob"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="32dp"
@@ -134,64 +145,45 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout8" />
 
     <Button
-        android:id="@+id/acceptJobButton"
-        android:layout_width="wrap_content"
+        android:id="@+id/acceptButtonWorkerViewJob"
+        android:layout_width="108dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="#4CAF50"
         android:text="Accept"
-        app:layout_constraintBottom_toBottomOf="@+id/textView31"
-        app:layout_constraintStart_toStartOf="@+id/textView31" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/declineJobButton"
+        android:id="@+id/declineButtonWorkerViewJob"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="#4CAF50"
         android:text="Decline"
-        app:layout_constraintBottom_toBottomOf="@+id/textView31"
-        app:layout_constraintEnd_toEndOf="@+id/textView31" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/descriptionEditTextCustomerViewJob"
         android:layout_width="256dp"
-        android:layout_height="128dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:text="Description"
-        app:layout_constraintEnd_toEndOf="@+id/textView31"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView31"
-        app:layout_constraintTop_toBottomOf="@+id/jobImageCustomerViewJob" />
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionTextWorkerViewJob" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout4"
+    <TextView
+        android:id="@+id/descriptionTextWorkerViewJob"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="@+id/textView31"
-        app:layout_constraintTop_toBottomOf="@+id/textView32">
+        android:text="Description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jobImageWorkerViewJob" />
 
-        <TextView
-            android:id="@+id/textView38"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Owner: "
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/textView39"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="James Seelos"
-            android:textSize="16sp" />
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

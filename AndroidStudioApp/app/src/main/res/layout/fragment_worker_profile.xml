@@ -8,7 +8,7 @@
     tools:context=".fragments.WorkerProfileFragment">
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/backgroundWorkerProfile"
         android:layout_width="0dp"
         android:layout_height="256dp"
         android:layout_marginStart="-16dp"
@@ -20,13 +20,34 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/workerLogoutButton"
+        android:id="@+id/backArrowWorkerProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_baseline_arrow_back_ios_24_white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/logoutButtonWorkerProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:src="@drawable/ic_baseline_logout_24"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nameTextWorkerProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
@@ -42,24 +63,13 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/profilePicture"
+            android:id="@+id/profilePictureWorkerProfile"
             android:layout_width="128dp"
             android:layout_height="128dp"
             android:scaleType="fitXY"
             android:src="@drawable/googleg_disabled_color_18" />
 
     </androidx.cardview.widget.CardView>
-
-    <TextView
-        android:id="@+id/nameTextCustomerProfile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout3"
@@ -72,7 +82,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView">
 
         <RatingBar
-            android:id="@+id/workerRatingBar"
+            android:id="@+id/ratingWorkerProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#FFFFFF"
@@ -117,50 +127,8 @@
 
     </LinearLayout>
 
-    <EditText
-        android:id="@+id/transferFundsCustomerProfile"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:minHeight="48dp"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/fundsTextCustomerProfile"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageView
-        android:id="@+id/backArrow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/ic_baseline_arrow_back_ios_24_white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/transferFundsButtonCustomerProfile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:backgroundTint="#4CAF50"
-        android:text="Transfer Funds"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <TextView
-        android:id="@+id/fundsTextCustomerProfile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="$$"
-        app:layout_constraintBottom_toTopOf="@+id/transferFundsButtonCustomerProfile"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/emailTextCustomerProfile"
+        android:id="@+id/emailTextWorkerProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -170,66 +138,98 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 
     <TextView
-        android:id="@+id/phoneTextCustomerProfile"
+        android:id="@+id/emailEditTextWorkerProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailTextWorkerProfile" />
+
+    <TextView
+        android:id="@+id/phoneTextWorkerProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:text="Phone Number"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailEditTextCustomerProfile" />
+        app:layout_constraintTop_toBottomOf="@+id/emailEditTextWorkerProfile" />
 
     <TextView
-        android:id="@+id/balanceTextCustomerProfile"
+        android:id="@+id/phoneEditTextWorkerProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:text="Balance"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addressEditTextCustomerProfile" />
+        app:layout_constraintTop_toBottomOf="@+id/phoneTextWorkerProfile" />
 
     <TextView
-        android:id="@+id/addressTextCustomerProfile"
+        android:id="@+id/addressTextWorkerProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:text="Address"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phoneEditTextCustomerProfile" />
+        app:layout_constraintTop_toBottomOf="@+id/phoneEditTextWorkerProfile" />
 
     <TextView
-        android:id="@+id/emailEditTextCustomerProfile"
+        android:id="@+id/addressEditTextWorkerProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailTextCustomerProfile" />
+        app:layout_constraintTop_toBottomOf="@+id/addressTextWorkerProfile" />
 
     <TextView
-        android:id="@+id/phoneEditTextCustomerProfile"
+        android:id="@+id/balanceTextWorkerProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="Balance"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addressEditTextWorkerProfile" />
+
+    <TextView
+        android:id="@+id/balanceEditTextWorkerProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phoneTextCustomerProfile" />
+        app:layout_constraintTop_toBottomOf="@+id/balanceTextWorkerProfile" />
+
+    <EditText
+        android:id="@+id/transferFundsWorkerProfile"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/fundsTextWorkerProfile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
-        android:id="@+id/addressEditTextCustomerProfile"
+        android:id="@+id/fundsTextWorkerProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addressTextCustomerProfile" />
+        android:text="$$"
+        app:layout_constraintBottom_toTopOf="@+id/transferFundsButtonWorkerProfile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/balanceEditTextCustomerProfile"
+    <Button
+        android:id="@+id/transferFundsButtonWorkerProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/balanceTextCustomerProfile" />
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="#4CAF50"
+        android:text="Transfer Funds"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

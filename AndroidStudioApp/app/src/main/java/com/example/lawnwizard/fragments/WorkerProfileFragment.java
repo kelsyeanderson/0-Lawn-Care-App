@@ -32,11 +32,11 @@ public class WorkerProfileFragment extends Fragment {
         NavController controller = NavHostFragment.findNavController(this);
         userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
 
-        binding.backArrow.setOnClickListener((v) ->{
+        binding.backArrowWorkerProfile.setOnClickListener((v) ->{
             controller.navigate(R.id.action_workerProfileFragment_to_workerHomeFragment);
         });
 
-        binding.workerLogoutButton.setOnClickListener((v) -> {
+        binding.logoutButtonWorkerProfile.setOnClickListener((v) -> {
             auth.signOut();
             controller.navigate(R.id.action_workerProfileFragment_to_signInFragment);
         });
@@ -47,21 +47,21 @@ public class WorkerProfileFragment extends Fragment {
             if (user == null) {
                 return;
             }
-            binding.customerProfileNameText.setText(user.getName());
-            binding.customerAddressText.setText(user.getName());
-            binding.customerBalanceText.setText(user.getBalance().toString());
-            binding.customerEmailText.setText(Objects.requireNonNull(auth.getCurrentUser()).getEmail());
-            binding.customerPhoneText.setText(user.getName());
+            binding.nameTextWorkerProfile.setText(user.getName());
+            binding.addressEditTextWorkerProfile.setText(user.getName());
+            binding.balanceEditTextWorkerProfile.setText(user.getBalance().toString());
+            binding.emailEditTextWorkerProfile.setText(Objects.requireNonNull(auth.getCurrentUser()).getEmail());
+            binding.phoneEditTextWorkerProfile.setText(user.getName());
 
-            binding.transferFundsButton.setOnClickListener((v) -> {
-                if(binding.transferFunds.getText().toString().equals("")){
-                    binding.transferFunds.setError("Please enter a value to transfer");
-                }else if(Integer.parseInt(binding.transferFunds.getText().toString()) < 0){
-                    binding.transferFunds.setError("Please enter a positive number");
+            binding.transferFundsButtonWorkerProfile.setOnClickListener((v) -> {
+                if(binding.transferFundsWorkerProfile.getText().toString().equals("")){
+                    binding.transferFundsWorkerProfile.setError("Please enter a value to transfer");
+                }else if(Integer.parseInt(binding.transferFundsWorkerProfile.getText().toString()) < 0){
+                    binding.transferFundsWorkerProfile.setError("Please enter a positive number");
                 }else{
-                    user.setBalance(-Integer.parseInt(binding.transferFunds.getText().toString()));
+                    user.setBalance(-Integer.parseInt(binding.transferFundsWorkerProfile.getText().toString()));
                     userViewModel.updateUser(user);
-                    binding.transferFunds.setText("");
+                    binding.transferFundsWorkerProfile.setText("");
                 }
             });
         }));

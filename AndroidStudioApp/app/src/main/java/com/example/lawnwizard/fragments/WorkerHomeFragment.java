@@ -36,20 +36,20 @@ public class WorkerHomeFragment extends Fragment {
 
             // load transactions
             jobViewModel.loadJobs();
-            binding.workCurrentJobsCount.setText(Integer.toString(jobViewModel.getJobs().size()));
-            binding.workPastJobsCount.setText(Integer.toString(jobViewModel.getJobs().size()));
+            binding.currentJobListWorkerHome.setText(Integer.toString(jobViewModel.getJobs().size()));
+            binding.jobHistoryListWorkerHome.setText(Integer.toString(jobViewModel.getJobs().size()));
         });
 
-        binding.imageView3.setOnClickListener((v) -> {
+        binding.profileButtonWorkerHome.setOnClickListener((v) -> {
             controller.navigate(R.id.action_workerHomeFragment_to_workerProfileFragment);
         });
-        binding.historyJobsCard.setOnClickListener((v) -> {
+        binding.jobHistoryButtonWorkerHome.setOnClickListener((v) -> {
             controller.navigate(R.id.action_workerHomeFragment_to_workerJobHistoryFragment);
         });
-        binding.currentJobsCard.setOnClickListener((v) -> {
+        binding.currentJobButtonWorkerHome.setOnClickListener((v) -> {
             controller.navigate(R.id.action_workerHomeFragment_to_workerActiveJobsFragment);
         });
-        binding.addJobButton2.setOnClickListener((v) -> {
+        binding.searchJobButtonWorkerHome.setOnClickListener((v) -> {
             controller.navigate(R.id.action_workerHomeFragment_to_workerAvailableJobsFragment);
         });
 

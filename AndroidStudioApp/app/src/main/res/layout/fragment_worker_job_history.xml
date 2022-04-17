@@ -7,7 +7,7 @@
     tools:context=".fragments.WorkerJobHistoryFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/jobListCustomerActiveJobs"
+        android:id="@+id/jobListWorkerJobHistory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="72dp"
@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/backArrowCustomerActiveJobs"
+        android:id="@+id/backArrowWorkerJobHistory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -26,7 +26,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/clearButtonWorkerJobHistory"
         android:layout_width="256dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"

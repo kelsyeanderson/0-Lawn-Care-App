@@ -76,7 +76,7 @@ public class WorkerAvailableJobsFragment extends Fragment {
                 // load jobs
                 jobViewModel.loadAvailableJobs(user, getContext(), userLocation);
                 ObservableArrayList<Job> test = jobViewModel.getAvailableJobs();
-                binding.jobs.setAdapter(
+                binding.jobListWorkerAvailableJobs.setAdapter(
                         new JobHistoryAdapter(
                                 jobViewModel.getAvailableJobs(),
                                 transaction -> {
@@ -87,10 +87,10 @@ public class WorkerAvailableJobsFragment extends Fragment {
                                 })
                 );
             });
-            binding.jobs.setLayoutManager(new LinearLayoutManager(getContext()));
+            binding.jobListWorkerAvailableJobs.setLayoutManager(new LinearLayoutManager(getContext()));
         });
 
-        binding.workerAvailableJobsBackArrow.setOnClickListener((v) -> {
+        binding.backArrowWorkerAvailableJobs.setOnClickListener((v) -> {
             controller.navigate(R.id.action_workerAvailableJobsFragment_to_workerHomeFragment);
         });
 

@@ -37,11 +37,11 @@ public class WorkerViewJobFragment extends Fragment {
         UserViewModel userViewModel = new ViewModelProvider(getActivity()).get(UserViewModel.class);
         JobViewModel jobViewModel = new ViewModelProvider(getActivity()).get(JobViewModel.class);
 
-        binding.jobBackButton.setOnClickListener((v)->{
+        binding.backButtonWorkerViewJob.setOnClickListener((v)->{
             controller.navigate(R.id.action_workerViewJobFragment_to_workerHomeFragment2);
         });
 
-        binding.textView39.setText(jobViewModel.getSelectedJob().getValue().getDescription());
+        binding.descriptionEditTextCustomerViewJob.setText(jobViewModel.getSelectedJob().getValue().getDescription());
 
 
         GeoPoint p = jobViewModel.getSelectedJob().getValue().getLocation();
@@ -66,18 +66,13 @@ public class WorkerViewJobFragment extends Fragment {
                 sb.append(address.getPostalCode()).append("\n");
                 sb.append(address.getCountryName());
                 result = sb.toString();
-                binding.textView37.setText(addresses.get(0).getAddressLine(0));
+                binding.addressEditTextWorkerViewJob.setText(addresses.get(0).getAddressLine(0));
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-
-
-
-//        binding.textView41.setText(jobViewModel.getSelectedJob().getValue().getE());
-
-        binding.acceptJobButton.setOnClickListener((v) -> {
+        binding.acceptButtonWorkerViewJob.setOnClickListener((v) -> {
             userViewModel.getUser().observe(getViewLifecycleOwner(), (user) -> {
                 if (user == null) return;
 
