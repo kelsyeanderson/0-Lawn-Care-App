@@ -93,42 +93,6 @@
             android:secondaryProgressTint="#FFFFFF"
             android:stepSize="0.1"
             tools:ignore="SpeakableTextPresentCheck" />
-
-<!--        <ImageView-->
-<!--            android:id="@+id/imageView6"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="1"-->
-<!--            android:src="@drawable/ic_baseline_star_24" />-->
-
-<!--        <ImageView-->
-<!--            android:id="@+id/imageView7"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="1"-->
-<!--            android:src="@drawable/ic_baseline_star_24" />-->
-
-<!--        <ImageView-->
-<!--            android:id="@+id/imageView8"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="1"-->
-<!--            android:src="@drawable/ic_baseline_star_half_24" />-->
-
-<!--        <ImageView-->
-<!--            android:id="@+id/imageView9"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="1"-->
-<!--            android:src="@drawable/ic_baseline_star_border_24" />-->
-
-<!--        <ImageView-->
-<!--            android:id="@+id/imageView10"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="1"-->
-<!--            android:src="@drawable/ic_baseline_star_border_24" />-->
-
     </LinearLayout>
 
     <TextView
@@ -169,31 +133,13 @@
         app:layout_constraintTop_toBottomOf="@+id/phoneTextCustomerProfile" />
 
     <TextView
-        android:id="@+id/addressTextCustomerProfile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:text="Address"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phoneEditTextCustomerProfile" />
-
-    <TextView
-        android:id="@+id/addressEditTextCustomerProfile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addressTextCustomerProfile" />
-
-    <TextView
         android:id="@+id/balanceTextCustomerProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:text="Balance"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addressEditTextCustomerProfile" />
+        app:layout_constraintTop_toBottomOf="@+id/phoneEditTextCustomerProfile" />
 
     <TextView
         android:id="@+id/balanceEditTextCustomerProfile"

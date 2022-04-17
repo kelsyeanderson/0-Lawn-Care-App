@@ -9,21 +9,27 @@ public class User {
     private String name;
     private String role;
     private String phoneNumber;
+    private String email;
     private LatLng prevLocation;
     private Integer balance = 0;
     private ArrayList<String> whitelist = new ArrayList<String>();
     private ArrayList<String> blacklist = new ArrayList<String>();
     private ArrayList<Float> ratings = new ArrayList<>();
 
-    public User(String userID, String name, String phoneNumber,  String role){
+    public User(String userID, String name, String phoneNumber,  String role, String email){
         //TODO: Add in prevLocation
         this.userID = userID;
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.role = role;
+        this.email = email;
     }
 
     public User(){}
+
+    public String getEmail() {
+        return email;
+    }
 
     public String getUserID() {
         return userID;

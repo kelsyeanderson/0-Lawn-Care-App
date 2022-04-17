@@ -52,10 +52,9 @@ public class CustomerProfileFragment extends Fragment {
             });
 
             binding.nameTextCustomerProfile.setText(user.getName());
-            binding.addressEditTextCustomerProfile.setText(user.getName());
             binding.balanceEditTextCustomerProfile.setText(user.getBalance().toString());
             binding.emailEditTextCustomerProfile.setText(Objects.requireNonNull(auth.getCurrentUser()).getEmail());
-            binding.phoneEditTextCustomerProfile.setText(user.getName());
+            binding.phoneEditTextCustomerProfile.setText(user.getPhoneNumber());
         }));
 
         binding.logoutButtonCustomerProfile.setOnClickListener((v) -> {

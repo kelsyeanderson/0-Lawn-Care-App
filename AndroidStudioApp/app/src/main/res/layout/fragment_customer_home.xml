@@ -239,12 +239,13 @@
 
     </androidx.cardview.widget.CardView>
 
-    <TextView
+    <Button
         android:id="@+id/blackWhiteListButtonCustomerHome"
         android:layout_width="256dp"
-        android:layout_height="78dp"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/light_green_rounded_corner_view"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/green_background"
+        android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

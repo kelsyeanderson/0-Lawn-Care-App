@@ -99,7 +99,7 @@
         android:layout_marginTop="32dp"
         android:ems="10"
         android:importantForAutofill="no"
-        android:inputType="textEmailAddress"
+        android:inputType="phone"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="@+id/backgroundSignUp"
         app:layout_constraintStart_toStartOf="@+id/backgroundSignUp"

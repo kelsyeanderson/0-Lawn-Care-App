@@ -50,7 +50,7 @@ public class SignupFragment extends Fragment {
                 ).addOnCompleteListener((task) -> {
                     if (task.isSuccessful()) {
                         Log.d("__FIREBASE", "Sign up success");
-                        viewmodel.saveUser(binding.nameEditTextSignUp.getText().toString(), binding.phoneEditTextSignUp.getText().toString(), dropdown.getSelectedItem().toString());
+                        viewmodel.saveUser(binding.nameEditTextSignUp.getText().toString(), binding.phoneEditTextSignUp.getText().toString(), dropdown.getSelectedItem().toString(), binding.emailEditTextSignUp.getText().toString());
                         if (dropdown.getSelectedItem().toString().equals("Worker")) {
                             controller.navigate(R.id.action_signupFragment_to_workerHomeFragment);
                         } else {
@@ -67,7 +67,7 @@ public class SignupFragment extends Fragment {
         return binding.getRoot();
     }
 
-    private boolean foundInputErrors(EditText nameField, EditText emailField, EditText confirmEmailField,
+    private boolean foundInputErrors(EditText nameField, EditText emailField, EditText phoneField,
                                      EditText passwordField, EditText confirmPasswordField){
         boolean foundError = false;
         if(nameField.getText().toString().equals("")){
@@ -93,6 +93,10 @@ public class SignupFragment extends Fragment {
         }
         if(emailField.getText().toString().matches("")){
             emailField.setError("Please enter an email");
+            foundError = true;
+        }
+        if(phoneField.getText().toString().length() != 10){
+            phoneField.setError("Please enter a correct phone number");
             foundError = true;
         }
         if(passwordField.getText().toString().matches("")){

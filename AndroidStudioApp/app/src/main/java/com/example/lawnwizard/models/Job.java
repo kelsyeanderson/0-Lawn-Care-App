@@ -60,6 +60,14 @@ public class Job {
         this.createdDate = currentTime.toString();
     }
 
+    public String getWorker() {
+        return worker;
+    }
+
+    public void setWorker(String worker) {
+        this.worker = worker;
+    }
+
     public String getJobDispute() {
         return jobDispute;
     }
