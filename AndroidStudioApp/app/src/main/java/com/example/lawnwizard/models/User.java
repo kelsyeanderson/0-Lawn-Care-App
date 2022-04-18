@@ -76,7 +76,7 @@ public class User {
         return blacklist;
     }
 
-    public void setBalance(int num) {
+    public void addToBalance(int num) {
         this.balance += num;
         if(this.balance < 0){
             this.balance = 0;

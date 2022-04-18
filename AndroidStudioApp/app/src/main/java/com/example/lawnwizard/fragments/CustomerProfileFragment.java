@@ -3,7 +3,6 @@ package com.example.lawnwizard.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
@@ -13,9 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.lawnwizard.R;
-import com.example.lawnwizard.databinding.FragmentCustomerHomeBinding;
 import com.example.lawnwizard.databinding.FragmentCustomerProfileBinding;
-import com.example.lawnwizard.models.User;
 import com.example.lawnwizard.viewmodels.UserViewModel;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -45,7 +42,7 @@ public class CustomerProfileFragment extends Fragment {
                 }else if(Integer.parseInt(binding.transferFundsCustomerProfile.getText().toString()) < 0){
                     binding.transferFundsCustomerProfile.setError("Please enter a positive number");
                 }else{
-                    user.setBalance(Integer.parseInt(binding.transferFundsCustomerProfile.getText().toString()));
+                    user.addToBalance(Integer.parseInt(binding.transferFundsCustomerProfile.getText().toString()));
                     binding.balanceEditTextCustomerProfile.setText(user.getBalance().toString());
                     userViewModel.updateUser(user);
                     binding.transferFundsCustomerProfile.setText("");

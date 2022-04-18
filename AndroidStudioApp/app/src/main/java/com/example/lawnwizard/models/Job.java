@@ -96,8 +96,9 @@ public class Job {
         this.createdDate = createdDate;
     }
 
-    public void setResolved(boolean resolved) {
-        this.resolved = resolved;
+    public void setResolved() {
+        this.resolved = true;
+        this.flagged = false;
     }
 
     public String getJobDispute() {
