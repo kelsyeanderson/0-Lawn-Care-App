@@ -223,7 +223,7 @@
     </fragment>
     <fragment
         android:id="@+id/loadingFragment"
-        android:name="com.example.lawnwizard.LoadingFragment"
+        android:name="com.example.lawnwizard.fragments.LoadingFragment"
         android:label="fragment_loading"
         tools:layout="@layout/fragment_loading" >
         <action

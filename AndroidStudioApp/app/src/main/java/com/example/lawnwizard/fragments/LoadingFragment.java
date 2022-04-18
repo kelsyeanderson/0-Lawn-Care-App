@@ -1,4 +1,4 @@
-package com.example.lawnwizard;
+package com.example.lawnwizard.fragments;
 
 import android.os.Bundle;
 
@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.lawnwizard.R;
 import com.example.lawnwizard.databinding.FragmentLoadingBinding;
 import com.example.lawnwizard.databinding.FragmentSignInBinding;
 import com.example.lawnwizard.viewmodels.UserViewModel;
