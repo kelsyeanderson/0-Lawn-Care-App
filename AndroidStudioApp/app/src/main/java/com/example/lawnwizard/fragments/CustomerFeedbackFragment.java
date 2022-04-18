@@ -39,13 +39,9 @@ public class CustomerFeedbackFragment extends Fragment {
         userViewModel.loadUser();
 
         userViewModel.getUser().observe(getViewLifecycleOwner(), (user -> {
-            if (user == null) {
-                return;
-            }
-            binding.ratingWorkerProfile.getRating();
-            binding.nameTextCustomerProfile.setText(user.getName());
-            binding.emailEditTextCustomerProfile.setText(Objects.requireNonNull(auth.getCurrentUser()).getEmail());
-            binding.phoneEditTextCustomerProfile.setText(user.getName());
+            if (user == null) return;
+
+
         }));
 
         return binding.getRoot();
