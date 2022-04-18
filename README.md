@@ -28,17 +28,17 @@ The file unittests (located in docs/milestone3_deliverables) will walk you throu
 Start by opening the app on your android device.
 To test a worker profile use the following credentials:
 
-Email:home@owner.com
+Email:homeowner@example.com
 
 Password: Password1!
 
 To test a homeowner profile use the following credentials:
 
-Email:worker@email.com
+Email:worker@example.com
 
 Password:Password1!
 
-Email:admin@email.com
+Email:admin@example.com
 
 Password:Password1!
 
