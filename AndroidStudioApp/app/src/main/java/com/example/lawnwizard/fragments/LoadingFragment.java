@@ -31,6 +31,19 @@ public class LoadingFragment extends Fragment {
         controller = NavHostFragment.findNavController(this);
         viewModel = new ViewModelProvider(this).get(UserViewModel.class);
 
+//        auth.createUserWithEmailAndPassword(
+//                "admin@testing.com",
+//                "Password1!"
+//        ).addOnCompleteListener((task) -> {
+//            if (task.isSuccessful()) {
+//                Log.d("__FIREBASE", "Sign up success");
+//                viewModel.saveUser("Admin", "7048442015", "Admin", "admin@testing.com");
+////                controller.navigate(R.id.action_loadingFragment_to_adminHomeFragment);
+//            } else {
+//                Log.d("__FIREBASE", task.getException().toString());
+//            }
+//        });
+
         if(auth.getCurrentUser() != null) {
             navigateToHome();
         }else{
