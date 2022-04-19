@@ -70,7 +70,12 @@ public class UserViewModel extends ViewModel{
                             docID = doc.getId();
                             i++;
                         }
-                        user.setValue(collection.toObjects(User.class).get(0));
+                        if(i == 0){
+                            saveUser("Admin", "7048442015", "Admin", "admin@testing.com");
+                            loadUser();
+                        }else {
+                            user.setValue(collection.toObjects(User.class).get(0));
+                        }
                     }
                 });
     }
