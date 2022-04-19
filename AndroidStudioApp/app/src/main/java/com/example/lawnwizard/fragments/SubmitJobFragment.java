@@ -14,7 +14,6 @@ import android.view.ViewGroup;
 
 import com.example.lawnwizard.R;
 import com.example.lawnwizard.databinding.FragmentSubmitJobBinding;
-import com.example.lawnwizard.databinding.FragmentWorkerViewJobBinding;
 import com.example.lawnwizard.models.Job;
 import com.example.lawnwizard.viewmodels.JobViewModel;
 import com.example.lawnwizard.viewmodels.UserViewModel;
@@ -81,7 +80,7 @@ public class SubmitJobFragment extends Fragment {
                 Job job = jobViewModel.getSelectedJob().getValue();
                 job.setCompleted();
 
-                user.setBalance(job.getPay());
+                user.addToBalance(job.getPay());
                 userViewModel.updateUser(user);
 
                 jobViewModel.updateJob(job);

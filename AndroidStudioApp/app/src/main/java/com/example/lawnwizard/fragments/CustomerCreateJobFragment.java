@@ -10,15 +10,12 @@ import android.location.Geocoder;
 import android.net.Uri;
 import android.os.Bundle;
 
-import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
-import android.os.Environment;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,19 +23,13 @@ import android.widget.EditText;
 
 import com.example.lawnwizard.R;
 import com.example.lawnwizard.databinding.FragmentCustomerCreateJobBinding;
-import com.example.lawnwizard.databinding.FragmentSignInBinding;
 import com.example.lawnwizard.models.Job;
 import com.example.lawnwizard.viewmodels.JobViewModel;
 import com.example.lawnwizard.viewmodels.UserViewModel;
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.GeoPoint;
-import com.google.type.LatLng;
 
-import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 public class CustomerCreateJobFragment extends Fragment {
@@ -106,7 +97,7 @@ public class CustomerCreateJobFragment extends Fragment {
                 addJob();
 
                 userViewModel.getUser().observe(getViewLifecycleOwner(), user -> {
-                    user.setBalance(-Integer.parseInt(binding.paymentInputCustomerCreateJob.getText().toString()));
+                    user.addToBalance(-Integer.parseInt(binding.paymentInputCustomerCreateJob.getText().toString()));
                     userViewModel.updateUser(user);
                 });
 

@@ -18,6 +18,7 @@ public class UserViewModel extends ViewModel{
     MutableLiveData<User> differentUser = new MutableLiveData<>();
     FirebaseFirestore db;
     String docID;
+    String differentUserDocID;
 
     public UserViewModel() {
         db = FirebaseFirestore.getInstance();
@@ -51,8 +52,6 @@ public class UserViewModel extends ViewModel{
         });
     }
 
-
-
     public void loadUser() {
         FirebaseAuth auth = FirebaseAuth.getInstance();
         db.collection("users")
@@ -71,15 +70,20 @@ public class UserViewModel extends ViewModel{
                             docID = doc.getId();
                             i++;
                         }
-                        user.setValue(collection.toObjects(User.class).get(0));
+                        if(i == 0){
+                            saveUser("Admin", "7048442015", "Admin", "admin@testing.com");
+                            loadUser();
+                        }else {
+                            user.setValue(collection.toObjects(User.class).get(0));
+                        }
                     }
                 });
     }
 
-    public void loadDifferentUser(String homeownerID) {
+    public void loadDifferentUser(String userID) {
         FirebaseAuth auth = FirebaseAuth.getInstance();
-        db.collection(homeownerID)
-                .whereEqualTo("userID", auth.getUid())
+        db.collection("users")
+                .whereEqualTo("userID", userID)
                 .get()
                 .addOnCompleteListener((task) -> {
                     if (task.isSuccessful()) {
@@ -91,7 +95,7 @@ public class UserViewModel extends ViewModel{
                                 break;
                             }
                             DocumentReference doc = document.getReference();
-                            docID = doc.getId();
+                            differentUserDocID = doc.getId();
                             i++;
                         }
                         differentUser.setValue(collection.toObjects(User.class).get(0));

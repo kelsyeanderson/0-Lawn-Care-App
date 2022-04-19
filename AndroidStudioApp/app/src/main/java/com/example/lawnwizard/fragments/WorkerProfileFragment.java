@@ -12,7 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.lawnwizard.R;
-import com.example.lawnwizard.databinding.FragmentCustomerHomeBinding;
 import com.example.lawnwizard.databinding.FragmentWorkerProfileBinding;
 import com.example.lawnwizard.viewmodels.UserViewModel;
 import com.google.firebase.auth.FirebaseAuth;
@@ -59,7 +58,7 @@ public class WorkerProfileFragment extends Fragment {
                 }else if(Integer.parseInt(binding.transferFundsWorkerProfile.getText().toString()) < 0){
                     binding.transferFundsWorkerProfile.setError("Please enter a positive number");
                 }else{
-                    user.setBalance(-Integer.parseInt(binding.transferFundsWorkerProfile.getText().toString()));
+                    user.addToBalance(-Integer.parseInt(binding.transferFundsWorkerProfile.getText().toString()));
                     binding.balanceEditTextWorkerProfile.setText(user.getBalance().toString());
                     userViewModel.updateUser(user);
                     binding.transferFundsWorkerProfile.setText("");
