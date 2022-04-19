@@ -47,6 +47,8 @@ public class WorkerJobHistoryFragment extends Fragment {
             binding.jobListWorkerJobHistory.setLayoutManager(new LinearLayoutManager(getContext()));
         });
 
+        binding.clearButtonWorkerJobHistory.setVisibility(View.GONE);
+
         binding.backArrowWorkerJobHistory.setOnClickListener((v)->{
             controller.navigate(R.id.action_workerJobHistoryFragment_to_workerHomeFragment);
         });

@@ -83,9 +83,12 @@ public class CustomerViewJobFragment extends Fragment {
             controller.navigate(R.id.action_customerViewJobFragment_to_customerHomeFragment);
         });
 
-        if(!jobViewModel.getSelectedJob().getValue().isFlagged()){
-            binding.ratingButtonCustomerViewJob.setVisibility(View.GONE);
+        if(jobViewModel.getSelectedJob().getValue().getResolved()){
+            binding.disputeButtonCustomerViewJob.setVisibility(View.GONE);
         }
+
+        binding.ratingButtonCustomerViewJob.setVisibility(View.GONE);
+
 
         if(!jobViewModel.getSelectedJob().getValue().isCompleted() || jobViewModel.getSelectedJob().getValue().isFlagged()){
             binding.disputeButtonCustomerViewJob.setVisibility(View.GONE);

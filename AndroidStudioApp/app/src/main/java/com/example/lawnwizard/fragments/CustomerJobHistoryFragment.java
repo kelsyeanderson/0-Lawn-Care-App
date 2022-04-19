@@ -48,6 +48,8 @@ public class CustomerJobHistoryFragment extends Fragment {
             binding.jobListCustomerJobHistory.setLayoutManager(new LinearLayoutManager(getContext()));
         });
 
+        binding.clearButtonCustomerJobHistory.setVisibility(View.GONE);
+
         binding.backArrowCustomerJobHistory.setOnClickListener((v)->{
             controller.navigate(R.id.action_customerJobHistoryFragment_to_customerHomeFragment);
         });

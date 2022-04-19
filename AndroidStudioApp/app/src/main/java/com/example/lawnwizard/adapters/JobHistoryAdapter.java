@@ -65,7 +65,7 @@ public class JobHistoryAdapter extends RecyclerView.Adapter<JobHistoryAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.getBinding().userName.setText(jobs.get(position).getHomeowner());
+        holder.getBinding().userName.setText(jobs.get(position).getDescription());
         holder.itemView.setOnClickListener(view -> {
             this.listener.onSelected(jobs.get(position));
         });
